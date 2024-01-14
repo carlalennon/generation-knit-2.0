@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 # Pattern view ERD 
 #  ____________________
 # |Name of Pattern_____|    X  
-# |Image(s)____________|    - 
+# |Image(s)____________|    - ImageField?
+# |Pattern PDF_________|    Look into FieldFIle
 # |Pattern notes_______|    X 
 # |Published by User___| F  X
 # |Date published _____|    X
@@ -26,7 +27,7 @@ NEEDLE = ((0, '1mm'), (1, '2mm'), (2, '3mm'), (3, '4mm'))
 class Pattern(models.Model):
     #Pattern title
     title = models.CharField(max_length=200, unique=True)
-    #Slug for URL
+    #Slug for URL, rplace with pattern ID field that generates a number
     slug = models.SlugField(max_length=200, unique=True)
     #Pattern posted by
     author = models.ForeignKey(
