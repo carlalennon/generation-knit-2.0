@@ -4,4 +4,5 @@ from .models import Pattern
 
 # Create your views here.
 class PatternView(generic.ListView):
-    model = Pattern
+    queryset = Pattern.objects.all()
+    template_name = "pattern_list.html"
