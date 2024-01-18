@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import include
+
+from feed import urls as feed_urls
 
 urlpatterns = [
-    path('', include('pattern.urls'), name='pattern_page'),
     path('summernote/', include('django_summernote.urls')),
     path('admin/', admin.site.urls),
+    path('', include(feed_urls), name='feed'),
 ]
