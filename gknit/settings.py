@@ -15,14 +15,14 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api	
-# cloudinary.config( 
-  	# cloud_name = "duekocfq6",
-  	# api_key = "493577957219434",
-  	# api_secret = "QdXapbRE4W1eQsvL_sVfA-Jf9cg"
-# )
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api	
+cloudinary.config( 
+  	cloud_name = "duekocfq6",
+  	api_key = "493577957219434",
+  	api_secret = "QdXapbRE4W1eQsvL_sVfA-Jf9cg"
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -147,7 +147,8 @@ STATIC_URL = 'static/'
 #STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 #STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-#MEDIA_URL = '/media/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, )
 #DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type

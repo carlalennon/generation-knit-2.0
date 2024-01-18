@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from pattern.models import Pattern
 
 # Create your views here.
@@ -9,3 +9,7 @@ class HomePageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['patterns'] = Pattern.objects.all()
         return context
+
+class PatternDetailView(DetailView):
+    template_name = "pattern_detail.html"
+    model = Pattern

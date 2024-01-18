@@ -28,8 +28,6 @@ NEEDLE = ((0, '1mm'), (1, '2mm'), (2, '3mm'), (3, '4mm'))
 class Pattern(models.Model):
     #Pattern title
     title = models.CharField(max_length=200, unique=True)
-    #Slug for URL, rplace with pattern ID field that generates a number
-    slug = models.SlugField(max_length=200, unique=True)
     #Pattern posted by
     author = models.ForeignKey(
     User, on_delete=models.CASCADE, related_name="blog_posts"
