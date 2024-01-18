@@ -1,3 +1,18 @@
+Sources: 
+
+Skillshare course
+https://cloudinary.com/blog/managing-media-files-in-django
+
+
+
+
+
+
+
+
+
+
+
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome carlalennon lennon,
