@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from pattern.models import Pattern
 
 # Create your views here.
 class HomePageView(TemplateView):
@@ -6,5 +7,5 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['my_thing'] = 'Hello World'
+        context['patterns'] = Pattern.objects.all()
         return context
