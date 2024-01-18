@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from sorl.thumbnail import ImageField
 
 # Pattern view ERD 
 #  ____________________
@@ -45,3 +46,5 @@ class Pattern(models.Model):
     weight = models.IntegerField(choices=WEIGHT, default=0)
     #Needle size
     needle = models.IntegerField(choices=NEEDLE, default=0)
+    # Image
+    image = ImageField()
