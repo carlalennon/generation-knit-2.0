@@ -6,5 +6,8 @@ Generation Knit
 {% endblock %}
 
 {% block body %}
-    <p>{{ patterns }}</p>
+    {% for pattern in patterns %}
+        {{ pattern.title }}
+        <br>
+    {% endfor %}
 {% endblock %}
