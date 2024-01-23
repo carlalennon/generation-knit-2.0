@@ -46,3 +46,7 @@ class Pattern(models.Model):
     needle = models.IntegerField(choices=NEEDLE, default=0)
     # Image
     image = ImageField()
+
+    def __str__(self):
+        return self.title
+    

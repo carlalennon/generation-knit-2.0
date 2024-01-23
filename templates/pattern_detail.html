@@ -1,1 +1,11 @@
-hello world
+{% extends "base.html" %}
+
+{% block title %}Pattern View{% endblock %}
+
+{% block body %}    
+    <h2>Pattern</h2>
+    {{ object.title }}
+    <h3>Images</h3>
+    <img src="{{ object.image.url }}" style="width: 100%; height: auto;">
+    
+{% endblock %}
