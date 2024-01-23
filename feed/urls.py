@@ -6,5 +6,5 @@ app_name = 'feed'
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='feed'),
-    #path('detail/<int:pk/>', PatternDetailView.as_view(), name="detail")
+    path('pattern/<int:pk>/', PatternDetailView.as_view(), name="detail")
 ]
