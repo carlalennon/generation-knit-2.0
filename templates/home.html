@@ -9,9 +9,10 @@ Generation Knit
 {% block body %}
 
     {% for pattern in patterns %}
+        <a href="{% url 'feed:detail' pattern.id %}">
         {% thumbnail pattern.image "100x100" crop="center" as im %}
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
-        {% endthumbnail %}
+        {% endthumbnail %}</a>
         {{ pattern.title }}
         <br>
         {{ pattern.weight }}, {{ pattern.author }}
