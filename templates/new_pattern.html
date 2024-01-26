@@ -3,6 +3,10 @@
 {% block title %}Upload a new pattern{% endblock %}
 
 {% block body %}    
-    {{ form }}
+    <form method="POST" action="">
+    {{ form.as_p }}
+        <div>
+            <button type="submit">Submit pattern</button>
+        </div>
     
 {% endblock %}
