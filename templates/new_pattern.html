@@ -3,7 +3,8 @@
 {% block title %}Upload a new pattern{% endblock %}
 
 {% block body %}    
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
+    {% csrf_token %}
     {{ form.as_p }}
         <div>
             <button type="submit">Submit pattern</button>

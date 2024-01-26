@@ -2,9 +2,6 @@ from django.shortcuts import render
 from django.views import generic
 from .models import Pattern
 from django.http import HttpResponse
-from django.shortcuts import render
-def upload_media(request):
-    return render(request, 'media_app/upload_media.html')
 
 # Create your views here.
 class PatternView(generic.ListView):
@@ -19,6 +16,3 @@ def patterns(request):
         'myPatterns' : myPatterns,
     }
     return HttpResponse(template.render(context, request))
-    
-def upload_media(request):
-    return render(request, 'media_app/upload_media.html')

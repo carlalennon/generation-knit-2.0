@@ -29,21 +29,21 @@ class Pattern(models.Model):
     #Pattern title
     title = models.CharField(max_length=200, unique=True)
     #Pattern posted by
-    author = models.ForeignKey(
-    User, on_delete=models.CASCADE, related_name="blog_posts"
-    )
+    #author = models.ForeignKey(
+    #User, on_delete=models.CASCADE, related_name="blog_posts"
+    #)
     #Pattern notes
-    content = models.TextField()
+    #content = models.TextField()
     #Post created on
-    created_on = models.DateTimeField(auto_now_add=True)
+    #created_on = models.DateTimeField(auto_now_add=True)
     #Pattern first published
-    first_published = models.DateField()
+    #first_published = models.DateField()
     #Pattern category
-    category = models.IntegerField(choices=CATEGORY, default=0)
+    #category = models.IntegerField(choices=CATEGORY, default=0)
     #Yarn Weight
-    weight = models.IntegerField(choices=WEIGHT, default=0)
+    #weight = models.IntegerField(choices=WEIGHT, default=0)
     #Needle size
-    needle = models.IntegerField(choices=NEEDLE, default=0)
+    #needle = models.IntegerField(choices=NEEDLE, default=0)
     # Image
     image = ImageField()
 

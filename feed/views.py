@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView, DetailView, FormView
-from .forms import PostForm
+from .forms import PostPattern
 from pattern.models import Pattern
 
 # Create your views here.
@@ -17,5 +17,13 @@ class PatternDetailView(DetailView):
 
 class UploadPatternView(FormView):
     template_name = "new_pattern.html"
-    form_class = PostForm
+    form_class = PostPattern
     success_url = "/"
+
+    def form_valid(self, form):
+        # Create a new pattern
+        new_object = Pattern.objects.create(
+            title = form.cleaned_data["title"],
+            image = form.cleaned_data["image"]
+        )
+        return super().form_valid(form)
