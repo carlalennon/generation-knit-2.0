@@ -51,9 +51,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     #'cloudinary_storage',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'sorl.thumbnail',
     'feed',
     'pattern',
+    'allauth',
     'django_summernote',
 ]
 
