@@ -35,7 +35,7 @@ class Pattern(models.Model):
     #Pattern notes
     #content = models.TextField()
     #Post created on
-    #created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(auto_now=True)
     #Pattern first published
     #first_published = models.DateField()
     #Pattern category
