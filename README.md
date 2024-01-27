@@ -6,6 +6,8 @@ https://cloudinary.com/blog/managing-media-files-in-django
 Allauth docs
 https://docs.allauth.org/en/latest/
 
+Using re_path since URLS is deprecated
+https://docs.djangoproject.com/en/4.0/ref/urls/
 
 
 

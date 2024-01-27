@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf import settings
-from django.conf.urls.static import static
-from django.urls import path, include
 from django.conf.urls import include
+from django.conf.urls.static import static
+from django.urls import path, include, re_path
+
 
 from feed import urls as feed_urls
 
@@ -26,6 +27,7 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('admin/', admin.site.urls),
     path('', include(feed_urls), name='feed'),
+    re_path('', include("allauth.urls"))
 ]
 
 if settings.DEBUG:
