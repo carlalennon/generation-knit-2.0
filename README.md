@@ -3,6 +3,10 @@ Sources:
 Skillshare course
 https://cloudinary.com/blog/managing-media-files-in-django
 
+Allauth docs
+https://docs.allauth.org/en/latest/
+
+
 
 
 
