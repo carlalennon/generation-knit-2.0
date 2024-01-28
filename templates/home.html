@@ -17,7 +17,13 @@ Generation Knit
         <br>
         {{ pattern.weight }}, 
         <br>
-        {{ thumbnail pattern.user.author.profile.image }}{{ pattern.author.username }}
+        <a href="#">
+            {% thumbnail pattern.author.profile.image "100x100" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {{ pattern.author.username }}
+            {% endthumbnail %}
+        </a>
+        
         <br>
     {% endfor %}
 {% endblock %}
