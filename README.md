@@ -15,6 +15,9 @@ https://ctrlzblog.com/how-to-add-a-text-editor-to-a-django-blog-with-summernote/
 Bootstrapping a django form
 https://ngangasn.com/how-to-use-bootstrap-5-with-django-the-right-way/
 
+Creating the models
+https://docs.djangoproject.com/en/5.0/topics/db/models/
+
 
 
 
