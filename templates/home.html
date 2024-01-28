@@ -15,7 +15,9 @@ Generation Knit
         {% endthumbnail %}</a>
         {{ pattern.title }}
         <br>
-        {{ pattern.weight }}, {{ pattern.author }}
+        {{ pattern.weight }}, 
+        <br>
+        {{ thumbnail pattern.user.author.profile.image }}{{ pattern.author.username }}
         <br>
     {% endfor %}
 {% endblock %}

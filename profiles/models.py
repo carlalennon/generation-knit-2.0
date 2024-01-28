@@ -12,7 +12,7 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         related_name="profile"
     )
-    image = ImageField(upload_to="profiles")
+    image = ImageField(upload_to="profiles/")
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
