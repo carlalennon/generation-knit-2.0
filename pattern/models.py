@@ -29,9 +29,10 @@ class Pattern(models.Model):
     #Pattern title
     title = models.CharField(max_length=200, unique=True)
     #Pattern posted by
-    #author = models.ForeignKey(
-    #User, on_delete=models.CASCADE, related_name="blog_posts"
-    #)
+    author = models.ForeignKey(
+    User, 
+    on_delete=models.CASCADE, 
+    )
     #Pattern notes
     #content = models.TextField()
     #Post created on
