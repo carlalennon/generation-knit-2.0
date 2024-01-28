@@ -9,6 +9,9 @@ https://docs.allauth.org/en/latest/
 Using re_path since URLS is deprecated
 https://docs.djangoproject.com/en/4.0/ref/urls/
 
+Adding summernote to forms
+https://ctrlzblog.com/how-to-add-a-text-editor-to-a-django-blog-with-summernote/
+
 
 
 
