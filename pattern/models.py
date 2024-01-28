@@ -34,7 +34,7 @@ class Pattern(models.Model):
     on_delete=models.CASCADE, 
     )
     #Pattern notes
-    #content = models.TextField()
+    content = models.TextField()
     #Post created on
     created_on = models.DateTimeField(auto_now=True)
     #Pattern first published
