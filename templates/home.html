@@ -10,7 +10,7 @@ Generation Knit
 
     {% for pattern in patterns %}
         <a href="{% url 'feed:detail' pattern.id %}">
-        {% thumbnail pattern.image "100x100" crop="center" as im %}
+        {% thumbnail pattern.image "200x200" crop="center" as im %}
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
         {% endthumbnail %}</a>
         {{ pattern.title }}
@@ -18,7 +18,7 @@ Generation Knit
         {{ pattern.weight }}, 
         <br>
         <a href="#">
-            {% thumbnail pattern.author.profile.image "100x100" crop="center" as im %}
+            {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
             {{ pattern.author.username }}
             {% endthumbnail %}
