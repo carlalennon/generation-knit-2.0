@@ -19,7 +19,7 @@ from sorl.thumbnail import ImageField
 # |Pattern sizes_______|    -
 # |Tags________________|    -
 
-STATUS = ((0, "Draft"), (1, "Published"))
+
 CATEGORY = (
     (0, ''), 
     (1, 'Sweater'), 
@@ -29,8 +29,19 @@ CATEGORY = (
     (5, 'Hat'), 
     (6, 'Scarf')
     )
-WEIGHT = ((0, 'Cobweb'), (1, 'Lace'), (2, 'Fingering'), (3, 'DK'), (4, 'Worsted'))
-NEEDLE = ((0, '1mm'), (1, '2mm'), (2, '3mm'), (3, '4mm'))
+WEIGHT = (
+    (0, 'Cobweb'), 
+    (1, 'Lace'), 
+    (2, 'Fingering'), 
+    (3, 'DK'), 
+    (4, 'Worsted')
+    )
+NEEDLE = (
+    (0, '1mm'), 
+    (1, '2mm'), 
+    (2, '3mm'), 
+    (3, '4mm')
+    )
 
 
 class Pattern(models.Model):

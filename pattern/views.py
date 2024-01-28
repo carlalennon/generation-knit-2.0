@@ -3,6 +3,8 @@ from django.views import generic
 from .models import Pattern
 from django.http import HttpResponse
 from django.contrib import messages
+from django.views.generic import TemplateView, DetailView, FormView
+from .forms import PostPattern
 
 # Create your views here.
 class PatternView(generic.ListView):

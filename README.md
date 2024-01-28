@@ -18,6 +18,8 @@ https://ngangasn.com/how-to-use-bootstrap-5-with-django-the-right-way/
 Creating the models
 https://docs.djangoproject.com/en/5.0/topics/db/models/
 
+Multiple file handling for pattern uploads
+https://docs.djangoproject.com/en/5.0/topics/http/file-uploads/
 
 
 
