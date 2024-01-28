@@ -12,9 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/urls/
 Adding summernote to forms
 https://ctrlzblog.com/how-to-add-a-text-editor-to-a-django-blog-with-summernote/
 
-
-
-
+Bootstrapping a django form
+https://ngangasn.com/how-to-use-bootstrap-5-with-django-the-right-way/
 
 
 
