@@ -40,7 +40,7 @@ class Pattern(models.Model):
     #Pattern first published
     #first_published = models.DateField()
     #Pattern category
-    #category = models.IntegerField(choices=CATEGORY, default=0)
+    category = models.IntegerField(choices=CATEGORY, default=0)
     #Yarn Weight
     #weight = models.IntegerField(choices=WEIGHT, default=0)
     #Needle size
