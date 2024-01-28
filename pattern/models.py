@@ -50,9 +50,9 @@ class Pattern(models.Model):
     #Pattern category
     category = models.IntegerField(choices=CATEGORY, default=0)
     #Yarn Weight
-    #weight = models.IntegerField(choices=WEIGHT, default=0)
+    weight = models.IntegerField(choices=WEIGHT, default=0)
     #Needle size
-    #needle = models.IntegerField(choices=NEEDLE, default=0)
+    needle = models.IntegerField(choices=NEEDLE, default=0)
     # Image
     image = ImageField(upload_to="patterns/")
 
