@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Pattern
+from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
 from .forms import PostPattern
 
@@ -12,4 +13,13 @@ class PatternView(generic.ListView):
 
 
 class UploadPatternView(CreateView):
-    pass
+    model = Pattern
+    template_name = 'new_pattern.html'
+    fields = [
+        'title',
+        'content',
+        'category',
+        'weight',
+        'needle',
+        'image',
+    ]
