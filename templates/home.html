@@ -17,28 +17,20 @@ Generation Knit
             {% thumbnail pattern.image "200x200" crop="center" as im %}
                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
             {% endthumbnail %}
-            </a>
+        </a>
         <div class="card-body">
-          <p class="card-text">
-            by
+                <p class="card-text">
+                by
                 <!---<a href="{{ pattern.author.profile }}"> -->
-                <b>{{ pattern.author }}</b>
+                    <b>{{ pattern.author }}</b>
                 <!--</a>-->
-            <a href="#">
-                {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
-                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-                {% endthumbnail %}
-            </a>
-        </p>
+                <a href="#">
+                    {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
+                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                    {% endthumbnail %}
+                </a>
+            </p>
         </div>
       </div>
-
-        {{ pattern.title }}
-        <br>
-        {{ pattern.weight }}, 
-        <br>
-       
-        
-        <br>
     {% endfor %}
 {% endblock %}
