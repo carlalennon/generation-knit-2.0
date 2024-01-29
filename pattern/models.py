@@ -70,3 +70,10 @@ class Pattern(models.Model):
     def __str__(self):
         return self.title
     
+class PatternImage(models.Model):
+    image = models.ImageField(upload_to='patterns/')
+    pattern = models.ForeignKey(
+        Pattern,
+        related_name="images",
+        on_delete=models.CASCADE
+    )

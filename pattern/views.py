@@ -33,7 +33,7 @@ class UploadPatternView(FormView):
         # Create a new pattern
         new_object = Pattern.objects.create(
             title = form.cleaned_data["title"],
-            image = form.cleaned_data["image"]
+            image = form.cleaned_data["image"],
         )
         messages.add_message(self.request, messages.SUCCESS, 'Post successful')
         return super().form_valid(form)
