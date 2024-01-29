@@ -21,6 +21,12 @@ https://docs.djangoproject.com/en/5.0/topics/db/models/
 Multiple file handling for pattern uploads
 https://docs.djangoproject.com/en/5.0/topics/http/file-uploads/
 
+Cloudinary upload widget
+https://cloudinary.com/documentation/upload_widget
+
+Classy class based views resource 
+https://ccbv.co.uk/projects/Django/5.0/django.views.generic.edit/FormView/
+
 
 
 
