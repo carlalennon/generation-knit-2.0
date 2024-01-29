@@ -4,6 +4,7 @@ from .models import Pattern
 from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
 from .forms import PostPattern
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 class PatternView(generic.ListView):
@@ -12,7 +13,7 @@ class PatternView(generic.ListView):
     paginate_by = 3
 
 
-class UploadPatternView(CreateView):
+class UploadPatternView(LoginRequiredMixin, CreateView):
     model = Pattern
     template_name = 'new_pattern.html'
     fields = [
