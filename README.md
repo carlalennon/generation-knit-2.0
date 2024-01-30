@@ -21,6 +21,9 @@ https://docs.djangoproject.com/en/5.0/topics/db/models/
 Multiple file handling for pattern uploads
 https://docs.djangoproject.com/en/5.0/topics/http/file-uploads/
 
+More multiple file handling
+https://qasimalbaqali.medium.com/upload-multiple-images-to-a-post-in-django-ff10f66e8f7as
+
 Cloudinary upload widget
 https://cloudinary.com/documentation/upload_widget
 

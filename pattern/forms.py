@@ -8,3 +8,5 @@ class PostPattern(forms.Form):
     image = forms.FileField(required=False)
     content = forms.CharField(widget=SummernoteWidget)
     #author = 
+
+
