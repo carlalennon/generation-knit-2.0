@@ -1,3 +1,22 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 
 {% block title %} {{ user }}'s Profile{% endblock %}
+
+{% block body %}
+    <h1> {{ user }} </h1>
+
+    <div class="card-body">
+        <p class="card-text">
+            {% thumbnail user.profile.image "500x500" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% endthumbnail %}
+        </a>
+    </p>
+</div>
+
+      <!-- To Do 
+    - Add amount of patterns 
+    - Add list of followers and following
+    -->
+{% endblock %}
