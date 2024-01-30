@@ -22,7 +22,7 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
         'category',
         'weight',
         'needle',
-        'image',
+        'featured_image',
     ]
     success_url = '/'
 
