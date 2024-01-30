@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from sorl.thumbnail import ImageField
+from cloudinary.models import CloudinaryField
 
 # Pattern view ERD 
 #  ____________________
@@ -64,6 +65,8 @@ class Pattern(models.Model):
     weight = models.IntegerField(choices=WEIGHT, default=0)
     #Needle size
     needle = models.IntegerField(choices=NEEDLE, default=0)
+    #Featured Image
+    featured_image = CloudinaryField('image', default='placeholder')
     # Image
     image = ImageField(upload_to="patterns/")
 
