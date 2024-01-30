@@ -23,12 +23,14 @@ from django.urls import path, include, re_path
 
 from feed import urls as feed_urls
 from pattern import urls as pattern_urls
+from profiles import urls as profile_urls
 
 urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('admin/', admin.site.urls),
     path('', include(feed_urls), name='feed'),
     path('', include(pattern_urls), name='patterns'),
+    path('profile/', include(profile_urls), name='profile'),
     re_path('', include("allauth.urls"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

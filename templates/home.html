@@ -22,10 +22,9 @@ Generation Knit
         <div class="card-body">
                 <p class="card-text">
                 by
-                <!---<a href="{{ pattern.author.profile }}"> -->
+                    <a href="{% url 'profiles:profile' pattern.author.username %}">
                     <b>{{ pattern.author }}</b>
-                <!--</a>-->
-                <a href="#">
+                    >
                     {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
                         <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                     {% endthumbnail %}
