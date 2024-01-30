@@ -65,7 +65,7 @@ class Pattern(models.Model):
     #Needle size
     needle = models.IntegerField(choices=NEEDLE, default=0)
     # Image
-    image = ImageField(upload_to="patterns/", default="templates/img_error.jpg")
+    image = ImageField(upload_to="patterns/")
 
     def __str__(self):
         return self.title
