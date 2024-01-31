@@ -9,12 +9,12 @@ Generation Knit
 {% block body %}
 
     {% for pattern in patterns %}
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 32rem;">
         <h2>
             {{ pattern.title }}
         </h2>
         <a href="{% url 'feed:detail' pattern.id %}">
-            {% thumbnail pattern.image "200x200" crop="center" as im %}
+            {% thumbnail pattern.image "500x500" crop="center" as im %}
                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
             {% endthumbnail %}
             
