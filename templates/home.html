@@ -10,9 +10,11 @@ Generation Knit
 
     {% for pattern in patterns %}
     <div class="card" style="width: 32rem;">
-        <h2>
+        <div class="text-center">
+            <h3>
             {{ pattern.title }}
-        </h2>
+            </h3>
+        </div>
         <a href="{% url 'feed:detail' pattern.id %}">
             {% thumbnail pattern.image "500x500" crop="center" as im %}
                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
@@ -20,11 +22,10 @@ Generation Knit
             
         </a>
         <div class="card-body">
-                <p class="card-text">
+                <p class="card-text float-end">
                 by
-                    <a href="{% url 'profiles:profile' pattern.author.username %}">
+                    <a href="{% url 'profiles:profile' pattern.author.username %}" class="text-decoration-none link-secondary">
                     <b>{{ pattern.author }}</b>
-                    >
                     {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
                         <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                     {% endthumbnail %}

@@ -30,6 +30,8 @@ https://cloudinary.com/documentation/upload_widget
 Classy class based views resource 
 https://ccbv.co.uk/projects/Django/5.0/django.views.generic.edit/FormView/
 
+Sorl thumbnail docs 
+https://sorl-thumbnail.readthedocs.io/en/latest/
 
 
 
