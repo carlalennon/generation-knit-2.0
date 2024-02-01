@@ -31,6 +31,7 @@ urlpatterns = [
     path('', include(feed_urls), name='feed'),
     path('', include(pattern_urls), name='patterns'),
     path('profile/', include(profile_urls), name='profile'),
+    path("accounts/", include("allauth.urls")),
     re_path('', include("allauth.urls"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
