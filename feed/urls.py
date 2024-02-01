@@ -5,6 +5,6 @@ from .views import HomePageView, PatternDetailView
 app_name = 'feed'
 
 urlpatterns = [
-    path('feed/', HomePageView.as_view(), name='feed'),
+    path('', HomePageView.as_view(), name='feed'),
     path('pattern/<int:pk>/', PatternDetailView.as_view(), name="detail"),
 ]
