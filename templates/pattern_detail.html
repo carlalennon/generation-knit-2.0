@@ -5,8 +5,9 @@
 {% block body %}    
     {{ object.title }}
     {{ request.user }}
-    {% if user == author %}
-    Something
+    {% if request.user.is_authenticated %}
+    <a href="{% url 'pattern:edit' pattern.id %}">Edit pattern</a>
+    Something 
     {% else %}
     {% endif %}
     <!---<img src="{{ object.image.url }}" style="width: 100%; height: auto;">

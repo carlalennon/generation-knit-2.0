@@ -38,4 +38,14 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
         obj.save()
         return super().form_valid(form)
 
+def edit_pattern(request, pattern_id):
+    pattern = get_object_or_404(Pattern, id=pattern_id)
+    if request.method == 'POST':
+        form = PostPattern(request.POST, request.FILES, instance=pattern)
+        if form.is_valid():
+            form.save()
+            return redirect('pattern_detail', pattern_id=pattern.id)
+    else:
+        form = PostPattern(instance=pattern)
+    return render(request, 'edit_pattern.html', {'form': form})
 

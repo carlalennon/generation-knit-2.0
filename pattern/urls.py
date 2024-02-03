@@ -7,4 +7,5 @@ app_name = "pattern"
 urlpatterns = [
     path('', views.PatternView.as_view(), name="pattern"),
     path('add/', UploadPatternView.as_view(), name="add"),
+    path('edit/<int:pk/>', views.edit_pattern, name="edit"),
 ]
