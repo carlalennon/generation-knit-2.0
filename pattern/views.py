@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic
 from .models import Pattern
 from django.views.generic.edit import CreateView
@@ -44,7 +44,7 @@ def edit_pattern(request, pattern_id):
         form = PostPattern(request.POST, request.FILES, instance=pattern)
         if form.is_valid():
             form.save()
-            return redirect('pattern_detail', pattern_id=pattern.id)
+            return redirect('feed:detail', pk=pattern.pk)
     else:
         form = PostPattern(instance=pattern)
     return render(request, 'edit_pattern.html', {'form': form})
