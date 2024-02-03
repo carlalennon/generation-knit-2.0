@@ -5,6 +5,8 @@ from django.views.generic.edit import CreateView
 from django.views.generic import TemplateView
 from .forms import PostPattern
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse, HttpResponseRedirect
+from django.template import loader
 
 # Create your views here.
 class PatternView(generic.ListView):
@@ -35,4 +37,5 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
         obj.author = self.request.user
         obj.save()
         return super().form_valid(form)
+
 

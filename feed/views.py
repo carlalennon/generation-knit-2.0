@@ -15,3 +15,13 @@ class PatternDetailView(DetailView):
     template_name = "pattern_detail.html"
     model = Pattern
 
+    def EditPattern(request):
+        user = user.username
+        pattern = pattern.author.username
+        template = loader.get_template('pattern_detail.html')
+        context = {
+            'user': user,
+            'pattern' : pattern,
+            }
+        return HttpResponse(template.render(context, request))
+

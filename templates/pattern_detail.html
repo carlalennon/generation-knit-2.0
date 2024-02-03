@@ -5,8 +5,8 @@
 {% block body %}    
     {{ object.title }}
     {{ request.user }}
-    {% if post.author.username == user  %}
-    <p> something </p>
+    {% if user == author %}
+    Something
     {% else %}
     {% endif %}
     <!---<img src="{{ object.image.url }}" style="width: 100%; height: auto;">
