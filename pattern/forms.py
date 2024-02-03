@@ -7,3 +7,7 @@ class PostPattern(forms.ModelForm):
     title = forms.CharField(max_length=200)
     image = forms.FileField(required=False)
     content = forms.CharField(widget=SummernoteWidget)
+
+    class Meta:
+        model = Pattern
+        fields = ['title', 'image', 'content']
