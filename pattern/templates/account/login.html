@@ -5,9 +5,12 @@
     {% trans "Sign In" %}
 {% endblock %}
 {% block body %}
-    {% element h1 %}
+<div class="card w-75 mb-3 mx-auto p-2">
+    <div class="mx-auto p-2" style="width: 200px;">
+    <h1 class="text-center">
         {% trans "Sign In" %}
-    {% endelement %}
+    </h1>
+    </div>
     <p>
         {% blocktrans %}If you have not created an account yet, then please
     <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
@@ -34,3 +37,7 @@
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
 {% endblock %}
+
+
+
+</div>
