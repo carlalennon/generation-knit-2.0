@@ -4,9 +4,15 @@
 
 {% block body %}    
     {{ object.title }}
-    <img src="{{ object.image.url }}" style="width: 100%; height: auto;">
+    {{ request.user }}
+    {% if post.author.username == user  %}
+    <p> something </p>
+    {% else %}
+    {% endif %}
+    <!---<img src="{{ object.image.url }}" style="width: 100%; height: auto;">
     <p>Category: {{ pattern.get_category_display }}</p>
     <p>Yarn Weight: {{ pattern.get_weight_display }}</p>
     <p>Needle Size: {{ pattern.get_needle_display }}</p>
     
+    -->
 {% endblock %}
