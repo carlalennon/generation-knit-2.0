@@ -15,10 +15,9 @@
   <h2> Results:
   </h2>
 {% for p in object_list %}
-
-    <li>
-        <a href="{% url 'feed:detail' p.id %}">{{ pattern.title}}Something is being returned</a>
-        </li>
+  <li>
+    <a href="{% url 'feed:detail' p.id %}">{{ p.title}}Something is being returned</a>
+  </li>
 {% endfor %}
 </ul>
 {% endblock %}
