@@ -7,7 +7,7 @@
     {{ request.user }}
     {% if request.user.is_authenticated %}
     <a href="{% url 'pattern:edit' pattern.id %}">Edit pattern</a>
-    <a href="{% url 'pattern:edit' pattern.id %}">Delete Pattern</a>
+    <a href="{% url 'pattern:delete' pattern.id %}">Delete Pattern</a>
     Something 
     {% else %}
     {% endif %}
