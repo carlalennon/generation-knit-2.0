@@ -27,10 +27,10 @@ def edit_profile(request, username):
         form = EditProfile(instance=profile)
     return render(request, 'edit_profile.html', {'form': form})
 
-"""
-def delete_pattern(request, pk):
-    pattern = get_object_or_404(Pattern, pk=pk)
-    pattern.delete()
-    messages.add_message(request, messages.SUCCESS, "Your pattern was deleted.")
+def delete_profile(request, username):
+    profile = get_object_or_404(Profile, user.username)
+    user = get_object_or_404(User, user=request.user)
+    profile.delete()
+    user.delete()
+    messages.add_message(request, messages.SUCCESS, "Your profile was deleted.")
     return redirect('feed:feed')
-    """
