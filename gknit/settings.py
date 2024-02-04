@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'feed',
     'pattern',
     'profiles',
+    'search',
 
     'allauth',
     'allauth.account',

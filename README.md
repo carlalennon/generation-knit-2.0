@@ -39,6 +39,9 @@ https://tutorial-extensions.djangogirls.org/en/homework/
 Adding messages to edit/delete post 
 https://docs.djangoproject.com/en/5.0/ref/contrib/messages/
 
+Create search function
+https://learndjango.com/tutorials/django-search-tutorial
+
 
 
 
