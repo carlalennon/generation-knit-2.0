@@ -42,8 +42,11 @@ https://docs.djangoproject.com/en/5.0/ref/contrib/messages/
 Create search function
 https://learndjango.com/tutorials/django-search-tutorial
 
+Classy Class Based Views
+https://ccbv.co.uk/
 
-
+Getting posts by user
+https://docs.djangoproject.com/en/5.0/topics/db/queries/
 
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)

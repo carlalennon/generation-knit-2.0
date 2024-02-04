@@ -44,7 +44,12 @@
     - Add amount of patterns 
     - Add list of followers and following
     -->
-
+    <ul>
+    {% for pattern in object_list %}
+    <li>{{ pattern.title }}</li>
+{% endfor %}
+    </ul>
+    
       <div class="card">
         <h3> Patterns by {{ user }}</h3>
         <div class="card-body">

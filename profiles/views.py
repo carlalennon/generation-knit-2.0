@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from django.contrib import messages
 from .models import Profile
+from pattern.models import Pattern
 from .forms import EditProfile
 
 # Create your views here.
@@ -34,3 +35,9 @@ def delete_profile(request, username):
     user.delete()
     messages.add_message(request, messages.SUCCESS, "Your profile was deleted.")
     return redirect('feed:feed')
+
+class PatternsByUser(ListView):
+
+    def get_queryset(self):
+        profile_user = self.get_object().user
+        return Pattern.objects.filter(author=profile_user)
