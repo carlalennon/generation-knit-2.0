@@ -12,9 +12,12 @@
   </div>
 
 <ul>
-{% for p in pattern %}
+  <h2> Results:
+  </h2>
+{% for p in object_list %}
+
     <li>
-        <a href="{% url 'feed:detail' p.id %}">
+        <a href="{% url 'feed:detail' p.id %}">{{ pattern.title}}Something is being returned</a>
         </li>
 {% endfor %}
 </ul>
