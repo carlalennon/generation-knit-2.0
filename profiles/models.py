@@ -13,7 +13,7 @@ class Profile(models.Model):
         related_name="profile"
     )
     image = ImageField(upload_to="profiles/")
-    bio = CharField(max_length=500)
+    bio = models.TextField(max_length=500)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

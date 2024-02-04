@@ -42,7 +42,7 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
 def edit_pattern(request, pattern_id):
     pattern = get_object_or_404(Pattern, id=pattern_id)
     if request.method == 'POST':
-        form = PostPattern(request.POST, request.FILES, instance=pattern)
+        form = EditPattern(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, "Pattern was edited successfully.")

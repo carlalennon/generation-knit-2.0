@@ -1,13 +1,12 @@
 from django import forms
 from django_summernote.widgets import SummernoteWidget
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Pattern
+from .models import Profile
 
-class PostPattern(forms.ModelForm):
-    title = forms.CharField(max_length=200)
+class EditProfile(forms.ModelForm):
     image = forms.FileField(required=False)
-    content = forms.CharField(widget=SummernoteWidget)
+    bio = forms.CharField(widget=SummernoteWidget)
 
     class Meta:
-        model = Pattern
-        fields = ['title', 'image', 'content']
+        model = Profile
+        fields = [ 'image', 'bio']
