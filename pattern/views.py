@@ -45,6 +45,7 @@ def edit_pattern(request, pattern_id):
         form = PostPattern(request.POST, request.FILES, instance=pattern)
         if form.is_valid():
             form.save()
+            messages.add_message(request, messages.SUCCESS, "Pattern was edited successfully.")
             return redirect('feed:detail', pk=pattern.pk)
     else:
         form = PostPattern(instance=pattern)

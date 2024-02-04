@@ -33,6 +33,12 @@ https://ccbv.co.uk/projects/Django/5.0/django.views.generic.edit/FormView/
 Sorl thumbnail docs 
 https://sorl-thumbnail.readthedocs.io/en/latest/
 
+Deleting a post
+https://tutorial-extensions.djangogirls.org/en/homework/
+
+Adding messages to edit/delete post 
+https://docs.djangoproject.com/en/5.0/ref/contrib/messages/
+
 
 
 
