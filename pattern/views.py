@@ -49,7 +49,7 @@ def edit_pattern(request, pattern_id):
         form = PostPattern(instance=pattern)
     return render(request, 'edit_pattern.html', {'form': form})
 
-def delete_pattern(request, pattern_id):
+def delete_pattern(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
     pattern.delete()
-    return redirect('/')
+    return redirect('feed:feed')
