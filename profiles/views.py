@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.models import User
 from django.views.generic import DetailView
+from django.contrib import messages
 from .models import Profile
 from .forms import EditProfile
+
 # Create your views here.
 
 class ProfileView(DetailView):
@@ -20,7 +22,7 @@ def edit_profile(request, username):
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, "Profile was edited successfully.")
-            return redirect('profiles:profile', pk=profile.pk)
+            return redirect('profiles:profile', username=request.user)
     else:
         form = EditProfile(instance=profile)
     return render(request, 'edit_profile.html', {'form': form})
