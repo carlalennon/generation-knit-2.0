@@ -11,7 +11,7 @@ class SearchView(ListView):
     def get_queryset(self):
         query = self.request.GET.get('p')
         pattern_search = Pattern.objects.filter(
-            Q(title__icontains=query)
+            Q(title__icontains=query) | Q(author__icontains=query)
         )
         return pattern_search
     
