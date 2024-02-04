@@ -8,5 +8,5 @@ urlpatterns = [
     path('', views.PatternView.as_view(), name="pattern"),
     path('add/', UploadPatternView.as_view(), name="add"),
     path('edit/<int:pattern_id>/', views.edit_pattern, name="edit"),
-    path('remove/<int:pattern_id>/', views.delete_pattern, name="delete"),
+    path('remove/pattern/<pk>/remove/', views.delete_pattern, name="delete"),
 ]
