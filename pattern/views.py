@@ -7,6 +7,7 @@ from .forms import PostPattern
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
+from django.contrib import messages
 
 # Create your views here.
 class PatternView(generic.ListView):
@@ -52,4 +53,6 @@ def edit_pattern(request, pattern_id):
 def delete_pattern(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
     pattern.delete()
+    messages.add_message(request, messages.SUCCESS, "Your pattern was deleted.")
     return redirect('feed:feed')
+    
