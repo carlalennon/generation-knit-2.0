@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from pattern.models import Pattern
 from django.views.generic import ListView
+from django.db.models import Q
 
 # Create your views here.
 class SearchView(ListView):
@@ -10,7 +11,7 @@ class SearchView(ListView):
     def get_queryset(self):
         query = self.request.GET.get('p')
         pattern_search = Pattern.objects.filter(
-            Q(name__icontains=query)
+            Q(title__icontains=query)
         )
         return pattern_search
     
