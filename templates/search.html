@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 
 {% block title%}
     Search
@@ -11,12 +12,17 @@
     </form>
   </div>
 
-<ul>
-  <h2> Results:
-  </h2>
+<ul class="list-group">
 {% for p in object_list %}
-  <li>
-    <a href="{% url 'feed:detail' p.id %}">{{ p.title}}Something is being returned</a>
+  <li class="list-group-item">
+    <a href="{% url 'feed:detail' p.id %}">{{ p.title}}</a>
+      <div class='d-flex justify-content-end align-middle'>
+        <a href="{% url 'profiles:profile' p.author.username %}" class="text-decoration-none link-secondary ">
+            {{ p.author }}
+        {% thumbnail p.author.profile.image "50x50" crop="center" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+        {% endthumbnail %}
+      </div>
   </li>
 {% endfor %}
 </ul>
