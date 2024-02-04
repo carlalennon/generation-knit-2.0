@@ -32,7 +32,7 @@ urlpatterns = [
     path('', include(pattern_urls), name='patterns'),
     path('profile/', include(profile_urls), name='profile'),
     path("accounts/", include("allauth.urls"), name='accounts'),
-    path('search/', include('search.urls'), name='search')
+    path('search/', include('search.urls'), name='search'),
     re_path('', include("allauth.urls"))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
