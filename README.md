@@ -21,6 +21,10 @@ I can add multiple items to cart"
 
 Each user story needs a card, conversation and a confirmation.
 
+Card : The user story that fits on a post-it note, as the example above
+Conversation : The discussion around the needs of the user story. In the above example, "What paper sizes should be included? What information should be included in the print-out?"
+Confirmation : Confirm the understanding and acceptance criteria
+
 
 Sources: 
 
