@@ -1,3 +1,27 @@
+### Porting User Stories over from old project 
+
+Rewriting user stories over from old project
+
+As a <role>
+I can <capability>
+So that <received benefit>
+
+In order to <receive benefit>
+as a <role>
+I can <goal/desire>
+
+Example:
+"As a warehouse employee
+I can choose the size of paper to print on 
+To make a label that matches the size of a parcel"
+
+"In order to check out multiple items
+As a user
+I can add multiple items to cart"
+
+Each user story needs a card, conversation and a confirmation.
+
+
 Sources: 
 
 Skillshare course
