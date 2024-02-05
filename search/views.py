@@ -15,6 +15,6 @@ class SearchView(ListView):
                 Q(title__icontains=query) | Q(author__username__icontains=query)
             )
         else:
-            pattern = Pattern.objects.none(author)
+            pattern = Pattern.objects.none()
         return pattern
     

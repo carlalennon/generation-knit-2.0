@@ -44,39 +44,11 @@
     - Add amount of patterns 
     - Add list of followers and following
     -->
-    <ul>
-    {% for pattern in object_list %}
-    <li>{{ pattern.title }}</li>
+    {% for p in get_object_list %}
+    <li>{{ p.title }}</li>
+{% empty %}
+    <li>No patterns authored by this user.</li>
 {% endfor %}
-    </ul>
-    
-      <div class="card">
-        <h3> Patterns by {{ user }}</h3>
-        <div class="card-body">
-            <div class="d-flex position-relative">
-                <img src="..." class="flex-shrink-0 me-3" alt="...">
-                <div>
-                  <h5 class="mt-0">Fake pattern</h5>
-                  <p>Place pattern weight, category here? </p>
-                </div>
-        </div>
-        <div class="card-body">
-            <div class="d-flex position-relative">
-                <img src="..." class="flex-shrink-0 me-3" alt="...">
-                <div>
-                  <h5 class="mt-0">Fake pattern</h5>
-                  <p>Place pattern weight, category here? </p>
-                </div>
-            </div>
-      </div>
-    </div>
-</div>
 
-      {% if request.user.is_authenticated %}
-      <li class="nav-item">
-        <a class="nav-link" href="#">Edit Profile</a>
-      </li>
-      {% else %}
-      {% endif %}
 
 {% endblock %}

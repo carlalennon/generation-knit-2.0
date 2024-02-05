@@ -28,6 +28,7 @@ def edit_profile(request, username):
         form = EditProfile(instance=profile)
     return render(request, 'edit_profile.html', {'form': form})
 
+
 def delete_profile(request, username):
     profile = get_object_or_404(Profile, user.username)
     user = get_object_or_404(User, user=request.user)
@@ -36,8 +37,12 @@ def delete_profile(request, username):
     messages.add_message(request, messages.SUCCESS, "Your profile was deleted.")
     return redirect('feed:feed')
 
+"""
 class PatternsByUser(ListView):
 
-    def get_queryset(self):
-        profile_user = self.get_object().user
-        return Pattern.objects.filter(author=profile_user)
+    def get(self, request, *args, **kwargs):
+        username = self.kwargs['username']
+        profile = get_object_or_404(Profile, user__username=username)
+        patterns = Pattern.objects.filter(author=profile.user)
+        return render(request, 'profile.html', {'profile': profile, 'patterns': patterns})
+"""    

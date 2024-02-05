@@ -51,6 +51,13 @@ def edit_pattern(request, pattern_id):
         form = PostPattern(instance=pattern)
     return render(request, 'edit_pattern.html', {'form': form})
 
+    def get_queryset(self):
+        query = self.request.GET.get('p')
+        pattern = Pattern.objects.filter(
+                author=username
+            )
+        return pattern
+
 def delete_pattern(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
     pattern.delete()
