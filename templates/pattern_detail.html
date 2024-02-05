@@ -3,8 +3,8 @@
 {% block title %}{{ pattern.title}} by {{pattern.author.username}}{% endblock %}
 
 {% block body %}    
-    {{ object.title }}
-    {{ request.user }}
+    {{ pattern.title}}
+    {{pattern.author.username}}
     {% if request.user.is_authenticated %}
     <a href="{% url 'pattern:edit' pattern.id %}">Edit pattern</a>
     <a href="{% url 'pattern:delete' pattern.id %}">Delete Pattern</a>
