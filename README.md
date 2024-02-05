@@ -79,6 +79,9 @@ https://docs.djangoproject.com/en/5.0/topics/db/queries/
 Filtering a user's posts for their profile
 https://medium.com/@abdelrahman.hassan.hamdy/leveraging-custom-filters-in-django-for-effective-data-rendering-b3efdb04ae64
 
+Pagination help 
+https://docs.djangoproject.com/en/5.0/topics/pagination/
+
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 

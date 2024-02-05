@@ -9,6 +9,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['patterns'] = Pattern.objects.all().order_by('-id')
+        paginate_by = 2
         return context
 
 class PatternDetailView(DetailView):
