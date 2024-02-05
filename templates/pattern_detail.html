@@ -2,9 +2,23 @@
 
 {% block title %}{{ pattern.title}} by {{pattern.author.username}}{% endblock %}
 
-{% block body %}    
-    {{ object.title }}
-    {{ request.user }}
+{% block body %}  
+<div class="container-fluid d-flex justify-content-center">
+    <div class="card" style="width: 18rem; border: 5px solid white;">
+    <img src="{{ object.image.url }}" style="width: 100%; height: auto;">
+    </div>
+</div>
+
+<div class="container-fluid d-flex justify-content-center">
+    <div>
+        <h1>
+            {{ object.title }}
+        </h1>
+    </div>
+</div>
+
+<!-- Buttons for logged in member only -->
+<div class="container-fluid d-flex justify-content-center">
     {% if request.user.is_authenticated %}
     <div class="btn-group" role="group" aria-label="Edit or delete pattern">
         <a href="{% url 'pattern:edit' pattern.id %}">
@@ -23,9 +37,5 @@
     </div>
 </div>
 
-    <p>Category: {{ pattern.get_category_display }}</p>
-    <p>Yarn Weight: {{ pattern.get_weight_display }}</p>
-    <p>Needle Size: {{ pattern.get_needle_display }}</p>
-    
-    -->
+
 {% endblock %}
