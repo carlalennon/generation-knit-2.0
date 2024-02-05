@@ -3,15 +3,26 @@
 {% block title %}{{ pattern.title}} by {{pattern.author.username}}{% endblock %}
 
 {% block body %}    
-    {{ pattern.title}}
-    {{pattern.author.username}}
+    {{ object.title }}
+    {{ request.user }}
     {% if request.user.is_authenticated %}
-    <a href="{% url 'pattern:edit' pattern.id %}">Edit pattern</a>
-    <a href="{% url 'pattern:delete' pattern.id %}">Delete Pattern</a>
-    Something 
+    <div class="btn-group" role="group" aria-label="Edit or delete pattern">
+        <a href="{% url 'pattern:edit' pattern.id %}">
+            <button type="button" class="btn btn-outline-primary">
+                Edit
+            </button>
+        </a>
+        <a href="{% url 'pattern:delete' pattern.id %}">
+            <button type="button" class="btn btn-outline-primary">
+                Delete
+            </button>
+        </a>
+      </div>
     {% else %}
     {% endif %}
-    <!---<img src="{{ object.image.url }}" style="width: 100%; height: auto;">
+    </div>
+</div>
+
     <p>Category: {{ pattern.get_category_display }}</p>
     <p>Yarn Weight: {{ pattern.get_weight_display }}</p>
     <p>Needle Size: {{ pattern.get_needle_display }}</p>
