@@ -26,6 +26,7 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
         'weight',
         'needle',
         'image',
+        'pdf',
     ]
     success_url = '/'
 

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from sorl.thumbnail import ImageField
 from cloudinary.models import CloudinaryField
+from upload_validator import FileTypeValidator
 
 # Pattern view ERD 
 #  ____________________
@@ -67,4 +68,6 @@ class Pattern(models.Model):
     needle = models.IntegerField(choices=NEEDLE, default=0)
     # Image
     image = ImageField(upload_to='media/')
+    # PDF
+    pdf = models.FileField(upload_to='pdfs/')
         
