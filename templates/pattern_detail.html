@@ -58,9 +58,21 @@
       </h2>
       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-            <p>Category: {{ pattern.get_category_display }}</p>
-            <p>Yarn Weight: {{ pattern.get_weight_display }}</p>
-            <p>Needle Size: {{ pattern.get_needle_display }}</p>
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                      <th scope="row">Category</th>
+                      <td>{{ pattern.get_category_display }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Yarn Weight</th>
+                        <td>{{ pattern.get_weight_display }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Needle Size</th>
+                        <td>{{ pattern.get_needle_display }}</td>
+                      </tr>
+              </table>
         </div>
       </div>
     </div>
@@ -99,11 +111,4 @@
         </div>
       </div>
   </div>
-
-Accordian disappeard in branch issue. Putting lost code from commits here until tomorrow. Need to style these
-Place Content, Pattern Details, About the Author, and Get The Pattern in accordian 
-<p>Category: {{ pattern.get_category_display }}</p>
-<p>Yarn Weight: {{ pattern.get_weight_display }}</p>
-<p>Needle Size: {{ pattern.get_needle_display }}</p>
-
 {% endblock %}
