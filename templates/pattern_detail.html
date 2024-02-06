@@ -18,8 +18,8 @@
 </div>
 
 <!-- Buttons for logged in member only -->
+{% if request.user.is_authenticated and pattern.author == request.user %}
 <div class="container-fluid d-flex justify-content-center">
-    {% if request.user.is_authenticated %}
     <div class="btn-group" role="group" aria-label="Edit or delete pattern">
         <a href="{% url 'pattern:edit' pattern.id %}">
             <button type="button" class="btn btn-outline-primary">
@@ -32,10 +32,9 @@
             </button>
         </a>
       </div>
-    {% else %}
-    {% endif %}
     </div>
 </div>
+{% endif %}
 
 <div class="accordion" id="accordionExample">
     <div class="accordion-item">
