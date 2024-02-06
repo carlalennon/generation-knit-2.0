@@ -83,16 +83,19 @@
       </h2>
       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
         <div class="accordion-body">
-            <div class="container d-flex">
+            <div class="container">
                 {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
                         <img class="img-thumbnail float-end" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
                 {% endthumbnail %}
-                <h4 class="align-middle">
+                <h4 class="align-middle p-2">
                     {{ pattern.author.username }}
                </h4>
-               <hr>
-            {{ pattern.author.bio }}
             </div>
+            <br>
+            <hr>
+            <p>
+                {{ pattern.author.profile.bio|safe }}
+            </p>
         </div>
       </div>
     </div>

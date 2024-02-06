@@ -12,7 +12,7 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         related_name="profile"
     )
-    image = ImageField(upload_to="profiles/")
+    image = ImageField(default='templates/assets/images/user-temp.png', upload_to="profiles/")
     bio = models.TextField(max_length=500)
 
 @receiver(post_save, sender=User)
