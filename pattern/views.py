@@ -42,7 +42,7 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
 def edit_pattern(request, pattern_id):
     pattern = get_object_or_404(Pattern, id=pattern_id)
     if request.method == 'POST':
-        form = EditPattern(request.POST, request.FILES, instance=profile)
+        form = PostPattern(request.POST, request.FILES, instance=pattern)
         if form.is_valid():
             form.save()
             messages.add_message(request, messages.SUCCESS, "Pattern was edited successfully.")
@@ -51,12 +51,12 @@ def edit_pattern(request, pattern_id):
         form = PostPattern(instance=pattern)
     return render(request, 'edit_pattern.html', {'form': form})
 
-    def get_queryset(self):
-        query = self.request.GET.get('p')
-        pattern = Pattern.objects.filter(
-                author=username
-            )
-        return pattern
+def get_queryset(self):
+    query = self.request.GET.get('p')
+    pattern = Pattern.objects.filter(
+            author=username
+        )
+    return pattern
 
 def delete_pattern(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
