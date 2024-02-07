@@ -45,11 +45,24 @@
     - Add amount of patterns 
     - Add list of followers and following
     -->
-    {% for pattern in patterns %}
-    <li>{{ pattern.author.username }}</li>
-{% empty %}
+    
+<ul class="list-group">
+  {% for pattern in patterns %}
+    <li class="list-group-item">
+      <a href="{% url 'feed:detail' pattern.id %}">{{ pattern.title}}</a>
+        <div class='d-flex justify-content-end align-middle'>
+          <a href="{% url 'feed:detail' pattern.id %}">
+            {% thumbnail pattern.image "50x50" crop="center" as im %}
+                <img class="justify-content-end" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
+            {% endthumbnail %}
+        </a>
+        </div>
+    </li>
+    {% empty %}
     <li>No patterns authored by this user.</li>
 {% endfor %}
+  </ul>
+
 
      <!-- Buttons for logged in member only -->
   {% if request.user.is_authenticated and user.username == request.user.username %}
