@@ -16,6 +16,11 @@ class ProfileView(DetailView):
     slug_field = 'username'
     slug_url_kwarg = 'username'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['patterns'] = Pattern.objects.filter(author=self.object)
+        return context
+    
 def edit_profile(request, username):
     profile = get_object_or_404(Profile, user=request.user)
     if request.method == 'POST':
@@ -29,6 +34,8 @@ def edit_profile(request, username):
     return render(request, 'edit_profile.html', {'form': form})
 
 
+
+
 def delete_profile(request, username):
     profile = get_object_or_404(Profile, user.username)
     user = get_object_or_404(User, user=request.user)
@@ -37,12 +44,16 @@ def delete_profile(request, username):
     messages.add_message(request, messages.SUCCESS, "Your profile was deleted.")
     return redirect('feed:feed')
 
+### Returns a list of patterns authored by the user 
 """
-class PatternsByUser(ListView):
+class ProfilePatterns(ListView):
+    template_name = 'profile.html'
+    model = Pattern
+    context_object_name = 'patterns'
+    paginate_by = 2  # Display 2 posts per page
 
-    def get(self, request, *args, **kwargs):
-        username = self.kwargs['username']
-        profile = get_object_or_404(Profile, user__username=username)
-        patterns = Pattern.objects.filter(author=profile.user)
-        return render(request, 'profile.html', {'profile': profile, 'patterns': patterns})
-"""    
+    def get_queryset(self):
+        user = get_object_or_404(User, username=self.kwargs['username'])
+        return Pattern.objects.filter(author=user).order_by('-id')
+
+        """

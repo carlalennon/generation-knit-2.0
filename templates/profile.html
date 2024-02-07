@@ -45,8 +45,8 @@
     - Add amount of patterns 
     - Add list of followers and following
     -->
-    {% for p in get_object_list %}
-    <li>{{ p.title }}</li>
+    {% for pattern in patterns %}
+    <li>{{ pattern.author.username }}</li>
 {% empty %}
     <li>No patterns authored by this user.</li>
 {% endfor %}
