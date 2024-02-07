@@ -110,7 +110,11 @@
         </h2>
         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="get-pattern" data-bs-parent="#accordionExample">
           <div class="accordion-body">
-            <a href="{{pattern.link_pattern}}" target="_blank">Link to external pattern</a>
+            <div class="container">
+              {% if pattern.link_pattern %}
+              <a href="{{pattern.link_pattern}}" target="_blank">Link to external pattern</a>
+              {% endif %}
+            </div>
             Pattern is available as a PDF download
         </div>
         </div>
