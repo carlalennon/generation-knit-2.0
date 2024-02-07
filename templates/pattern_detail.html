@@ -115,7 +115,10 @@
               <a href="{{pattern.link_pattern}}" target="_blank">Link to external pattern</a>
               {% endif %}
             </div>
-            Pattern is available as a PDF download
+            {% if pattern.pdf %}
+            <a href="{{pattern.pdf.url}}" target="_blank">Link to PDF</a>
+            {% endif %}
+          </div>
         </div>
         </div>
       </div>
