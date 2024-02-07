@@ -85,6 +85,9 @@ https://docs.djangoproject.com/en/5.0/topics/pagination/
 File validation for pattern PDFs 
 https://pypi.org/project/django-upload-validator/#:~:text=Django%20Upload%20Validator%20is%20a,extensions%20using%20python%2Dmagic%20library.
 
+Cloudinary delivery PDF fail 
+https://support.cloudinary.com/hc/en-us/articles/360016480179-PDF-or-ZIP-files-appearing-in-Media-Library-but-download-URLs-return-an-error
+
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
