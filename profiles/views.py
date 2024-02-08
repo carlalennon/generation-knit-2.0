@@ -20,6 +20,11 @@ class ProfileView(DetailView):
         context = super().get_context_data(**kwargs)
         context['patterns'] = Pattern.objects.filter(author=self.object)
         return context
+
+    def get_num_patterns(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['num_patterns'] = Pattern.objects.filter(author=self.object).count()
+        return context
     
 def edit_profile(request, username):
     profile = get_object_or_404(Profile, user=request.user)
