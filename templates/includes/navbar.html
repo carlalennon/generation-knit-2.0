@@ -1,4 +1,4 @@
-
+{% load thumbnail %}
 
 <nav class="navbar bg-body-tertiary">
   <div class="container">
@@ -45,5 +45,11 @@
     <a class="navbar-brand" href="#">
       <img class=""src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
     </a>
+    <div class="float-end justify-content-end" id="user-information" aria="username and profile picture">
+      {{ request.user.username}}
+      {% thumbnail request.user.profile.image "30x30" crop="center" as im %}
+      <img class="justify-content-end thumbnail" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
+  {% endthumbnail %}
+    </div>
   </div>
 </nav>
