@@ -45,11 +45,15 @@
     <a class="navbar-brand" href="#">
       <img class=""src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24">
     </a>
+    {% if request.user.is_authenticated %}
     <div class="float-end justify-content-end" id="user-information" aria="username and profile picture">
       {{ request.user.username}}
       {% thumbnail request.user.profile.image "30x30" crop="center" as im %}
       <img class="justify-content-end thumbnail" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
   {% endthumbnail %}
+  {% else %}
+  <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+  {% endif %}
     </div>
   </div>
 </nav>
