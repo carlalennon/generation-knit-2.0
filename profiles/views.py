@@ -42,8 +42,8 @@ def edit_profile(request, username):
 
 
 def delete_profile(request, username):
-    profile = get_object_or_404(Profile, user.username)
-    user = get_object_or_404(User, user=request.user)
+    profile = get_object_or_404(Profile, user__username=username)
+    user = get_object_or_404(User, username=username)
     profile.delete()
     user.delete()
     messages.add_message(request, messages.SUCCESS, "Your profile was deleted.")
