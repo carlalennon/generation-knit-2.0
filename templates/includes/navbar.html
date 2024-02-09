@@ -47,8 +47,8 @@
     </a>
     {% if request.user.is_authenticated %}
     <div class="float-end justify-content-end" id="user-information" aria="username and profile picture">
-      {{ request.user.username}}
       <a class="nav-link" href="{% url 'profiles:profile' user.username %}">
+      {{ request.user.username}}
       {% thumbnail request.user.profile.image "30x30" crop="center" as im %}
       <img class="justify-content-end thumbnail" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
   {% endthumbnail %}
