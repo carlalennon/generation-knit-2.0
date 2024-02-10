@@ -91,6 +91,9 @@ https://support.cloudinary.com/hc/en-us/articles/360016480179-PDF-or-ZIP-files-a
 Making a field optional in the upload form
 https://subscription.packtpub.com/book/web-development/9781787281141/5/ch05lvl1sec34/making-fields-optional
 
+MIME types for documents
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 

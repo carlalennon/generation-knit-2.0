@@ -15,20 +15,13 @@ class PatternView(generic.ListView):
     template_name = "pattern/index.html"
     paginate_by = 3
 
+    def get_queryset(self):
+        return Pattern.objects.filter(author=self.request.user.username)
 
 class UploadPatternView(LoginRequiredMixin, CreateView):
     model = Pattern
     template_name = 'new_pattern.html'
-    fields = [
-        'title',
-        'content',
-        'category',
-        'weight',
-        'needle',
-        'image',
-        'pdf',
-        'link_pattern',
-    ]
+    form_class = PostPattern
     success_url = '/'
 
     def dispatch(self, request, *args, **kwargs):
@@ -53,12 +46,12 @@ def edit_pattern(request, pattern_id):
         form = PostPattern(instance=pattern)
     return render(request, 'edit_pattern.html', {'form': form})
 
-def get_queryset(self):
+"""def get_queryset(self):
     query = self.request.GET.get('p')
     pattern = Pattern.objects.filter(
             author=username
         )
-    return pattern
+    return pattern"""
 
 def delete_pattern(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
