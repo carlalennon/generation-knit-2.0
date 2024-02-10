@@ -88,6 +88,9 @@ https://pypi.org/project/django-upload-validator/#:~:text=Django%20Upload%20Vali
 Cloudinary delivery PDF fail 
 https://support.cloudinary.com/hc/en-us/articles/360016480179-PDF-or-ZIP-files-appearing-in-Media-Library-but-download-URLs-return-an-error
 
+Making a field optional in the upload form
+https://subscription.packtpub.com/book/web-development/9781787281141/5/ch05lvl1sec34/making-fields-optional
+
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 

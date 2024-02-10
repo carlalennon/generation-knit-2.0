@@ -69,7 +69,7 @@ class Pattern(models.Model):
     # Image
     image = ImageField(upload_to='media/')
     # PDF
-    pdf = models.FileField(upload_to='pdfs/')
+    pdf = models.FileField(upload_to='pdfs/', blank=True)
     # Link to Pattern
-    link_pattern = models.CharField()
+    link_pattern = models.CharField(blank=True)
         
