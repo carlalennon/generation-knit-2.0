@@ -71,6 +71,16 @@ This can be viewed in closer detail in the [issues section of this project](http
 ###  Future Features
 ## Design 
 ### Colours 
+Anything over 7 is very accesible 
+My accessible colours:
+
+#F9F4BA  18.68:1
+#F6EE9A  17.61:1
+#f0e332  15.74:1
+#d9c626  12.06:1
+#c2a91a  8.98:1
+
+
 ### Typography 
 ## Languages 
 ### Git 
@@ -93,7 +103,12 @@ I used Javascript in combination with Bootstrap to make my website neater and mo
 Javascript is not installed in this project, rather it is loaded in using a tag in base.html. The tag is based on the bottom of the page to improve loading times.
 
 ![My javascript tag](/workspace/generation-knit-2.0/templates/assets/images/readme/readme-javascript.png)
+
 ### Bootstrap
+
+I used Bootstrap to design the HTML of my website. 
+
+Bootstrap is a 
 ## Deployment
 ## Error Hall of Fame
 ## Citations 
@@ -194,6 +209,12 @@ https://subscription.packtpub.com/book/web-development/9781787281141/5/ch05lvl1s
 
 MIME types for documents
 https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+
+Accessbile colour schemes
+https://venngage.com/blog/accessible-colors/
+
+Accessible colour palette generator 
+https://venngage.com/tools/accessible-color-palette-generator
 
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
