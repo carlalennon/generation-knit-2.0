@@ -43,6 +43,26 @@ Generation Knit serves as a platform to both share and find knitting patterns. T
 ## User Avatar
 ## Site Goals
 ## Agile Method
+
+### User Stories
+
+For Agile development, user stories are an important part of the process. They allow developers to plan according to the needs of the user. This ensures that important steps for the user's experience aren't overlooked in developement. 
+
+On my kanban board, user stories are marked as Must Have, Could Have, or Beautify. Beautify is for styling that doesn't affect functionality.
+
+My user stories are as follows: 
+
+- Users Story: Registration
+- User Story: Homepage/Feed
+- User Story: Pattern Detail Page
+- User Story: User Profile
+- User Story: Search for patterns
+- User Story: Navigation Bar
+- User Story: Upload a Pattern
+
+This can be viewed in closer detail in the ![issues section of this project](https://github.com/carlalennon/generation-knit-2.0/issues).
+
+![USer stories on Kanban board](templates/assets/images/readme/readme-user-stories.png)
 ## Wireframes
 ## Data Modelling Relationships
 ## Structure
