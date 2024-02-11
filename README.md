@@ -60,7 +60,7 @@ My user stories are as follows:
 - User Story: Navigation Bar
 - User Story: Upload a Pattern
 
-This can be viewed in closer detail in the ![issues section of this project](https://github.com/carlalennon/generation-knit-2.0/issues).
+This can be viewed in closer detail in the [issues section of this project](https://github.com/carlalennon/generation-knit-2.0/issues).
 
 ![USer stories on Kanban board](templates/assets/images/readme/readme-user-stories.png)
 ## Wireframes
