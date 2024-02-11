@@ -63,6 +63,7 @@ My user stories are as follows:
 This can be viewed in closer detail in the [issues section of this project](https://github.com/carlalennon/generation-knit-2.0/issues).
 
 ![USer stories on Kanban board](templates/assets/images/readme/readme-user-stories.png)
+
 ## Wireframes
 ## Data Modelling Relationships
 ## Structure
@@ -72,8 +73,26 @@ This can be viewed in closer detail in the [issues section of this project](http
 ### Colours 
 ### Typography 
 ## Languages 
+### Git 
+
+I used git for version control on this project. Version control allows me to track and control changes to the project. It also allows me to restore older versions of the project should something go wrong. 
+
+I tracked my project using git. I wrote a small descriptive note for each commit to github.
+
 ### Django 
+
+I used Django to build my project. Django is a Python framework for developing web apps. Django comes with security features built in to keep sensitive data hidden. It is a popular framework and is widely used in professional development settings. 
+
+I especially liked the tag system, as the tags can accept logical arguments. These can be used to determine whether to show certain HTML or iterate over database entries.
+
+
 ### JavaScript
+
+I used Javascript in combination with Bootstrap to make my website neater and more responsive to the user. A javascript feature of note is the hambuger menu in which the navigation tags are hidden. This allows less visual clutter on the page for the user. It is especially effective for mobile users.
+
+Javascript is not installed in this project, rather it is loaded in using a tag in base.html. The tag is based on the bottom of the page to improve loading times.
+
+![My javascript tag](/workspace/generation-knit-2.0/templates/assets/images/readme/readme-javascript.png)
 ### Bootstrap
 ## Deployment
 ## Error Hall of Fame
