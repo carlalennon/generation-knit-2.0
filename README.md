@@ -12,6 +12,52 @@ For my fourth portfolio projects, I wanted to create a project that both showcas
 
 Generation Knit serves as a platform to both share and find knitting patterns. The goal was to create a platform that stores the information that comes with a knitting pattern and display it back to the user in an attractive and intuitive. The largest community based knitting website on the internet has long been criticized for its confusing layout and lack of accessibilty for visually impaired users. My website aims to address these issues.
 
+## Contents: 
+
+- What happened to Generation Knit 1.0? 
+- UX Design
+- Accessibilty Focus
+- User Avatar
+- Site Goals
+- Agile Method
+- Wireframes
+- Data Modelling Relationships
+- Structure
+- - Features
+- - Future Features
+- Design 
+- - Colours 
+- - Typography 
+- Languages 
+- - Django 
+- - JavaScript
+- - Bootstrap
+- Deployment
+- Error Hall of Fame
+- Citations 
+
+
+## What happened to Generation Knit 1.0? 
+## UX Design
+## Accessibilty Focus
+## User Avatar
+## Site Goals
+## Agile Method
+## Wireframes
+## Data Modelling Relationships
+## Structure
+### Features
+###  Future Features
+## Design 
+### Colours 
+### Typography 
+## Languages 
+### Django 
+### JavaScript
+### Bootstrap
+## Deployment
+## Error Hall of Fame
+## Citations 
 
 ### Porting User Stories over from old project 
 
