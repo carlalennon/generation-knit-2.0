@@ -1,4 +1,20 @@
+# Generation Knit 
+
+## Overview
+
+Generation Knit is a pattern charing website, built to address the need for a modern, responsive and accesbile website in the online knitting space. It provides a space for users to upload and share pattterns for knitting and crochet 
+
+[Screenshot of Generation Knit home page]
+
+## Project Goals 
+
+For my fourth portfolio projects, I wanted to create a project that both showcased my proficiency with databases, Bootstrap and Django. My project goal is to show that I can use these tools effectively in a creative way.
+
+Generation Knit serves as a platform to both share and find knitting patterns. The goal was to create a platform that stores the information that comes with a knitting pattern and display it back to the user in an attractive and intuitive. The largest community based knitting website on the internet has long been criticized for its confusing layout and lack of accessibilty for visually impaired users. My website aims to address these issues.
+
+
 ### Porting User Stories over from old project 
+
 
 Rewriting user stories over from old project
 
