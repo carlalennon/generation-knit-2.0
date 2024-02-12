@@ -109,6 +109,10 @@ Javascript is not installed in this project, rather it is loaded in using a tag 
 I used Bootstrap to design the HTML of my website. 
 
 Bootstrap is a 
+
+### CSS 
+
+
 ## Deployment
 ## Error Hall of Fame
 ## Citations 
@@ -215,6 +219,9 @@ https://venngage.com/blog/accessible-colors/
 
 Accessible colour palette generator 
 https://venngage.com/tools/accessible-color-palette-generator
+
+Bootstrap Overrides
+https://blog.hubspot.com/website/how-to-override-bootstrap-css
 
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
