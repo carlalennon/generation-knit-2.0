@@ -5,36 +5,40 @@
     Search
 {% endblock %}
 {% block body %}  
-  <div class="input-group mb-3">
+ 
     <form action="{% url 'search:search' %}" method="GET">
-    <input name="p" type="text" class="form-control mb-3" placeholder='Search' aria-label="Search bar" aria-describedby="search-bar">
-    <button class='btn btn-primary' type='submit' id='search' aria-label="Go">Go</button>
-    <select class="form-select" aria-label="Search by yarn weight">
-      <option selected>Yarn Weight</option>
-      <option value="1">Cobweb</option>
-      <option value="2">Lace</option>
-      <option value="3">Fingering</option>
-      <option value="4">DK</option>
-      <option value="5">Worsted</option>
-    </select>
-    <select class="form-select" aria-label="Search by project type">
-      <option selected>Category</option>
-      <option value="1">Sweater</option>
-      <option value="2">Cardigan</option>
-      <option value="3">Skirt</option>
-      <option value="4">Pants</option>
-      <option value="5">Hat</option>
-      <option value="6">Scarf</option>
-    </select>
-    <select class="form-select" aria-label="Search by needle size">
-      <option selected>Needle size</option>
-      <option value="1">1mm</option>
-      <option value="2">2mm</option>
-      <option value="3">3mm</option>
-      <option value="4">4mm</option>
-    </select>
+        <div class="mb-3">
+          <input name="p" type="text" class="form-control mb-3" placeholder='Search' aria-label="Search bar" aria-describedby="search-bar">
+        </div>
+      <div class="mb-3">
+        <select class="form-select" aria-label="Search by yarn weight">
+          <option selected>Yarn Weight</option>
+          <option value="1">Cobweb</option>
+          <option value="2">Lace</option>
+          <option value="3">Fingering</option>
+          <option value="4">DK</option>
+          <option value="5">Worsted</option>
+        </select>
+        <select class="form-select" aria-label="Search by project type">
+          <option selected>Category</option>
+          <option value="1">Sweater</option>
+          <option value="2">Cardigan</option>
+          <option value="3">Skirt</option>
+          <option value="4">Pants</option>
+          <option value="5">Hat</option>
+          <option value="6">Scarf</option>
+        </select>
+        <select class="form-select" aria-label="Search by needle size">
+          <option selected>Needle size</option>
+          <option value="1">1mm</option>
+          <option value="2">2mm</option>
+          <option value="3">3mm</option>
+          <option value="4">4mm</option>
+        </select>
+      </div>
+        <button class='btn btn-primary' type='submit' id='search' aria-label="Go">Go</button>
   </form>
-  </div>
+
 
 <ul class="list-group">
 {% for p in object_list %}
