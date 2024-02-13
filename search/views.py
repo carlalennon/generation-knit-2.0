@@ -12,7 +12,7 @@ class SearchView(ListView):
         query = self.request.GET.get('p')
         if query is not None:
             pattern = Pattern.objects.filter(
-                Q(title__icontains=query) | Q(author__username__icontains=query)
+                Q(title__icontains=query) | Q(author__username__icontains=query) | Q(content__icontains=query)
             )
         else:
             pattern = Pattern.objects.none()
