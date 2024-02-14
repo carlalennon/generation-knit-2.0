@@ -53,7 +53,7 @@
           </div>
           <a href="{% url 'feed:detail' p.id %}">
             {% thumbnail p.image "300x300" crop="center" as im %}
-                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
+                <img src="{{ im.url }}" class="img-fluid"> 
             {% endthumbnail %}     
           </a>
               <div class="card-body">
@@ -62,7 +62,7 @@
                     <a href="{% url 'profiles:profile' p.author.username %}" class="text-decoration-none link-secondary">
                       <b>{{ p.author }}</b>
                         {% thumbnail p.author.profile.image "50x50" crop="center" as im %}
-                          <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                          <img src="{{ im.url }}" class="img-fluid">
                       {% endthumbnail %}
                     </a>
                 </p>
