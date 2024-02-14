@@ -79,12 +79,12 @@ This can be viewed in closer detail in the [issues section of this project](http
 
   <details>
     <summary> Search result preview for large screen</summary></summary>
-    <IMG src="templates/assets/images/readme/wireframe-search-result-bar.png"  alt="Search result preview for large screen"/>
+    <IMG src="templates/assets/images/readme/wireframe-search-result.png"  alt="Search result preview for large screen"/>
     </details>
 
   <details>
     <summary> Search result preview for small screen</summary></summary>
-    <IMG src="templates/assets/images/readme/wireframe-search-result.png"  alt="Search result preview for small screen"/>
+    <IMG src="templates/assets/images/readme/wireframe-search-result-bar.png"  alt="Search result preview for small screen"/>
     </details>
     
 ## Data Modelling Relationships

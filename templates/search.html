@@ -39,8 +39,58 @@
         <button class='btn btn-primary' type='submit' id='search' aria-label="Go">Go</button>
   </form>
 
+  <div class="container">
+    <!-- Large Screen Layout -->
+    <div class="row d-none d-lg-flex">
+      {% for p in object_list %}
+      <div class="col-lg-3">
+      <!-- Display result content -->
+        <div class="card d-flex" >
+          <div class="text-center">
+            <h3>
+              {{ p.title }}
+            </h3>
+          </div>
+          <a href="{% url 'feed:detail' p.id %}">
+            {% thumbnail p.image "300x300" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
+            {% endthumbnail %}     
+          </a>
+              <div class="card-body">
+                <p class="card-text float-end">
+                  by
+                    <a href="{% url 'profiles:profile' p.author.username %}" class="text-decoration-none link-secondary">
+                      <b>{{ p.author }}</b>
+                        {% thumbnail p.author.profile.image "50x50" crop="center" as im %}
+                          <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                      {% endthumbnail %}
+                    </a>
+                </p>
+              </div>
 
-<ul class="list-group">
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  
+    <!-- Small Screen Layout -->
+    <div class="row d-lg-none">
+      {% for result in search_results %}
+      <div class="col-12">
+        <div class="search-result">
+          <div class="card">
+            <div class="card-body">
+              <!-- Display result content -->
+              {{ result.content }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  
+  </div>
+<!--<ul class="list-group">
 {% for p in object_list %}
   <li class="list-group-item">
     <a href="{% url 'feed:detail' p.id %}">{{ p.title}}</a>
@@ -54,4 +104,4 @@
   </li>
 {% endfor %}
 </ul>
-{% endblock %}
+{% endblock %}-->
