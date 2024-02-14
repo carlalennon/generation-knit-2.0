@@ -73,20 +73,33 @@ This can be viewed in closer detail in the [issues section of this project](http
     </details>
 
   <details>
-    <summary> Small Wireframe</summary></summary>
+    <summary> Small Wireframe</summary>
     <IMG src="templates/assets/images/readme/wireframe-search-mobile.png"  alt="small wireframe for search page"/>
     </details>
 
   <details>
-    <summary> Search result preview for large screen</summary></summary>
+    <summary> Search result preview for large screen</summary>
     <IMG src="templates/assets/images/readme/wireframe-search-result.png"  alt="Search result preview for large screen"/>
     </details>
 
   <details>
-    <summary> Search result preview for small screen</summary></summary>
+    <summary> Search result preview for small screen</summary>
     <IMG src="templates/assets/images/readme/wireframe-search-result-bar.png"  alt="Search result preview for small screen"/>
     </details>
     
+  ### Profile Wireframes
+
+  <details>
+    <summary> User Profile on large screen</summary>
+    <IMG src="templates/assets/images/readme/wireframe-profile-large.png"  alt="User Profile on large screen"/>
+    </details>
+
+  <details>
+    <summary> User Profile on small screen</summary>
+    <IMG src="templates/assets/images/readme/wireframe-profile-small.png"  alt=" User Profile on small screen"/>
+    </details>
+
+
 ## Data Modelling Relationships
 ## Structure
 ### Features
