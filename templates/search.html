@@ -5,10 +5,11 @@
     Search
 {% endblock %}
 {% block body %}  
- 
+ <!-- Small screen styling -->
+<div class="d-sm-none">
     <form action="{% url 'search:search' %}" method="GET">
         <div class="mb-3">
-          <input name="p" type="text" class="form-control mb-3" placeholder='Search' aria-label="Search bar" aria-describedby="search-bar">
+          <input name="p" type="text" class="form-control mb-3" placeholder='Small Search' aria-label="Search bar" aria-describedby="search-bar">
         </div>
       <div class="mb-3">
         <select class="form-select" name="weight" aria-label="Search by yarn weight">
@@ -38,6 +39,45 @@
       </div>
         <button class='btn btn-primary' type='submit' id='search' aria-label="Go">Go</button>
   </form>
+</div>
+
+  <!-- Large screen styling -->
+  <div class="d-none d-sm-block">
+  <form action="{% url 'search:search' %}" method="GET">
+    <div class="mb-3">
+      <input name="p" type="text" class="form-control mb-3" placeholder='Large Search' aria-label="Search bar" aria-describedby="search-bar">
+    </div>
+  <div class="mb-3">
+    <select class="form-select" name="weight" aria-label="Search by yarn weight">
+      <option selected value="">Yarn Weight</option>
+      <option value="0">Cobweb</option>
+      <option value="1">Lace</option>
+      <option value="2">Fingering</option>
+      <option value="3">DK</option>
+      <option value="4">Worsted</option>
+    </select>
+    <select class="form-select" name="category" aria-label="Search by project type">
+      <option selected value="">Category</option>
+      <option value="1">Sweater</option>
+      <option value="2">Cardigan</option>
+      <option value="3">Skirt</option>
+      <option value="4">Pants</option>
+      <option value="5">Hat</option>
+      <option value="6">Scarf</option>
+    </select>
+    <select class="form-select" name="needle_size" aria-label="Search by needle size">
+      <option selected value="">Needle size</option>
+      <option value="0">1mm</option>
+      <option value="1">2mm</option>
+      <option value="2">3mm</option>
+      <option value="3">4mm</option>
+    </select>
+  </div>
+    <button class='btn btn-primary' type='submit' id='search' aria-label="Go">Go</button>
+</form>
+</div>
+
+
 
   <div class="container">
     <!-- Large Screen Layout -->
