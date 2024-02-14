@@ -10,7 +10,7 @@ class SearchView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('p')
-        needle_size = self.request.GET.get('needle_size')
+        needle_size = self.request.GET.get('needle')
         category = self.request.GET.get('category')
         weight = self.request.GET.get('weight')
 
