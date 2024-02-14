@@ -66,9 +66,36 @@ This can be viewed in closer detail in the [issues section of this project](http
 
 ## Wireframes
 
+### Early Wireframes to get the "Vibe"
+
+  <details>
+    <summary> Large Wireframe</summary>
+    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
+    </details>
+    
+  <details>
+    <summary> Large Wireframe</summary>
+    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
+    </details>
+
+  <details>
+    <summary> Large Wireframe</summary>
+    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
+    </details>
+
+  <details>
+    <summary> Large Wireframe</summary>
+    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
+    </details>
+
+  <details>
+    <summary> Large Wireframe</summary>
+    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
+    </details>
+
 ### Search Wireframes
   <details>
-    <summary> Large Wireframe</summary></summary>
+    <summary> Large Wireframe</summary>
     <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
     </details>
 
@@ -99,6 +126,17 @@ This can be viewed in closer detail in the [issues section of this project](http
     <IMG src="templates/assets/images/readme/wireframe-profile-small.png"  alt=" User Profile on small screen"/>
     </details>
 
+### Feed Wireframes
+
+  <details>
+    <summary> Large Wireframe</summary>
+    <IMG src="templates/assets/images/readme/wireframe-feed-large.png"  alt="large wireframe for home page"/>
+    </details>
+      <details>
+
+  <summary> Small Wireframe</summary>
+    <IMG src="templates/assets/images/readme/wireframe-feed-small.png"  alt="large wireframe for home page"/>
+    </details>
 
 ## Data Modelling Relationships
 ## Structure
