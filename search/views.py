@@ -10,18 +10,25 @@ class SearchView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('p')
+        needle_size = self.request.GET.get('needle_size')
+        category = self.request.GET.get('category')
+        weight = self.request.GET.get('weight')
+
         if query is not None:
-            pattern = Pattern.objects.filter(
+            patterns = Pattern.objects.filter(
                 Q(title__icontains=query) | Q(author__username__icontains=query) | Q(content__icontains=query)
             )
         else:
-            pattern = Pattern.objects.none()
-        return pattern
-    
-    def search(request):
-        needle_size = request.GET.get('needle_size')
+            patterns = Pattern.objects.none()
+
         if needle_size:
-            patterns = Pattern.objects.filter(needle_size=needle_size)
-        else:
-            patterns = Pattern.objects.all()
-        return render(request, 'search.html', {'patterns': patterns})
+            patterns = patterns.filter(needle_size=needle_size)
+
+        if category:
+            patterns = patterns.filter(category=category)
+
+        if weight:
+            patterns = patterns.filter(weight=weight)
+
+        return patterns
+    
