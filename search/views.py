@@ -13,6 +13,7 @@ class SearchView(ListView):
         needle_size = self.request.GET.get('needle')
         category = self.request.GET.get('category')
         weight = self.request.GET.get('weight')
+        paginate_by = 8
 
         if query is not None:
             patterns = Pattern.objects.filter(

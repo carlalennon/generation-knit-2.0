@@ -44,7 +44,6 @@
     <div class="row d-none d-lg-flex">
       {% for p in object_list %}
       <div class="col-lg-3">
-      <!-- Display result content -->
         <div class="card d-flex" >
           <div class="text-center">
             <h3>
@@ -75,15 +74,15 @@
   
     <!-- Small Screen Layout -->
     <div class="row d-lg-none">
-      {% for result in search_results %}
-      <div class="col-12">
-        <div class="search-result">
-          <div class="card">
-            <div class="card-body">
-              <!-- Display result content -->
-              {{ result.content }}
-            </div>
-          </div>
+      {% for p in object_list %}
+      <div class=" card col-12">
+        <a href="{% url 'feed:detail' p.id %}">{{ p.title}}</a>
+          <div class='d-flex justify-content-end align-middle'>
+            <a href="{% url 'profiles:profile' p.author.username %}" class="text-decoration-none link-secondary ">
+                {{ p.author }}
+            {% thumbnail p.author.profile.image "50x50" crop="center" as im %}
+                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+            {% endthumbnail %}
         </div>
       </div>
       {% endfor %}
