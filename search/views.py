@@ -18,3 +18,10 @@ class SearchView(ListView):
             pattern = Pattern.objects.none()
         return pattern
     
+    def search(request):
+        needle_size = request.GET.get('needle_size')
+        if needle_size:
+            patterns = Pattern.objects.filter(needle_size=needle_size)
+        else:
+            patterns = Pattern.objects.all()
+        return render(request, 'search.html', {'patterns': patterns})
