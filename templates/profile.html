@@ -54,8 +54,7 @@
                 <div class="col">
                     <a href="{% url 'feed:detail' pattern.id %}"
                         class="nav-link">
-                        {% thumbnail pattern.image "100x100" crop="center" as im
-                        %}
+                        {% thumbnail pattern.image "100x100" crop="center" as im %}
                         <img src="{{ im.url }}" class="img-fluid" alt="pattern thumbnail">
                         {% endthumbnail %}
                         {{ pattern.title}}
@@ -66,8 +65,7 @@
                         href="{% url 'profiles:profile' pattern.author.username %}"
                         class="text-decoration-none link-secondary ">
                         {{ pattern.author }}
-                        {% thumbnail pattern.author.profile.image "50x50"
-                        crop="center" as im %}
+                        {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
                         <img src="{{ im.url }}" width="{{ im.width }}" alt="user icon"
                             height="{{ im.height }}">
                         {% endthumbnail %}
@@ -105,9 +103,7 @@
                         <a
                             href="{% url 'profiles:profile' pattern.author.username %}"
                             class="text-decoration-none link-secondary">
-                            <b>{{ pattern.author }}</b> {% thumbnail
-                            pattern.author.profile.image "50x50" crop="center"
-                            as im %}
+                            <b>{{ pattern.author }}</b> {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
                             <img src="{{ im.url }}" class="img-fluid" alt="user icon"> 
                             {% endthumbnail %}
                         </a>
@@ -125,8 +121,7 @@
     </div>
 </div>
 <!-- Buttons for logged in member only -->
-{% if request.user.is_authenticated and user.username == request.user.username
-%}
+{% if request.user.is_authenticated and user.username == request.user.username %}
 <div class="container-fluid d-flex justify-content-center">
     <div class="btn-group" role="group" aria-label="Edit or delete pattern">
             <button type="button" class="btn btn-outline-primary" action="{% url 'profiles:edit' user.username %}">
@@ -137,4 +132,5 @@
             </button>
     </div>
 </div>
-{% endif %} {% endblock %}
+{% endif %} 
+{% endblock %}
