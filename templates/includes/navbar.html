@@ -107,8 +107,7 @@
             <a class="nav-link"
                 href="{% url 'profiles:profile' user.username %}">
                 {{ request.user.username}}
-                {% thumbnail request.user.profile.image "30x30"
-                crop="center" as im %}
+                {% thumbnail request.user.profile.image "30x30" crop="center" as im %}
                 <img class="justify-content-end thumbnail"
                     src="{{ im.url }}" width="{{ im.width }}"
                     height="{{ im.height}}"
