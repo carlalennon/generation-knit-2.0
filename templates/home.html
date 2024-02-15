@@ -9,7 +9,8 @@ Generation Knit
 {% block body %}
 
     {% for pattern in patterns %}
-    <div class="card d-flex" style="width: 32rem;">
+    <div class="col col-md-auto">
+    <div class="card d-flex" style="max-width: 30rem;">
         <div class="text-center">
             <h3>
             {{ pattern.title }}
@@ -52,6 +53,7 @@ Generation Knit
             {% endif %}
         </span>
     </div>
+</div>
 
 
 
