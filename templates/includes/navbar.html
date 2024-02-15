@@ -1,10 +1,12 @@
 {% load thumbnail %}
 {% load static %}
 
+<!-- Style navbar to same colour as BG so screen readers can see it but leaves a seamless look for sighted users-->
 <nav class="navbar" style="background-color: #ced4da;">
     <div class="container">
         <div>
 
+          <!-- Offcanvas -->
             <button class="btn" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNav">
                 <img
@@ -91,6 +93,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- Navbar Branding -->
         <a class="navbar-brand" href="{% url 'feed:feed' %}">
             <!-- Large screen brand  -->
             <img class="img-fluid d-none d-sm-block"
