@@ -123,11 +123,11 @@
 <!-- Buttons for logged in member only -->
 {% if request.user.is_authenticated and user.username == request.user.username %}
 <div class="container-fluid d-flex justify-content-center">
-    <div class="btn-group" role="group" aria-label="Edit or delete pattern">
-        <a href="{% url 'profiles:edit' user.username %}" class="btn btn-dark">
+    <div class="btn-group" role="group" aria-label="Edit or delete profile">
+        <a href="{% url 'profiles:edit' user.username %}" class="btn btn-dark" aria="edit profile">
             Edit profile
         </a>
-        <a href="{% url 'profiles:delete' user.username %}" class="btn btn-danger">
+        <a href="{% url 'profiles:delete' user.username %}" class="btn btn-danger" aria="delete profile">
             Delete profile
         </a>
     </div>
