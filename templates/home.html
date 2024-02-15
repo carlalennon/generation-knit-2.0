@@ -27,8 +27,7 @@ Generation Knit
                 <a href="{% url 'profiles:profile' pattern.author.username %}"
                     class="text-decoration-none link-secondary">
                     <b>{{ pattern.author }}</b>
-                    {% thumbnail pattern.author.profile.image "50x50"
-                    crop="center" as im %}
+                    {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
                     <img src="{{ im.url }}" width="{{ im.width }}"
                         height="{{ im.height }}">
                     {% endthumbnail %}
@@ -46,8 +45,7 @@ Generation Knit
             {% endif %}
 
             <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages
-                }}.
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages}}.
             </span>
 
             {% if page_obj.has_next %}
