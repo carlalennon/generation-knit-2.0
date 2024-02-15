@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load thumbnail %}
 
-
 {% block title %}
 Generation Knit
 {% endblock %}
@@ -9,26 +8,29 @@ Generation Knit
 {% block body %}
 <div class="container d-flex col col-md-auto flex-column align-items-center">
     {% for pattern in patterns %}
-    
+
     <div class="card d-flex" style="max-width: 30rem;">
         <div class="text-center">
             <h3>
-            {{ pattern.title }}
+                {{ pattern.title }}
             </h3>
         </div>
         <a href="{% url 'feed:detail' pattern.id %}">
             {% thumbnail pattern.image "500x500" crop="center" as im %}
-                <img src="{{ im.url }}" class="img-fluid"> 
+            <img src="{{ im.url }}" class="img-fluid">
             {% endthumbnail %}
-            
+
         </a>
         <div class="card-body">
-                <p class="card-text float-end">
+            <p class="card-text float-end">
                 by
-                    <a href="{% url 'profiles:profile' pattern.author.username %}" class="text-decoration-none link-secondary">
+                <a href="{% url 'profiles:profile' pattern.author.username %}"
+                    class="text-decoration-none link-secondary">
                     <b>{{ pattern.author }}</b>
-                    {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
-                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                    {% thumbnail pattern.author.profile.image "50x50"
+                    crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}"
+                        height="{{ im.height }}">
                     {% endthumbnail %}
                 </a>
             </p>
@@ -39,23 +41,21 @@ Generation Knit
     <div class="pagination">
         <span class="step-links">
             {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
             {% endif %}
-    
+
             <span class="current">
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages
+                }}.
             </span>
-    
+
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
             {% endif %}
         </span>
     </div>
 </div>
 
-
-
 {% endblock %}
-
