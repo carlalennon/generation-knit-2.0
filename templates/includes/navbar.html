@@ -32,22 +32,22 @@
                     </div>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page"
-                                href="/">
+                            <a class="nav-link active" 
+                                href="{% url 'feed:feed' %}">
                                 <img
                                     src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012318/static/icon-home.png"
-                                    aria="home" width="50px" height="50px">
+                                    alt="home" width="50px" height="50px">
                                 Home
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                 href="{% url 'search:search' %}">
-                                <a class="nav-link active" aria-current="page"
+                                <a class="nav-link active" alt-current="page"
                                     href="/">
                                     <img
                                         src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012362/static/icon-search.png"
-                                        aria="search" width="50px" height="50px">
+                                        alt="search" width="50px" height="50px">
                                     Search
                                 </a>
                             </li>
@@ -55,10 +55,10 @@
                                 <a class="nav-link"
                                     href="{% url 'pattern:add' %}">
                                     <a class="nav-link active"
-                                        aria-current="page" href="/">
+                                        alt-current="page" href="/">
                                         <img
                                             src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012296/static/icon-add.png"
-                                            aria="add pattern" width="50px" height="50px">
+                                            alt="add pattern" width="50px" height="50px">
                                         Add pattern
                                     </a>
                                 </li>
@@ -68,7 +68,7 @@
                                         href="{% url 'profiles:profile' user.username %}">
                                         <img
                                             src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012340/static/icon-profile.png"
-                                            aria="My profile" width="50px" height="50px">
+                                            alt="My profile" width="50px" height="50px">
                                         My Profile</a>
                                 </li>
                                 {% else %}
@@ -79,14 +79,14 @@
                                         href="{% url 'account_logout' %}">
                                         <img
                                             src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012278/static/icon-signout.png"
-                                            aria="Sign out" width="50px" height="50px">
+                                            alt="Sign out" width="50px" height="50px">
                                         Sign Out</a>
                                     {% else %}
                                     <a class="nav-link"
                                         href="{% url 'account_login' %}">
                                         <img
                                             src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012390/static/icon-signin.png"
-                                            aria="Log in" width="50px" height="50px">
+                                            alt="Log in" width="50px" height="50px">
                                         Login
                                     </a>
                                     {% endif %}
