@@ -2,67 +2,41 @@
 
 
 <div class="container">
-  <div class="row">
-      <!-- Profile picture on the left -->
-      <div class="col-lg-6 d-flex justify-content-center p-3">
-          <p class="card-text">
-              {% thumbnail user.profile.image "300x300" crop="center" as im %}
-              <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
-          </p>
+    <div class="container">
+        <div class="row">
+            <!-- Profile picture -->
+            <div class="col-lg-6 d-flex justify-content-center p-3">
+                <p class="card-text">
+                    {% thumbnail user.profile.image "300x300" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
+                </p>
+            </div>
+      
+            <!-- Bio and pattern number -->
+            <div class="col-lg-6 d-flex flex-column align-items-lg-start align-items-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{ user.username }}
+                        </h5>
+                        {{ user.profile.bio|safe }}
+                    </div>
+                </div>
+      
+                <table class="table table-hover">
+                    <thead>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Patterns:</th>
+                            <td>{{ num_patterns }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
       </div>
-
-      <!-- Bio and pattern number on the right -->
-      <div class="col-lg-6">
-          <div class="card">
-              <div class="card-body">
-                  <h5 class="card-title">
-                      {{ user.username }}
-                  </h5>
-                  {{ user.profile.bio|safe }}
-              </div>
-          </div>
-
-          <table class="table table-hover">
-              <thead>
-              </thead>
-              <tbody>
-                  <tr>
-                      <th scope="row">Patterns:</th>
-                      <td>{{ num_patterns }}</td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-  </div>
-
-  <!-- Small screen -->
-<div class="d-sm-none card-body d-flex justify-content-center p-3">
-    <p class="card-text">
-        {% thumbnail user.profile.image "300x300" crop="center" as im %}
-        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"> {% endthumbnail %}
-    </p>
-</div>
-
-<div class="container">
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">
-            {{ user.username }}
-        </h5>
-        {{ user.profile.bio|safe }}
-    </div>
-</div>
-
-<table class="table table-hover">
-    <thead>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">Patterns:</th>
-            <td>{{ num_patterns }}</td>
-        </tr>
-    </tbody>
-</table>
+      
 
 <h2>Patterns by {{user.username }}</h2>
     <!-- Styling for small screen -->
@@ -101,7 +75,7 @@
     <div class="row d-none d-lg-flex">
         {% for pattern in patterns %}
         <div class="col-lg-3">
-            <div class="card d-flex">
+            <div class="card d-flex h-100">
                 <div class="text-center">
                     <h3>
                         {{ pattern.title }}
@@ -132,7 +106,6 @@
         {% endfor %}
     </div>
 </div>
-
 <!-- Buttons for logged in member only -->
 {% if request.user.is_authenticated and user.username == request.user.username %}
 <div class="container-fluid d-flex justify-content-center">
