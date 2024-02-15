@@ -43,8 +43,6 @@
                         <li class="nav-item">
                             <a class="nav-link"
                                 href="{% url 'search:search' %}">
-                                <a class="nav-link active" alt-current="page"
-                                    href="/">
                                     <img
                                         src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012362/static/icon-search.png"
                                         alt="search" width="50px" height="50px">
@@ -54,8 +52,6 @@
                             <li class="nav-item">
                                 <a class="nav-link"
                                     href="{% url 'pattern:add' %}">
-                                    <a class="nav-link active"
-                                        alt-current="page" href="/">
                                         <img
                                             src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012296/static/icon-add.png"
                                             alt="add pattern" width="50px" height="50px">
@@ -95,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="navbar-brand" href="{% url "feed:feed" %}">
+                <a class="navbar-brand" href="{% url 'feed:feed' %}">
                     <!-- Large screen brand  -->
                     <img class="img-fluid d-none d-sm-block"
                         src="https://res.cloudinary.com/duekocfq6/image/upload/v1708004906/static/logo-lg_idyzwe.png"
