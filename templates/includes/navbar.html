@@ -10,7 +10,7 @@
                 aria-controls="toggle navigation">
                 <img
                     src="https://res.cloudinary.com/duekocfq6/image/upload/f_auto,q_auto/v1/static/icon-menu"
-                    name="3 bar menu" height="50px" width="50px">
+                    alt="3 bar menu" height="50px" width="50px">
             </button>
             <div class="offcanvas offcanvas-start" tabindex="-1"
                 id="offcanvasNav" aria-labelledby="Navigation menu">
@@ -36,7 +36,7 @@
                                 href="/">
                                 <img
                                     src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012318/static/icon-home.png"
-                                    aria width="50px" height="50px">
+                                    aria="home" width="50px" height="50px">
                                 Home
                             </a>
                         </li>
@@ -47,7 +47,7 @@
                                     href="/">
                                     <img
                                         src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012362/static/icon-search.png"
-                                        aria width="50px" height="50px">
+                                        aria="search" width="50px" height="50px">
                                     Search
                                 </a>
                             </li>
@@ -58,7 +58,7 @@
                                         aria-current="page" href="/">
                                         <img
                                             src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012296/static/icon-add.png"
-                                            aria width="50px" height="50px">
+                                            aria="add pattern" width="50px" height="50px">
                                         Add pattern
                                     </a>
                                 </li>
@@ -68,7 +68,7 @@
                                         href="{% url 'profiles:profile' user.username %}">
                                         <img
                                             src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012340/static/icon-profile.png"
-                                            aria width="50px" height="50px">
+                                            aria="My profile" width="50px" height="50px">
                                         My Profile</a>
                                 </li>
                                 {% else %}
@@ -79,14 +79,14 @@
                                         href="{% url 'account_logout' %}">
                                         <img
                                             src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012278/static/icon-signout.png"
-                                            aria width="50px" height="50px">
+                                            aria="Sign out" width="50px" height="50px">
                                         Sign Out</a>
                                     {% else %}
                                     <a class="nav-link"
                                         href="{% url 'account_login' %}">
                                         <img
                                             src="https://res.cloudinary.com/duekocfq6/image/upload/v1708012390/static/icon-signin.png"
-                                            aria width="50px" height="50px">
+                                            aria="Log in" width="50px" height="50px">
                                         Login
                                     </a>
                                     {% endif %}
@@ -116,7 +116,8 @@
                         crop="center" as im %}
                         <img class="justify-content-end thumbnail"
                             src="{{ im.url }}" width="{{ im.width }}"
-                            height="{{ im.height}}">
+                            height="{{ im.height}}"
+                            alt="user icon">
                         {% endthumbnail %}
                     </a>
                     {% else %}
