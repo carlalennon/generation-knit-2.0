@@ -33,11 +33,39 @@
         </tbody>
       </table>
 
-      <!-- To Do 
-    - Add amount of patterns 
-    - Add list of followers and following
-    -->
-    
+
+      <div class="row d-lg-none">
+        {% for pattern in patterns %}
+        <div class="card col-12 ">
+          <div class="row">
+            <div class="col">
+          <a href="{% url 'feed:detail' pattern.id %}" class="nav-link">
+            {% thumbnail pattern.image "100x100" crop="center" as im %}
+            <img src="{{ im.url }}" class="img-fluid"> 
+            {% endthumbnail %}   
+            {{ pattern.title}}  
+          </a>
+        </div>
+        <div class="col d-flex justify-content-end align-items-center">
+            <a href="{% url 'profiles:profile' pattern.author.username %}" class="text-decoration-none link-secondary ">
+              {{ pattern.author }}
+              {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
+              <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+              {% endthumbnail %}
+            </div>
+        </div>
+      </div>
+        {% empty%}
+
+        <div class="card">
+          <div class="card-body">
+            <p>This author has not authored any patterns</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+<!--      
 <ul class="list-group">
   {% for pattern in patterns %}
     <li class="list-group-item">
@@ -54,7 +82,7 @@
     <li>No patterns authored by this user.</li>
 {% endfor %}
   </ul>
-
+-->
 
      <!-- Buttons for logged in member only -->
   {% if request.user.is_authenticated and user.username == request.user.username %}
