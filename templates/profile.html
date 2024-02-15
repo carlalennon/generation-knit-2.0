@@ -32,8 +32,8 @@
           </tr>
         </tbody>
       </table>
-
-
+      <div class="container">
+      <!-- Styling for small screen -->
       <div class="row d-lg-none">
         {% for pattern in patterns %}
         <div class="card col-12 ">
@@ -55,6 +55,40 @@
             </div>
         </div>
       </div>
+
+
+<!-- Styling for large screen -->
+<div class="row d-none d-lg-flex">
+  {% for pattern in patterns %}
+  <div class="col-lg-3">
+    <div class="card d-flex" >
+      <div class="text-center">
+        <h3>
+          {{ pattern.title }}
+        </h3>
+      </div>
+      <a href="{% url 'feed:detail' pattern.id %}">
+        {% thumbnail pattern.image "300x300" crop="center" as im %}
+            <img src="{{ im.url }}" class="img-fluid"> 
+        {% endthumbnail %}     
+      </a>
+          <div class="card-body">
+            <p class="card-text float-end">
+              by
+                <a href="{% url 'profiles:profile' pattern.author.username %}" class="text-decoration-none link-secondary">
+                  <b>{{ pattern.author }}</b>
+                    {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
+                      <img src="{{ im.url }}" class="img-fluid">
+                  {% endthumbnail %}
+                </a>
+            </p>
+          </div>
+
+    </div>
+  </div>
+</div>
+
+
         {% empty%}
 
         <div class="card">
@@ -65,24 +99,18 @@
         {% endfor %}
       </div>
 
-<!--      
-<ul class="list-group">
-  {% for pattern in patterns %}
-    <li class="list-group-item">
-      <a href="{% url 'feed:detail' pattern.id %}">{{ pattern.title}}</a>
-        <div class='d-flex justify-content-end align-middle'>
-          <a href="{% url 'feed:detail' pattern.id %}">
-            {% thumbnail pattern.image "50x50" crop="center" as im %}
-                <img class="justify-content-end" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height}}"> 
-            {% endthumbnail %}
-        </a>
+      
+    
+        {% empty%}
+
+        <div class="card">
+          <div class="card-body">
+            <p>This author has not authored any patterns</p>
+          </div>
         </div>
-    </li>
-    {% empty %}
-    <li>No patterns authored by this user.</li>
-{% endfor %}
-  </ul>
--->
+        {% endfor %}
+      </div>
+    </div>      
 
      <!-- Buttons for logged in member only -->
   {% if request.user.is_authenticated and user.username == request.user.username %}
