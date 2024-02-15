@@ -103,8 +103,7 @@
                 </a>
                 <!-- Show user information in top right -->
                 {% if request.user.is_authenticated %}
-                <div class="float-end justify-content-end" id="user-information"
-                    aria="username and profile picture">
+                <div class="float-end justify-content-end" id="user-information">
                     <a class="nav-link"
                         href="{% url 'profiles:profile' user.username %}">
                         {{ request.user.username}}
