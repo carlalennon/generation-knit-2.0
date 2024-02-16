@@ -6,7 +6,7 @@
     {% trans "Sign In" %}
 {% endblock %}
 {% block body %}
-<div class="card w-75 mb-3 mx-auto p-2 shadow-lg">
+<div class="card w-75 mb-3 mx-auto p-2 shadow-lg" style="max-width: 30rem;">
     <div class="mx-auto p-2" style="width: 200px;">
     <h1 class="text-center">
         {% trans "Sign In" %}
@@ -20,7 +20,7 @@
     <form method="post" action="{{ login_url }}">
         {% csrf_token %}
         <div class="mb-3">
-            <label for="{{ login.email.id_for_label }}">{{ login.email.label }}</label>
+            <label for="{{ login.login.id_for_label }}">{{ login.email.label }}</label>
             {{ form.login|add_class:"form-control" }}
         </div>
         <div class="mb-3">
