@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
 
-
 {% block title%}
 Search
 {% endblock %}
@@ -108,7 +107,8 @@ Search
                 </div>
                 <a href="{% url 'feed:detail' p.id %}">
                     {% thumbnail p.image "300x300" crop="center" as im %}
-                    <img src="{{ im.url }}" class="img-fluid" alt="{{ p.title }}">
+                    <img src="{{ im.url }}" class="img-fluid"
+                        alt="{{ p.title }}">
                     {% endthumbnail %}
                 </a>
                 <div class="card-body">
@@ -117,9 +117,9 @@ Search
                         <a href="{% url 'profiles:profile' p.author.username %}"
                             class="text-decoration-none link-secondary">
                             <b>{{ p.author }}</b>
-                            {% thumbnail p.author.profile.image "50x50"
-                            crop="center" as im %}
-                            <img src="{{ im.url }}" class="img-fluid" alt="{{ p.author.username }}">
+                            {% thumbnail p.author.profile.image "50x50" crop="center" as im %}
+                            <img src="{{ im.url }}" class="img-fluid"
+                                alt="{{ p.author.username }}">
                             {% endthumbnail %}
                         </a>
                     </p>
@@ -137,7 +137,8 @@ Search
                 <div class="col">
                     <a href="{% url 'feed:detail' p.id %}">
                         {% thumbnail p.image "100x100" crop="center" as im %}
-                        <img src="{{ im.url }}" class="img-fluid" alt="{{ p.title }}">
+                        <img src="{{ im.url }}" class="img-fluid"
+                            alt="{{ p.title }}">
                         {% endthumbnail %}
 
                         {{ p.title}}
@@ -147,10 +148,10 @@ Search
                     <a href="{% url 'profiles:profile' p.author.username %}"
                         class="text-decoration-none link-secondary ">
                         {{ p.author }}
-                        {% thumbnail p.author.profile.image "50x50"
-                        crop="center" as im %}
+                        {% thumbnail p.author.profile.image "50x50" crop="center" as im %}
                         <img src="{{ im.url }}" width="{{ im.width }}"
-                            height="{{ im.height }}" alt="{{ p.author.username }}">
+                            height="{{ im.height }}"
+                            alt="{{ p.author.username }}">
                         {% endthumbnail %}
                     </div>
                 </div>
@@ -159,4 +160,4 @@ Search
         </div>
 
     </div>
-{% endblock %}
+    {% endblock %}
