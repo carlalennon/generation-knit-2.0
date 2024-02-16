@@ -326,6 +326,10 @@ https://venngage.com/tools/accessible-color-palette-generator
 Bootstrap Overrides
 https://blog.hubspot.com/website/how-to-override-bootstrap-css
 
+Django widget tweaks 
+https://github.com/jazzband/django-widget-tweaks
+
+
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
