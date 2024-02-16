@@ -33,12 +33,15 @@ Generation Knit serves as a platform to both share and find knitting patterns. T
 - - JavaScript
 - - Bootstrap
 - Deployment
+- Linting 
 - Error Hall of Fame
 - Citations 
 
 
 ## What happened to Generation Knit 1.0? 
 ## UX Design
+
+I wanted a simple home page to let the images speak for themselves. Looking at the images is the most pleasurable part of browsing knitting patterns, it should no be marred by stray information all over the page.
 ## Accessibilty Focus
 ## User Avatar
 ## Site Goals
@@ -69,29 +72,25 @@ This can be viewed in closer detail in the [issues section of this project](http
 ### Early Wireframes to get the "Vibe"
 
   <details>
-    <summary> Large Wireframe</summary>
-    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
+    <summary> Early wireframe for the hamburger menu</summary>
+    <IMG src="templates/assets/images/readme/wireframe-hamburger-menu.png"  alt="Early wireframe for the hamburger menu"/>
     </details>
     
   <details>
-    <summary> Large Wireframe</summary>
-    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
+    <summary>Early wireframe for the home feed</summary>
+    <IMG src="templates/assets/images/readme/wireframe-home-feed.png"  alt="Early wireframe for the home feed"/>
     </details>
 
   <details>
-    <summary> Large Wireframe</summary>
-    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
+    <summary> Early wireframe for login page</summary>
+    <IMG src="templates/assets/images/readme/wireframe-log-in.png"  alt="Early wireframe for login page"/>
     </details>
 
   <details>
-    <summary> Large Wireframe</summary>
-    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
+    <summary> Wireframe for a pattern generation tool</summary>
+    <IMG src="templates/assets/images/readme/wireframe-pattern-generator.png"  alt="Wireframe for a pattern generation tool"/>
     </details>
 
-  <details>
-    <summary> Large Wireframe</summary>
-    <IMG src="templates/assets/images/readme/wireframe-search-desktop.png"  alt="large wireframe for search page"/>
-    </details>
 
 ### Search Wireframes
   <details>
@@ -188,6 +187,34 @@ Bootstrap is a
 
 ## Deployment
 ## Error Hall of Fame
+
+## Linting 
+
+### HTML
+
+I used the W3C schools linter to check my html. It does not like Django tags, so my goal was to solve every error it gave apart from the Django related errors. 
+
+The HTML linter really didn't like Django, and showed a lot of errors in all HTML with Django tags 
+![Django errors in W3 HTML checker ](templates/assets/images/readme/readme-lint-django.png)
+
+I used "Validate by Direct Input"
+
+I worked through errors in my code until only the Django related errors were left. 
+
+Some common errors:
+
+
+  <summary> Button cannot be a child of an "a" tag</summary>
+    <IMG src="templates/assets/images/readme/readme-lint-common-01.png"  alt="Button cannot be a child of an a tag error "/>
+    </details>
+
+  <summary> Image tags require an alt attribute (I had been using "name" as an alt )</summary>
+    <IMG src="templates/assets/images/readme/readme-lint-common-02.png"  alt="Image tags require an alt attribute error"/>
+    </details>
+
+  <summary> Stray tags </summary>
+    <IMG src="templates/assets/images/readme/readme-lint-common-03.png"  alt="Stray tag error"/>
+    </details>
 ## Citations 
 
 ### Porting User Stories over from old project 
