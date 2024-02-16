@@ -5,7 +5,7 @@
 {% block body %}  
 <div class="container-fluid d-flex justify-content-center">
     <div class="card" style="width: 18rem; border: 5px solid white;">
-    <img src="{{ object.image.url }}" style="width: 100%; height: auto;">
+    <img src="{{ object.image.url }}" style="width: 100%; height: auto;" alt="pattern image">
     </div>
 </div>
 
@@ -21,15 +21,11 @@
 {% if request.user.is_authenticated and pattern.author == request.user %}
 <div class="container-fluid d-flex justify-content-center">
     <div class="btn-group" role="group" aria-label="Edit or delete pattern">
-        <a href="{% url 'pattern:edit' pattern.id %}">
-            <button type="button" class="btn btn-outline-primary">
+        <a href="{% url 'pattern:edit' pattern.id %}"class="btn btn-dark">
                 Edit
-            </button>
         </a>
-        <a href="{% url 'pattern:delete' pattern.id %}">
-            <button type="button" class="btn btn-outline-primary">
+        <a href="{% url 'pattern:delete' pattern.id %}" class="btn btn-dark">
                 Delete
-            </button>
         </a>
       </div>
     </div>
@@ -86,7 +82,7 @@
             <a href="{% url 'profiles:profile' pattern.author.username %}">
             <div class="container">
                 {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
-                        <img class="img-thumbnail float-end" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                        <img class="img-thumbnail float-end" src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="user icon">
                 {% endthumbnail %}
                 <h4 class="align-middle p-2">
                     {{ pattern.author.username }}
