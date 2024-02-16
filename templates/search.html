@@ -16,7 +16,7 @@ Search
         <div class="mb-3">
             <select class="form-select" name="weight"
                 aria-label="Search by yarn weight">
-                <option selected value>Yarn Weight</option>
+                <option selected value="none">Yarn Weight</option>
                 <option value="0">Cobweb</option>
                 <option value="1">Lace</option>
                 <option value="2">Fingering</option>
@@ -25,7 +25,7 @@ Search
             </select>
             <select class="form-select" name="category"
                 aria-label="Search by project type">
-                <option selected value>Category</option>
+                <option selected value="none">Category</option>
                 <option value="1">Sweater</option>
                 <option value="2">Cardigan</option>
                 <option value="3">Skirt</option>
@@ -35,7 +35,7 @@ Search
             </select>
             <select class="form-select" name="needle_size"
                 aria-label="Search by needle size">
-                <option selected value>Needle size</option>
+                <option selected value="none">Needle size</option>
                 <option value="0">1mm</option>
                 <option value="1">2mm</option>
                 <option value="2">3mm</option>
@@ -58,7 +58,7 @@ Search
         <div class="col input-group mb-3">
             <select class="form-select" name="weight"
                 aria-label="Search by yarn weight">
-                <option selected value>Yarn Weight</option>
+                <option selected value="none">Yarn Weight</option>
                 <option value="0">Cobweb</option>
                 <option value="1">Lace</option>
                 <option value="2">Fingering</option>
@@ -67,7 +67,7 @@ Search
             </select>
             <select class="form-select" name="category"
                 aria-label="Search by project type">
-                <option selected value>Category</option>
+                <option selected value="none">Category</option>
                 <option value="1">Sweater</option>
                 <option value="2">Cardigan</option>
                 <option value="3">Skirt</option>
@@ -77,7 +77,7 @@ Search
             </select>
             <select class="form-select" name="needle_size"
                 aria-label="Search by needle size">
-                <option selected value>Needle size</option>
+                <option selected value="none">Needle size</option>
                 <option value="0">1mm</option>
                 <option value="1">2mm</option>
                 <option value="2">3mm</option>
@@ -107,7 +107,7 @@ Search
                 </div>
                 <a href="{% url 'feed:detail' p.id %}">
                     {% thumbnail p.image "300x300" crop="center" as im %}
-                    <img src="{{ im.url }}" class="img-fluid" alt="pattern preview">
+                    <img src="{{ im.url }}" class="img-fluid" alt="{{ p.title }}">
                     {% endthumbnail %}
                 </a>
                 <div class="card-body">
@@ -118,12 +118,11 @@ Search
                             <b>{{ p.author }}</b>
                             {% thumbnail p.author.profile.image "50x50"
                             crop="center" as im %}
-                            <img src="{{ im.url }}" class="img-fluid" alt="user icon">
+                            <img src="{{ im.url }}" class="img-fluid" alt="{{ p.author.username }}">
                             {% endthumbnail %}
                         </a>
                     </p>
                 </div>
-
             </div>
         </div>
         {% endfor %}
@@ -137,7 +136,7 @@ Search
                 <div class="col">
                     <a href="{% url 'feed:detail' p.id %}">
                         {% thumbnail p.image "100x100" crop="center" as im %}
-                        <img src="{{ im.url }}" class="img-fluid" alt="pattern preview">
+                        <img src="{{ im.url }}" class="img-fluid" alt="{{ p.title }}">
                         {% endthumbnail %}
 
                         {{ p.title}}
@@ -149,10 +148,9 @@ Search
                         {{ p.author }}
                         {% thumbnail p.author.profile.image "50x50"
                         crop="center" as im %}
-                        <img src="{{ im.url }}" width="{{ im.width }}" alt="user icon"
-                            height="{{ im.height }}">
+                        <img src="{{ im.url }}" width="{{ im.width }}"
+                            height="{{ im.height }}" alt="{{ p.author.username }}">
                         {% endthumbnail %}
-                </a>
                     </div>
                 </div>
             </div>
@@ -160,3 +158,4 @@ Search
         </div>
 
     </div>
+{% endblock %}
