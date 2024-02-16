@@ -6,7 +6,7 @@
     {% trans "Sign In" %}
 {% endblock %}
 {% block body %}
-<div class="card w-75 mb-3 mx-auto p-2">
+<div class="card w-75 mb-3 mx-auto p-2 shadow-lg">
     <div class="mx-auto p-2" style="width: 200px;">
     <h1 class="text-center">
         {% trans "Sign In" %}
@@ -35,6 +35,5 @@
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
-{% endfor %}
 {% endblock %}
 </div>
