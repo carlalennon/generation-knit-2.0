@@ -131,7 +131,6 @@ This can be viewed in closer detail in the [issues section of this project](http
     <summary> Large Wireframe</summary>
     <IMG src="templates/assets/images/readme/wireframe-feed-large.png"  alt="large wireframe for home page"/>
     </details>
-      <details>
 
   <summary> Small Wireframe</summary>
     <IMG src="templates/assets/images/readme/wireframe-feed-small.png"  alt="large wireframe for home page"/>
@@ -187,6 +186,10 @@ Bootstrap is a
 
 ## Deployment
 ## Error Hall of Fame
+
+  <summary> This duplicate id error appeared on pages when there were 2 different HTML sections for small and large screen. I've decided to ignore them as due to the way they styling is done, only one element appears on the screen at a time</summary>
+    <IMG src="templates/assets/images/readme/readme-error-01.png"  alt="duplicate id error"/>
+    </details>
 
 ## Linting 
 
