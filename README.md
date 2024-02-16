@@ -191,6 +191,7 @@ Bootstrap is a
     <IMG src="templates/assets/images/readme/readme-error-01.png"  alt="duplicate id error"/>
     </details>
 
+
 ## Linting 
 
 ### HTML
@@ -218,6 +219,13 @@ Some common errors:
   <summary> Stray tags </summary>
     <IMG src="templates/assets/images/readme/readme-lint-common-03.png"  alt="Stray tag error"/>
     </details>
+
+
+## Known Errors 
+
+- The summernote widget does not respond to screen size in the edit pattern and profile pages
+- User cannot upload more than one image for a pattern 
+
 ## Citations 
 
 ### Porting User Stories over from old project 
@@ -328,6 +336,8 @@ https://blog.hubspot.com/website/how-to-override-bootstrap-css
 
 Django widget tweaks 
 https://github.com/jazzband/django-widget-tweaks
+
+
 
 
 
