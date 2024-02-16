@@ -92,8 +92,7 @@
                     <a
                         href="{% url 'profiles:profile' pattern.author.username %}">
                         <div class="container">
-                            {% thumbnail pattern.author.profile.image "50x50"
-                            crop="center" as im %}
+                            {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
                             <img class="img-thumbnail float-end"
                                 src="{{ im.url }}" width="{{ im.width }}"
                                 height="{{ im.height }}" alt="user icon">
