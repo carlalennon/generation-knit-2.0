@@ -3,39 +3,44 @@
 {% load i18n %}
 {% load allauth account %}
 {% block title %}
-    {% trans "Sign In" %}
+{% trans "Sign In" %}
 {% endblock %}
 {% block body %}
-<div class="card w-75 mb-3 mx-auto p-2 shadow-lg" style="max-width: 30rem; height: 50vh;">
+<div class="card w-75 mb-3 mx-auto p-2 shadow-lg"
+    style="max-width: 30rem; height: 50vh;">
     <div class="container m-2">
-    <div class="mx-auto p-2" style="width: 200px;">
-    <h1 class="text-center">
-        {% trans "Sign In" %}
-    </h1>
-    </div>
-    <p>
-        {% blocktrans %}New around here? You can 
-    <a href="{{ signup_url }}">create an account</a> .{% endblocktrans %}
-    </p>
-    {% url 'account_login' as login_url %}
-    <form method="post" action="{{ login_url }}">
-        {% csrf_token %}
-        <div class="mb-3">
-            <label for="{{ login.login.id_for_label }}">{{ login.email.label }}</label>
-            {{ form.login|add_class:"form-control" }}
+        <div class="mx-auto p-2" style="width: 200px;">
+            <h1 class="text-center">
+                {% trans "Sign In" %}
+            </h1>
         </div>
-        <div class="mb-3">
-            <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
-            {{ form.password|add_class:"form-control" }}
-        </div>
-        {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        <p>
+            {% blocktrans %}New around here? You can
+            <a href="{{ signup_url }}">create an account</a> .{% endblocktrans%}
+        </p>
+        {% url 'account_login' as login_url %}
+        <form method="post" action="{{ login_url }}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="{{ login.login.id_for_label }}">{{ login.email.label
+                    }}</label>
+                {{ form.login|add_class:"form-control" }}
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.password.id_for_label }}">{{
+                    form.password.label }}</label>
+                {{ form.password|add_class:"form-control" }}
+            </div>
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}"
+                value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button type="submit" class="btn btn-dark mt-4">{% trans "Sign In"%}</button>
+        </form>
+        {% if SOCIALACCOUNT_ENABLED %}
+        {% include "socialaccount/snippets/login.html" with
+        page_layout="entrance" %}
         {% endif %}
-        <button type="submit" class="btn btn-dark mt-4">{% trans "Sign In" %}</button>
-    </form>
-    {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
-    {% endif %}
-</div>
-{% endblock %}
+    </div>
+    {% endblock %}
 </div>
