@@ -31,7 +31,7 @@
         {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button type="submit" class="btn btn-primary">{% trans "Sign In" %}</button>
+        <button type="submit" class="btn btn-dark mt-4">{% trans "Sign In" %}</button>
     </form>
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
