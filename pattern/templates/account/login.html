@@ -22,13 +22,11 @@
         <form method="post" action="{{ login_url }}">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="{{ login.login.id_for_label }}">{{ login.email.label
-                    }}</label>
+                <label for="{{ login.login.id_for_label }}">{{ login.email.label }}</label>
                 {{ form.login|add_class:"form-control" }}
             </div>
             <div class="mb-3">
-                <label for="{{ form.password.id_for_label }}">{{
-                    form.password.label }}</label>
+                <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
                 {{ form.password|add_class:"form-control" }}
             </div>
             {% if redirect_field_value %}
@@ -37,8 +35,7 @@
             <button type="submit" class="btn btn-dark mt-4">{% trans "Sign In"%}</button>
         </form>
         {% if SOCIALACCOUNT_ENABLED %}
-        {% include "socialaccount/snippets/login.html" with
-        page_layout="entrance" %}
+        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
         {% endif %}
     </div>
     {% endblock %}
