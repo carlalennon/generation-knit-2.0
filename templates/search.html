@@ -2,147 +2,162 @@
 {% load thumbnail %}
 
 {% block title%}
-    Search
+Search
 {% endblock %}
-{% block body %}  
- <!-- Small screen styling -->
+{% block body %}
+<!-- Small screen styling -->
 <div class="d-sm-none">
     <form action="{% url 'search:search' %}" method="GET">
         <div class="mb-3 ">
-          <input name="p" type="text" class="form-control mb-3" placeholder='Search' aria-label="Search bar" aria-describedby="search-bar">
+            <input name="p" type="text" class="form-control mb-3"
+                placeholder='Search' aria-label="Search bar"
+                aria-describedby="search-bar">
         </div>
-      <div class="mb-3">
-        <select class="form-select" name="weight" aria-label="Search by yarn weight">
-          <option selected value="">Yarn Weight</option>
-          <option value="0">Cobweb</option>
-          <option value="1">Lace</option>
-          <option value="2">Fingering</option>
-          <option value="3">DK</option>
-          <option value="4">Worsted</option>
-        </select>
-        <select class="form-select" name="category" aria-label="Search by project type">
-          <option selected value="">Category</option>
-          <option value="1">Sweater</option>
-          <option value="2">Cardigan</option>
-          <option value="3">Skirt</option>
-          <option value="4">Pants</option>
-          <option value="5">Hat</option>
-          <option value="6">Scarf</option>
-        </select>
-        <select class="form-select" name="needle_size" aria-label="Search by needle size">
-          <option selected value="">Needle size</option>
-          <option value="0">1mm</option>
-          <option value="1">2mm</option>
-          <option value="2">3mm</option>
-          <option value="3">4mm</option>
-        </select>
-      </div>
-        <button class='btn btn-primary' type='submit' id='search' aria-label="Go">Go</button>
-  </form>
+        <div class="mb-3">
+            <select class="form-select" name="weight"
+                aria-label="Search by yarn weight">
+                <option selected value>Yarn Weight</option>
+                <option value="0">Cobweb</option>
+                <option value="1">Lace</option>
+                <option value="2">Fingering</option>
+                <option value="3">DK</option>
+                <option value="4">Worsted</option>
+            </select>
+            <select class="form-select" name="category"
+                aria-label="Search by project type">
+                <option selected value>Category</option>
+                <option value="1">Sweater</option>
+                <option value="2">Cardigan</option>
+                <option value="3">Skirt</option>
+                <option value="4">Pants</option>
+                <option value="5">Hat</option>
+                <option value="6">Scarf</option>
+            </select>
+            <select class="form-select" name="needle_size"
+                aria-label="Search by needle size">
+                <option selected value>Needle size</option>
+                <option value="0">1mm</option>
+                <option value="1">2mm</option>
+                <option value="2">3mm</option>
+                <option value="3">4mm</option>
+            </select>
+        </div>
+        <button class='btn btn-primary' type='submit' id='search'
+            aria-label="Go">Go</button>
+    </form>
 </div>
 
-  <!-- Large screen styling -->
-  <div class="d-none d-sm-block row">
-  <form action="{% url 'search:search' %}" method="GET" class="row">
-    <div class="col mb-3">
-      <input name="p" type="text" class="form-control mb-3" placeholder='Search' aria-label="Search bar" aria-describedby="search-bar">
+<!-- Large screen styling -->
+<div class="d-none d-sm-block row">
+    <form action="{% url 'search:search' %}" method="GET" class="row">
+        <div class="col mb-3">
+            <input name="p" type="text" class="form-control mb-3"
+                placeholder='Search' aria-label="Search bar"
+                aria-describedby="search-bar">
+        </div>
+        <div class="col input-group mb-3">
+            <select class="form-select" name="weight"
+                aria-label="Search by yarn weight">
+                <option selected value>Yarn Weight</option>
+                <option value="0">Cobweb</option>
+                <option value="1">Lace</option>
+                <option value="2">Fingering</option>
+                <option value="3">DK</option>
+                <option value="4">Worsted</option>
+            </select>
+            <select class="form-select" name="category"
+                aria-label="Search by project type">
+                <option selected value>Category</option>
+                <option value="1">Sweater</option>
+                <option value="2">Cardigan</option>
+                <option value="3">Skirt</option>
+                <option value="4">Pants</option>
+                <option value="5">Hat</option>
+                <option value="6">Scarf</option>
+            </select>
+            <select class="form-select" name="needle_size"
+                aria-label="Search by needle size">
+                <option selected value>Needle size</option>
+                <option value="0">1mm</option>
+                <option value="1">2mm</option>
+                <option value="2">3mm</option>
+                <option value="3">4mm</option>
+            </select>
+        </div>
+      </form>
     </div>
-    <div class="col input-group mb-3">
-      <select class="form-select" name="weight" aria-label="Search by yarn weight">
-        <option selected value="">Yarn Weight</option>
-        <option value="0">Cobweb</option>
-        <option value="1">Lace</option>
-        <option value="2">Fingering</option>
-        <option value="3">DK</option>
-        <option value="4">Worsted</option>
-      </select>
-      <select class="form-select" name="category" aria-label="Search by project type">
-        <option selected value="">Category</option>
-        <option value="1">Sweater</option>
-        <option value="2">Cardigan</option>
-        <option value="3">Skirt</option>
-        <option value="4">Pants</option>
-        <option value="5">Hat</option>
-        <option value="6">Scarf</option>
-      </select>
-      <select class="form-select" name="needle_size" aria-label="Search by needle size">
-        <option selected value="">Needle size</option>
-        <option value="0">1mm</option>
-        <option value="1">2mm</option>
-        <option value="2">3mm</option>
-        <option value="3">4mm</option>
-      </select>
-    </div>
-  </div>
     <div class="row">
-      <div class="col-md-1 offset-md-1">
-    <button class='btn btn-primary ' type='submit' id='search' aria-label="Go">Go</button>
-    
-      
-    </div>
-</form>
+        <div class="col-md-1 offset-md-1">
+            <button class='btn btn-primary ' type='submit' id='search'
+                aria-label="Go">Go</button>
+
+        </div>
+    </form>
 </div>
 <hr>
 
-
-
-  <div class="container">
+<div class="container">
     <!-- Large Screen Layout -->
     <div class="row d-none d-lg-flex">
-      {% for p in object_list %}
-      <div class="col-lg-3">
-        <div class="card d-flex" >
-          <div class="text-center">
-            <h3>
-              {{ p.title }}
-            </h3>
-          </div>
-          <a href="{% url 'feed:detail' p.id %}">
-            {% thumbnail p.image "300x300" crop="center" as im %}
-                <img src="{{ im.url }}" class="img-fluid"> 
-            {% endthumbnail %}     
-          </a>
-              <div class="card-body">
-                <p class="card-text float-end">
-                  by
-                    <a href="{% url 'profiles:profile' p.author.username %}" class="text-decoration-none link-secondary">
-                      <b>{{ p.author }}</b>
-                        {% thumbnail p.author.profile.image "50x50" crop="center" as im %}
-                          <img src="{{ im.url }}" class="img-fluid">
-                      {% endthumbnail %}
-                    </a>
-                </p>
-              </div>
+        {% for p in object_list %}
+        <div class="col-lg-3">
+            <div class="card d-flex">
+                <div class="text-center">
+                    <h3>
+                        {{ p.title }}
+                    </h3>
+                </div>
+                <a href="{% url 'feed:detail' p.id %}">
+                    {% thumbnail p.image "300x300" crop="center" as im %}
+                    <img src="{{ im.url }}" class="img-fluid">
+                    {% endthumbnail %}
+                </a>
+                <div class="card-body">
+                    <p class="card-text float-end">
+                        by
+                        <a href="{% url 'profiles:profile' p.author.username %}"
+                            class="text-decoration-none link-secondary">
+                            <b>{{ p.author }}</b>
+                            {% thumbnail p.author.profile.image "50x50"
+                            crop="center" as im %}
+                            <img src="{{ im.url }}" class="img-fluid">
+                            {% endthumbnail %}
+                        </a>
+                    </p>
+                </div>
 
+            </div>
         </div>
-      </div>
-      {% endfor %}
+        {% endfor %}
     </div>
-  
+
     <!-- Small Screen Layout -->
     <div class="row d-lg-none">
-      {% for p in object_list %}
-      <div class="card col-12 ">
-        <div class="row">
-          <div class="col">
-        <a href="{% url 'feed:detail' p.id %}">
-          {% thumbnail p.image "100x100" crop="center" as im %}
-          <img src="{{ im.url }}" class="img-fluid"> 
-          {% endthumbnail %}   
-          
-          {{ p.title}}  
-        </a>
-      </div>
-      <div class="col d-flex justify-content-end align-items-center">
-          <a href="{% url 'profiles:profile' p.author.username %}" class="text-decoration-none link-secondary ">
-            {{ p.author }}
-            {% thumbnail p.author.profile.image "50x50" crop="center" as im %}
-            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
-            {% endthumbnail %}
-          </div>
-      </div>
+        {% for p in object_list %}
+        <div class="card col-12 ">
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'feed:detail' p.id %}">
+                        {% thumbnail p.image "100x100" crop="center" as im %}
+                        <img src="{{ im.url }}" class="img-fluid">
+                        {% endthumbnail %}
+
+                        {{ p.title}}
+                    </a>
+                </div>
+                <div class="col d-flex justify-content-end align-items-center">
+                    <a href="{% url 'profiles:profile' p.author.username %}"
+                        class="text-decoration-none link-secondary ">
+                        {{ p.author }}
+                        {% thumbnail p.author.profile.image "50x50"
+                        crop="center" as im %}
+                        <img src="{{ im.url }}" width="{{ im.width }}"
+                            height="{{ im.height }}">
+                        {% endthumbnail %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
     </div>
-      {% endfor %}
-    </div>
-  
-  </div>
