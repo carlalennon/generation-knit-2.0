@@ -56,6 +56,7 @@
                 Pattern Information
             </button>
         </h2>
+        <!-- Get pattern information for table -->
         <div id="collapseTwo" class="accordion-collapse collapse"
             aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
@@ -105,6 +106,7 @@
                     <br>
                     <hr>
                     <p>
+                      <!-- Get bio of user without HTML injection -->
                         {{ pattern.author.profile.bio|safe }}
                     </p>
                 </div>
@@ -118,6 +120,7 @@
                     Get the Pattern
                 </button>
             </h2>
+            <!-- Buttons only appear when PDF or Link is attached to a pattern -->
             <div id="collapseFour" class="accordion-collapse collapse"
                 aria-labelledby="get-pattern"
                 data-bs-parent="#accordionExample">
