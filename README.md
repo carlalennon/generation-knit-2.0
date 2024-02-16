@@ -140,6 +140,9 @@ This can be viewed in closer detail in the [issues section of this project](http
 ## Structure
 ### Features
 ###  Future Features
+
+- Add multiple image uploads to patterns
+- Add Cloudinary upload widget to forms for ease of use for user
 ## Design 
 ### Colours 
 Anything over 7 is very accesible 
