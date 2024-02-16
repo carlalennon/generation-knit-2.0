@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'sorl.thumbnail',
+    'widget_tweaks',
 
     'feed',
     'pattern',
