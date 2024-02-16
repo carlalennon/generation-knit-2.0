@@ -125,17 +125,13 @@
                 <div class="accordion-body">
                     <div class="container">
                         {% if pattern.link_pattern %}
-                        <a href="{{pattern.link_pattern}}" target="_blank">
-                            <button type="button" class="btn btn-primary">
+                        <a href="{{pattern.link_pattern}}" target="_blank" class="btn btn-dark">
                                 Link to external pattern
-                            </button>
                         </a>
                         {% endif %}
                         {% if pattern.pdf %}
-                        <a href="{{pattern.pdf.url}}" target="_blank">
-                            <button type="button" class="btn btn-primary">
+                        <a href="{{pattern.pdf.url}}" target="_blank" class="btn btn-primary">
                                 Link to PDF
-                            </button>
                         </a>
                         {% endif %}
                     </div>
