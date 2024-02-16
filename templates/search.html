@@ -107,7 +107,7 @@ Search
                 </div>
                 <a href="{% url 'feed:detail' p.id %}">
                     {% thumbnail p.image "300x300" crop="center" as im %}
-                    <img src="{{ im.url }}" class="img-fluid">
+                    <img src="{{ im.url }}" class="img-fluid" alt="pattern preview">
                     {% endthumbnail %}
                 </a>
                 <div class="card-body">
@@ -118,7 +118,7 @@ Search
                             <b>{{ p.author }}</b>
                             {% thumbnail p.author.profile.image "50x50"
                             crop="center" as im %}
-                            <img src="{{ im.url }}" class="img-fluid">
+                            <img src="{{ im.url }}" class="img-fluid" alt="user icon">
                             {% endthumbnail %}
                         </a>
                     </p>
@@ -137,7 +137,7 @@ Search
                 <div class="col">
                     <a href="{% url 'feed:detail' p.id %}">
                         {% thumbnail p.image "100x100" crop="center" as im %}
-                        <img src="{{ im.url }}" class="img-fluid">
+                        <img src="{{ im.url }}" class="img-fluid" alt="pattern preview">
                         {% endthumbnail %}
 
                         {{ p.title}}
@@ -149,7 +149,7 @@ Search
                         {{ p.author }}
                         {% thumbnail p.author.profile.image "50x50"
                         crop="center" as im %}
-                        <img src="{{ im.url }}" width="{{ im.width }}"
+                        <img src="{{ im.url }}" width="{{ im.width }}" alt="user icon"
                             height="{{ im.height }}">
                         {% endthumbnail %}
                     </div>
