@@ -12,17 +12,7 @@ class HomePageView(ListView):
 
     def get_queryset(self):
         return Pattern.objects.all().order_by('-id')
-
-"""class HomePageView(TemplateView):
-    template_name = 'home.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['patterns'] = Pattern.objects.all().order_by('-id')
-
-        #Paginator
         
-        return context"""
 
 class PatternDetailView(DetailView):
     template_name = "pattern_detail.html"
