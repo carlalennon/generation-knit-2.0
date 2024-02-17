@@ -39,13 +39,51 @@ Generation Knit serves as a platform to both share and find knitting patterns. T
 
 
 ## What happened to Generation Knit 1.0? 
+
+I started work on the first version of this project in October 2023. After multiple issues with Codeanywhere, I was advised by Code Institute to start again from scratch on Gitpod. I quickly rebuilt my project as Generation Knit 2.0. The original project can be viewed [here](https://github.com/carlalennon/portfolio-project-4). I started this current project again in January 2024. 
+
+In my job, I do a lot of overtime. This restart was daunting to me, but by working on the project every day I slowly built up a new project from scratch. 
+
 ## UX Design
 
 I wanted a simple home page to let the images speak for themselves. Looking at the images is the most pleasurable part of browsing knitting patterns, it should no be marred by stray information all over the page.
+
+For the feed, I settled with having the absolute bare minimum of information available so the picture stand out on their own. This is in direct opposition to other knitting websites, where the tendency is to have information everywhere cluttering up the page and affecting the enjoyment of the browsing experience. 
+
+I created many wireframes for this project, some just to get the look of the site down, and more practical ones. They are included in the wireframe section below. 
+
+I endevoured to create a site that adhered to UX principles. Information is neatly stored and displayed upon request. The website is laid out in a way that is easy to use. 
+
+
 ## Accessibilty Focus
+
+The largest knitting website on the web often receives criticism for its lack of accessibilty to vision-impaired crafters. This is expecially bad when so many elderly people knit, and can be vision impaired. My site is laid out in a way that colourblind users can still use the site. The icons in the nav bar are designed to be distincy from each other so vision impaired users will not have any problems differentiating them. I have also tried to adhered to accessibility guidelines from W3 Schools to improve the site experience for the visually impaired.
+
+
 ## User Avatar
+
+My site user avatar: 
+- Young person looking for a modern knitting site
+- Like fibre craft, dislikes cluttered UI of extant sites
+- Is challenged in finding and sharing knitting patterns in existing social media platforms
+- Wants to upload patterns or share those they've found online
+
+
 ## Site Goals
+
+My site goals are as follows: 
+
+- Provide a modern responsive interface for users
+- Provide a place for users to discover new patterns
+- Provide a place for users to share new patterns they write 
+- Provide a place for user to share patterns they find
+- Allow users to search patterns by keyword and category
+- Allow users to create and customise a profile to showcase their personality 
+
 ## Agile Method
+
+I used the agile method to develop my project. I wrote [user stories](https://github.com/carlalennon/generation-knit-2.0/issues?q=is%3Aopen%20is%3Aissue%20project%3Acarlalennon%2F4) and mapped them to a [kanban board](https://github.com/users/carlalennon/projects/4/views/1). I then broke my user stories into tasks and completed the tasks one by one. I also assigned labels to my issues so I can see what they are better.
+
 
 ### User Stories
 
@@ -138,13 +176,22 @@ This can be viewed in closer detail in the [issues section of this project](http
     </details>
 
 ## Data Modelling Relationships
+
+I mapped out the relationships between my data models and used these to build my models. I have added a diagram below.
+
+![ERD diagram](templates/assets/images/readme/readme-entity-relationship-database.png)
+
+
 ## Structure
+
+My project is structured with gknit as the main app and feed, pattern, profiles, and search as installed apps. 
 ### Features
 ###  Future Features
 
 - Add multiple image uploads to patterns
 - Add Cloudinary upload widget to forms for ease of use for user
 - Give user the option to change a pdf to an external link or vice versa after pattern is posted
+- Allow users to add custom alt text to images they upload
 ## Design 
 ### Colours 
 Anything over 7 is very accesible 
@@ -248,38 +295,19 @@ Manual testing was carried out on User Stories:
 |                                 | Test final build before submission                                                 | Check all pages on Heroku build before submission                                                       | Checked all pages on Heroku branch                                                                                                        | Pass |
 </details>
 
-### Responsive Design 
+### Network Testing
 
-Responsiveness testing was carried out using Chrome Devtools. Special care was given to the pages that undergo large layout changes between large and small screens. These are 
+Network testing was done using Chrome devtools. My image loading is very slow, in the future I will look into why this is and how to correct it. 
 
-- Search Page 
-- Profile page
+![Waterfall showing slow image loading](templates/assets/images/readme/readme-network-testing.png)
 
-In the future I would like to add further layout changes to 
+I also did some troubleshooting on slow database queries. While not always slow, they sometimes are causing delays in the site. I had to choose an American server to get an up-to-date verison of PostgreSQL, which may also be contributing to load times. In my research, most sources said that this would likely be solved by upgrading to a paid plan with ElephantSQL. 
 
-- Add pattern form
-- Edit pattern form
-- Edit profile form
-- Login/Sign Up page
-- Pattern detail page
+![Showing slow queries and recommended time of 1ms or less](templates/assets/images/readme/readme-network-postgres.png)
 
-This is discussed more in the known issues section
+### Linting 
 
-
-
-## Deployment
-
-
-## Error Hall of Fame
-
-  <summary> This duplicate id error appeared on pages when there were 2 different HTML sections for small and large screen. I've decided to ignore them as due to the way they styling is done, only one element appears on the screen at a time</summary>
-    <IMG src="templates/assets/images/readme/readme-error-01.png"  alt="duplicate id error"/>
-    </details>
-
-
-## Linting 
-
-### HTML
+#### HTML
 
 I used the W3C schools linter to check my html. It does not like Django tags, so my goal was to solve every error it gave apart from the Django related errors. 
 
@@ -306,13 +334,87 @@ Some common errors:
     </details>
 
 
-### Python
+#### Python
 
 I used an ![online Python formatter](https://www.tutorialspoint.com/online_python_formatter.htm) to paste each python file into to observe the differences. I then manually made changes to each file. I did not want to use an automatica linter to avoid breaking any of my Django
 
-### CSS
+#### CSS
 
 I used ![a CSS linter](csslint.net) to check my CSS file. It gave me 6 warnings for the !important tag in my CSS. However, I decided to keep these in because the custom CSS would not appear without them. I believe this is because my Bootstrap is served from a CDN. Installing Bootstrap to the static folder in Cloudinary appendsa random string to each file. Even when this is removed, the Bootstrap files are still broken. This prevented me from using SASS customisation.
+
+  <summary> CSS Lint warnings and no issues</summary>
+    <IMG src="templates/assets/images/readme/readme-lint-css.png"  alt="CSS Lint warnings and no issues"/>
+    </details>
+
+
+### Responsive Design 
+
+Responsiveness testing was carried out using Chrome Devtools. Special care was given to the pages that undergo large layout changes between large and small screens. These are 
+
+- Search Page 
+- Profile page
+
+In the future I would like to add further layout changes to 
+
+- Add pattern form
+- Edit pattern form
+- Edit profile form
+- Login/Sign Up page
+- Pattern detail page
+
+This is discussed more in the known issues section
+
+### Performance Testing 
+
+
+
+## Deployment
+
+
+## Error Hall of Fame
+
+  <summary> This duplicate id error appeared on pages when there were 2 different HTML sections for small and large screen. I've decided to ignore them as due to the way they styling is done, only one element appears on the screen at a time</summary>
+    <IMG src="templates/assets/images/readme/readme-error-01.png"  alt="duplicate id error"/>
+    </details>
+
+
+## Linting 
+
+### HTML
+
+I used the W3C schools linter to check my html. It does not like Django tags, so my goal was to solve every error it gave apart from the Django related errors. 
+
+The HTML linter really didn't like Django, and showed a lot of errors in all HTML with Django tags 
+
+![Django errors in W3 HTML checker ](templates/assets/images/readme/readme-lint-django.png)
+
+I used "Validate by Direct Input"
+
+I worked through errors in my code until only the Django related errors were left. 
+
+Some common errors:
+
+
+  <summary> Button cannot be a child of an "a" tag</summary>
+    <IMG src="templates/assets/images/readme/readme-lint-common-01.png"  alt="Button cannot be a child of an a tag error "/>
+    </details>
+
+  <summary> Image tags require an alt attribute (I had been using "name" as an alt )</summary>
+    <IMG src="templates/assets/images/readme/readme-lint-common-02.png"  alt="Image tags require an alt attribute error"/>
+    </details>
+
+  <summary> Stray tags </summary>
+    <IMG src="templates/assets/images/readme/readme-lint-common-03.png"  alt="Stray tag error"/>
+    </details>
+
+
+### Python
+
+I used an [online Python formatter](https://www.tutorialspoint.com/online_python_formatter.htm) to paste each python file into to observe the differences. I then manually made changes to each file. I did not want to use an automatica linter to avoid breaking any of my Django
+
+### CSS
+
+I used [a CSS linter](csslint.net) to check my CSS file. It gave me 6 warnings for the !important tag in my CSS. However, I decided to keep these in because the custom CSS would not appear without them. I believe this is because my Bootstrap is served from a CDN. Installing Bootstrap to the static folder in Cloudinary appendsa random string to each file. Even when this is removed, the Bootstrap files are still broken. This prevented me from using SASS customisation.
 
   <summary> CSS Lint warnings and no issues</summary>
     <IMG src="templates/assets/images/readme/readme-lint-css.png"  alt="CSS Lint warnings and no issues"/>
@@ -360,39 +462,6 @@ I used a variety of resources to help me understand the new elements that PP4 of
 - [Fix search filtering when category etc. is null](https://www.w3schools.com/python/ref_string_isdigit.asp)
 - [Python Linter](https://www.tutorialspoint.com/online_python_formatter.htm)
  
-
-
-
-### Porting User Stories over from old project 
-
-
-Rewriting user stories over from old project
-
-As a <role>
-I can <capability>
-So that <received benefit>
-
-In order to <receive benefit>
-as a <role>
-I can <goal/desire>
-
-Example:
-"As a warehouse employee
-I can choose the size of paper to print on 
-To make a label that matches the size of a parcel"
-
-"In order to check out multiple items
-As a user
-I can add multiple items to cart"
-
-Each user story needs a card, conversation and a confirmation.
-
-Card : The user story that fits on a post-it note, as the example above
-Conversation : The discussion around the needs of the user story. In the above example, "What paper sizes should be included? What information should be included in the print-out?"
-Confirmation : Confirm the understanding and acceptance criteria
-
-
-Sources: 
 
 
 
