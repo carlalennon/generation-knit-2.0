@@ -7,22 +7,14 @@ from upload_validator import FileTypeValidator
 # Pattern view ERD 
 #  ____________________
 # |Name of Pattern_____|    X  
-# |Image(s)____________|    - ImageField?
-# |Pattern PDF_________|    Look into FieldFIle
+# |Image_______________|    x
+# |Pattern PDF_________|    X
 # |Pattern notes_______|    X 
 # |Published by User___| F  X
 # |Date published _____|    X
 # |Category of Pattern_|    x
 # |Yarn Weight_________|    x
-# |Gauge_______________|    -
 # |Needle size_________|    X
-# |Yardage_____________|    -
-# |Suggested Wool______|    -
-# |Pattern sizes_______|    -
-# |Tags________________|    -
-
-
-
 
 
 class Pattern(models.Model):
