@@ -196,6 +196,9 @@ I used a small amount of custom CSS to style certain aspects of my project. To s
 
 Manual testing was carried out on User Stories: 
 
+<details>
+  <summary> Manual Testing Table </summary>
+
 | User Story                      | Acceptance Criteria                                                                | Action                                                                                                  | Result                                                                                                                                    |      |
 |---------------------------------|------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|------|
 | Upload a Pattern                | Users can upload a pattern when logged in                                          | Upload a pattern to the site when logged in                                                             | I can upload a pattern to Generation Knit                                                                                                 | Pass |
@@ -237,6 +240,11 @@ Manual testing was carried out on User Stories:
 |                                 | User is assigned a temporary user icon on registration                             | Check that new profile has temp icon assigned                                                           | New user has temp icon assigned                                                                                                           | Pass |
 |                                 | User is assigned a Profile object on registration                                  | Go to profile page on creation of new user                                                              | There is a new profile page for my new user                                                                                               | Pass |
 |                                 | Profile edit and delete buttons only appear on a user's own page                   | Log out and check user profile page                                                                     | Buttons only appear on profile page when user is logged in and it's their own profile                                                     | Pass |
+| User Story: Deploy to Heroku    | Configure variables in Heroku to the necessary values for my project               | Add in the appropriate variable in Heroku                                                               | Added in necessary variables                                                                                                              | Pass |
+|                                 | Create Procfile and configure settings.py to work with Heroku                      | Create the procfile in the project                                                                      | Created the procfile and configured for launch                                                                                            | Pass |
+|                                 | Successfully deploy to Heroku                                                      | Deploy the project to Heroku from branch                                                                | Deployed the project from branch main                                                                                                     | Pass |
+|                                 | Test final build before submission                                                 | Check all pages on Heroku build before submission                                                       | Checked all pages on Heroku branch                                                                                                        | Pass |
+</details>
 ## Deployment
 
 
