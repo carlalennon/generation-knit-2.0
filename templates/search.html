@@ -159,7 +159,7 @@ Search
         </div>
         {% endfor %}
     </div>
-    {% if p %}
+    {% if p in object_list %}
     <div class="pagination card">
         <span class="step-links">
             {% if page_obj.has_previous %}
