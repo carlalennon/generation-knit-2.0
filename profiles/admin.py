@@ -7,5 +7,5 @@ class ProfileAdmin(SummernoteModelAdmin):
 
     list_display = ('user', )
     search_fields = ['user']
-    summernote_fields = ('content',)
-# Register your models here.
+    summernote_fields = ('content', )
+
