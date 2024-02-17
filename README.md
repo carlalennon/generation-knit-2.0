@@ -54,6 +54,7 @@ I created many wireframes for this project, some just to get the look of the sit
 
 I endevoured to create a site that adhered to UX principles. Information is neatly stored and displayed upon request. The website is laid out in a way that is easy to use. 
 
+I created hand-drawn logo and icons for the nav bar, to create some personality for the site 
 
 ## Accessibilty Focus
 
@@ -103,7 +104,11 @@ My user stories are as follows:
 
 This can be viewed in closer detail in the [issues section of this project](https://github.com/carlalennon/generation-knit-2.0/issues).
 
-![USer stories on Kanban board](templates/assets/images/readme/readme-user-stories.png)
+  <details>
+    <summary> User stories on Kanban board</summary>
+    <IMG src="templates/assets/images/readme/readme-user-stories.png"  alt="User stories on Kanban board"/>
+    </details>
+
 
 ## Wireframes
 
@@ -178,8 +183,11 @@ This can be viewed in closer detail in the [issues section of this project](http
 ## Data Modelling Relationships
 
 I mapped out the relationships between my data models and used these to build my models. I have added a diagram below.
-
-![ERD diagram](templates/assets/images/readme/readme-entity-relationship-database.png)
+ 
+  <details>
+  <summary> ERD diagram</summary>
+    <IMG src="templates/assets/images/readme/readme-entity-relationship-database.png"  alt="ERD diagram"/>
+    </details>
 
 
 ## Structure
@@ -295,7 +303,7 @@ Manual testing was carried out on User Stories:
 |                                 | Test final build before submission                                                 | Check all pages on Heroku build before submission                                                       | Checked all pages on Heroku branch                                                                                                        | Pass |
 </details>
 
-### Network Testing
+### Performance Testing
 
 Network testing was done using Chrome devtools. My image loading is very slow, in the future I will look into why this is and how to correct it. 
 
@@ -313,8 +321,21 @@ Along with a similar error from PageSpeed Insights.
 
 ![PageSpeed Insights error](templates/assets/images/readme/readme-network-pagespeedinsights.png)
 
+I am using sorl thumbnail for image resizing, but results are still slow. Here's an example of a typical server response:
+
+![Server response of 10 seconds](templates/assets/images/readme/readme-network-server-timing.png)
 
 In the future, I would run more tests to see why my site is so slow. 
+
+  <summary> Lighthouse test for search page </summary>
+    <IMG src="templates/assets/images/readme/readme-lighthouse-search.png"  alt="Lighthouse test for search page"/>
+    </details>
+
+
+  <summary> Lighthouse test for pattern page </summary>
+    <IMG src="templates/assets/images/readme/readme-lighthouse-pattern-page.png"  alt="Lighthouse test for pattern page"/>
+    </details>
+
 
 ### Linting 
 
@@ -375,7 +396,7 @@ In the future I would like to add further layout changes to
 
 This is discussed more in the known issues section
 
-### Performance Testing 
+
 
 
 
