@@ -16,7 +16,7 @@ Generation Knit
             </h3>
         </div>
         <a href="{% url 'feed:detail' pattern.id %}">
-            {% thumbnail pattern.image "500x500" crop="center" as im %}
+            {% thumbnail pattern.image "400x400" crop="center" as im %}
             <img src="{{ im.url }}" class="img-fluid" alt="pattern preview">
             {% endthumbnail %}
 
@@ -28,8 +28,7 @@ Generation Knit
                     class="text-decoration-none link-secondary">
                     <b>{{ pattern.author }}</b>
                     {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
-                    <img src="{{ im.url }}" width="{{ im.width }}"
-                        height="{{ im.height }}"
+                    <img src="{{ im.url }}"
                         alt="user icon">
                     {% endthumbnail %}
                 </a>
