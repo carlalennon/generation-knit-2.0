@@ -143,6 +143,7 @@ This can be viewed in closer detail in the [issues section of this project](http
 
 - Add multiple image uploads to patterns
 - Add Cloudinary upload widget to forms for ease of use for user
+- Give user the option to change a pdf to an external link or vice versa after pattern is posted
 ## Design 
 ### Colours 
 Anything over 7 is very accesible 
@@ -228,6 +229,7 @@ Some common errors:
 
 - The summernote widget does not respond to screen size in the edit pattern and profile pages
 - User cannot upload more than one image for a pattern 
+- Users cannot add a link from the pattern edit screen if they chose a PDF on creation of the pattern entry, and vice versa
 
 ## Citations 
 
