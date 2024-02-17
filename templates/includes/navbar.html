@@ -1,5 +1,6 @@
 {% load thumbnail %}
 {% load static %}
+{% load cloudinary %}
 
 <!-- Style navbar to same colour as BG so screen readers can see it but leaves a seamless look for sighted users-->
 <nav class="navbar" style="background-color: #ced4da;">
@@ -98,8 +99,9 @@
         <a class="navbar-brand" href="{% url 'feed:feed' %}">
             <!-- Large screen brand  -->
             <img class="img-fluid d-none d-sm-block"
-                src="https://res.cloudinary.com/duekocfq6/image/upload/v1708004906/static/logo-lg_idyzwe.png"
-                alt="Generation Knit" width="300" height="60">
+            src="https://res.cloudinary.com/duekocfq6/image/upload/v1708004906/static/logo-lg_idyzwe.png"
+            alt="Generation Knit" width="300" height="60">
+                
             <!-- Small screen brand  -->
             <img class="img-fluid d-sm-none"
                 src="https://res.cloudinary.com/duekocfq6/image/upload/v1708008204/static/logo-sm_zomalv.png"
