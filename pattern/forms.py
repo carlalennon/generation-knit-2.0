@@ -16,8 +16,10 @@ class PostPattern(forms.ModelForm):
         )]
     )
     link_pattern = forms.CharField(required=False)
-        
+    category = forms.ChoiceField(choices=Pattern.CATEGORY, required=True)
+    weight = forms.ChoiceField(choices=Pattern.WEIGHT, required=True)
+    needle = forms.ChoiceField(choices=Pattern.NEEDLE, required=True)
 
     class Meta:
         model = Pattern
-        fields = ['title', 'image', 'content', 'pattern_pdf', 'link_pattern']
+        fields = ['title', 'image', 'content', 'pattern_pdf', 'link_pattern', 'category', 'weight', 'needle']
