@@ -20,7 +20,7 @@ from django.conf.urls import include
 from django.conf.urls.static import static
 from django.urls import path, include, re_path
 
-
+# App URLS
 from feed import urls as feed_urls
 from pattern import urls as pattern_urls
 from profiles import urls as profile_urls
@@ -34,7 +34,7 @@ urlpatterns = [
     path("accounts/", include("allauth.urls"), name='accounts'),
     path('search/', include('search.urls'), name='search'),
     re_path('', include("allauth.urls"))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
