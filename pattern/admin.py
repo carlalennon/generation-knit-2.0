@@ -8,4 +8,3 @@ class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', )
     search_fields = ['title']
     summernote_fields = ('content',)
-# Register your models here.
