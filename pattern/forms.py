@@ -10,7 +10,7 @@ class PostPattern(forms.ModelForm):
     image = forms.FileField(required=False)
     content = forms.CharField(widget=SummernoteWidget)
     # User can only upload PDFs to this field
-    pattern_pdf = forms.FileField(
+    pdf = forms.FileField(
         label='pdf', help_text="Please upload a .pdf file", required=False,
         validators=[FileTypeValidator(
             allowed_types=['application/pdf'],
@@ -24,4 +24,4 @@ class PostPattern(forms.ModelForm):
 
     class Meta:
         model = Pattern
-        fields = ['title', 'image', 'content', 'pattern_pdf', 'link_pattern', 'category', 'weight', 'needle']
+        fields = ['title', 'image', 'content', 'pdf', 'link_pattern', 'category', 'weight', 'needle']
