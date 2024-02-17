@@ -15,7 +15,9 @@ class PostPattern(forms.ModelForm):
             allowed_extensions=[ '.pdf']
         )]
     )
+    link_pattern = forms.CharField(required=False)
+        
 
     class Meta:
         model = Pattern
-        fields = ['title', 'image', 'content', 'pattern_pdf']
+        fields = ['title', 'image', 'content', 'pattern_pdf', 'link_pattern']
