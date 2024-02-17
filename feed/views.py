@@ -2,8 +2,7 @@ from django.views.generic import TemplateView, DetailView, FormView, ListView
 from pattern.models import Pattern
 from django.contrib import messages
 
-# Create your views here.
-
+# List newest posts to generation knit in newest order
 class HomePageView(ListView):
     template_name = 'home.html'
     model = Pattern
@@ -14,10 +13,12 @@ class HomePageView(ListView):
         return Pattern.objects.all().order_by('-id')
 
 
+# Detailed view of pattern with all details
 class PatternDetailView(DetailView):
     template_name = "pattern_detail.html"
     model = Pattern
 
+    # Allow user to edit a pattern
     def EditPattern(request):
         user = user.username
         pattern = pattern.author.username
