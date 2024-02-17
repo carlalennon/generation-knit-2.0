@@ -49,16 +49,3 @@ def delete_profile(request, username):
     messages.add_message(request, messages.SUCCESS, "Your profile was deleted.")
     return redirect('feed:feed')
 
-### Returns a list of patterns authored by the user 
-"""
-class ProfilePatterns(ListView):
-    template_name = 'profile.html'
-    model = Pattern
-    context_object_name = 'patterns'
-    paginate_by = 2  # Display 2 posts per page
-
-    def get_queryset(self):
-        user = get_object_or_404(User, username=self.kwargs['username'])
-        return Pattern.objects.filter(author=user).order_by('-id')
-
-        """

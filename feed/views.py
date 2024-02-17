@@ -8,11 +8,11 @@ class HomePageView(ListView):
     template_name = 'home.html'
     model = Pattern
     context_object_name = 'patterns'
-    paginate_by = 2  # Display 2 posts per page
+    paginate_by = 5  # Display 2 posts per page
 
     def get_queryset(self):
         return Pattern.objects.all().order_by('-id')
-        
+
 
 class PatternDetailView(DetailView):
     template_name = "pattern_detail.html"
