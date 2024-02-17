@@ -13,7 +13,7 @@ from django.contrib import messages
 class PatternView(generic.ListView):
     queryset = Pattern.objects.all()
     template_name = "pattern/index.html"
-    paginate_by = 3
+    paginate_by = 4
 
     def get_queryset(self):
         return Pattern.objects.filter(author=self.request.user.username)
