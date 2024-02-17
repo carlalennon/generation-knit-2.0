@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.contrib import messages
 
-# Create your views here.
+
 class PatternView(generic.ListView):
     queryset = Pattern.objects.all()
     template_name = "pattern/index.html"
@@ -18,10 +18,12 @@ class PatternView(generic.ListView):
     def get_queryset(self):
         return Pattern.objects.filter(author=self.request.user.username)
 
+# Allow user to upload pattern
 class UploadPatternView(LoginRequiredMixin, CreateView):
     model = Pattern
     template_name = 'new_pattern.html'
     form_class = PostPattern
+    # Send user back to feed to see their pattern at the top 
     success_url = '/'
 
     def dispatch(self, request, *args, **kwargs):
@@ -34,6 +36,7 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
         obj.save()
         return super().form_valid(form)
 
+# Allow user to edit a pattern
 def edit_pattern(request, pattern_id):
     pattern = get_object_or_404(Pattern, id=pattern_id)
     if request.method == 'POST':
@@ -46,7 +49,7 @@ def edit_pattern(request, pattern_id):
         form = PostPattern(instance=pattern)
     return render(request, 'edit_pattern.html', {'form': form})
 
-
+# Allow user to delete a pattern 
 def delete_pattern(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
     pattern.delete()
