@@ -194,6 +194,8 @@ I used a small amount of custom CSS to style certain aspects of my project. To s
 
 ## Testing and Validation
 
+### Manual Testing 
+
 Manual testing was carried out on User Stories: 
 
 <details>
@@ -245,6 +247,26 @@ Manual testing was carried out on User Stories:
 |                                 | Successfully deploy to Heroku                                                      | Deploy the project to Heroku from branch                                                                | Deployed the project from branch main                                                                                                     | Pass |
 |                                 | Test final build before submission                                                 | Check all pages on Heroku build before submission                                                       | Checked all pages on Heroku branch                                                                                                        | Pass |
 </details>
+
+### Responsive Design 
+
+Responsiveness testing was carried out using Chrome Devtools. Special care was given to the pages that undergo large layout changes between large and small screens. These are 
+
+- Search Page 
+- Profile page
+
+In the future I would like to add further layout changes to 
+
+- Add pattern form
+- Edit pattern form
+- Edit profile form
+- Login/Sign Up page
+- Pattern detail page
+
+This is discussed more in the known issues section
+
+
+
 ## Deployment
 
 
@@ -300,42 +322,43 @@ I used ![a CSS linter](csslint.net) to check my CSS file. It gave me 6 warnings 
 
 - The summernote widget does not respond to screen size in the edit pattern and profile pages
 - User cannot upload more than one image for a pattern 
-- Users cannot add a link from the pattern edit screen if they chose a PDF on creation of the pattern entry, and vice versa
+- The sign up page is not styled nicely 
+
 
 ## Citations 
 
 I used a variety of resources to help me understand the new elements that PP4 offers. Of note was the skillshare course by Kalob Taulien. After finishing the LMS, it was extremely beneficial to watch someone put an app together in Django. He explains very clearly what was happening on screen and why. I also spent a lot of time in the boostrap and django docs.
 
-![]()
-- ![Skillshare course](https://skl.sh/3OMfffl)
-- ![Cloudinary Django resources](https://cloudinary.com/blog/managing-media-files-in-django)
-- ![Allauth docs](https://docs.allauth.org/en/latest/)
-- ![Using re_path since URLS is deprecated](https://docs.djangoproject.com/en/4.0/ref/urls/)
-- ![Adding summernote to forms](https://ctrlzblog.com/how-to-add-a-text-editor-to-a-django-blog-with-summernote/)
-- ![Bootstrapping a django form](https://ngangasn.com/how-to-use-bootstrap-5-with-django-the-right-way/)
-- ![Creating the models](https://docs.djangoproject.com/en/5.0/topics/db/models/)
-- ![Multiple file handling for pattern uploads](https://docs.djangoproject.com/en/5.0/topics/http/file-uploads/)
-- ![More multiple file handling](https://qasimalbaqali.medium.com/upload-multiple-images-to-a-post-in-django-ff10f66e8f7as)
-- ![Cloudinary upload widget](https://cloudinary.com/documentation/upload_widget)
-- ![Classy class based views resource ](https://ccbv.co.uk/projects/Django/5.0/django.views.generic.edit/FormView/)
-- ![Sorl thumbnail docs ](https://sorl-thumbnail.readthedocs.io/en/latest/)
-- ![Deleting a post](https://tutorial-extensions.djangogirls.org/en/homework/)
-- ![Adding messages to edit/delete post ](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)
-- ![Create search function](https://learndjango.com/tutorials/django-search-tutorial)
-- ![Classy Class Based Views](https://ccbv.co.uk/)
-- ![Getting posts by user](https://docs.djangoproject.com/en/5.0/topics/db/queries/)
-- ![Filtering a user's posts for their profile](https://medium.com/@abdelrahman.hassan.hamdy/leveraging-custom-filters-in-django-for-effective-data-rendering-b3efdb04ae64)
-- ![Pagination help ](https://docs.djangoproject.com/en/5.0/topics/pagination/)
-- ![File validation for pattern PDFs ](https://pypi.org/project/django-upload-validator/#:~:text=Django%20Upload%20Validator%20is%20a,extensions%20using%20python%2Dmagic%20library.)
-- ![Cloudinary delivery PDF fail ](https://support.cloudinary.com/hc/en-us/articles/360016480179-PDF-or-ZIP-files-appearing-in-Media-Library-but-download-URLs-return-an-error)
-- ![Making a field optional in the upload form](https://subscription.packtpub.com/book/web-development/9781787281141/5/ch05lvl1sec34/making-fields-optional)
-- ![MIME types for documents](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)
-- ![Accessbile colour schemes](https://venngage.com/blog/accessible-colors/)
-- ![Accessible colour palette generator ](https://venngage.com/tools/accessible-color-palette-generator)
-- ![Bootstrap Overrides](https://blog.hubspot.com/website/how-to-override-bootstrap-css)
-- ![Django widget tweaks ](https://github.com/jazzband/django-widget-tweaks)
-- ![Fix search filtering when category etc. is null](https://www.w3schools.com/python/ref_string_isdigit.asp)
-- ![Python Linter](https://www.tutorialspoint.com/online_python_formatter.htm)
+
+- [Skillshare course](https://skl.sh/3OMfffl)
+- [Cloudinary Django resources](https://cloudinary.com/blog/managing-media-files-in-django)
+- [Allauth docs](https://docs.allauth.org/en/latest/)
+- [Using re_path since URLS is deprecated](https://docs.djangoproject.com/en/4.0/ref/urls/)
+- [Adding summernote to forms](https://ctrlzblog.com/how-to-add-a-text-editor-to-a-django-blog-with-summernote/)
+- [Bootstrapping a django form](https://ngangasn.com/how-to-use-bootstrap-5-with-django-the-right-way/)
+- [Creating the models](https://docs.djangoproject.com/en/5.0/topics/db/models/)
+- [Multiple file handling for pattern uploads](https://docs.djangoproject.com/en/5.0/topics/http/file-uploads/)
+- [More multiple file handling](https://qasimalbaqali.medium.com/upload-multiple-images-to-a-post-in-django-ff10f66e8f7as)
+- [Cloudinary upload widget](https://cloudinary.com/documentation/upload_widget)
+- [Classy class based views resource ](https://ccbv.co.uk/projects/Django/5.0/django.views.generic.edit/FormView/)
+- [Sorl thumbnail docs ](https://sorl-thumbnail.readthedocs.io/en/latest/)
+- [Deleting a post](https://tutorial-extensions.djangogirls.org/en/homework/)
+- [Adding messages to edit/delete post ](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)
+- [Create search function](https://learndjango.com/tutorials/django-search-tutorial)
+- [Classy Class Based Views](https://ccbv.co.uk/)
+- [Getting posts by user](https://docs.djangoproject.com/en/5.0/topics/db/queries/)
+- [Filtering a user's posts for their profile](https://medium.com/@abdelrahman.hassan.hamdy/leveraging-custom-filters-in-django-for-effective-data-rendering-b3efdb04ae64)
+- [Pagination help ](https://docs.djangoproject.com/en/5.0/topics/pagination/)
+- [File validation for pattern PDFs ](https://pypi.org/project/django-upload-validator/#:~:text=Django%20Upload%20Validator%20is%20a,extensions%20using%20python%2Dmagic%20library.)
+- [Cloudinary delivery PDF fail ](https://support.cloudinary.com/hc/en-us/articles/360016480179-PDF-or-ZIP-files-appearing-in-Media-Library-but-download-URLs-return-an-error)
+- [Making a field optional in the upload form](https://subscription.packtpub.com/book/web-development/9781787281141/5/ch05lvl1sec34/making-fields-optional)
+- [MIME types for documents](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)
+- [Accessbile colour schemes](https://venngage.com/blog/accessible-colors/)
+- [Accessible colour palette generator ](https://venngage.com/tools/accessible-color-palette-generator)
+- [Bootstrap Overrides](https://blog.hubspot.com/website/how-to-override-bootstrap-css)
+- [Django widget tweaks ](https://github.com/jazzband/django-widget-tweaks)
+- [Fix search filtering when category etc. is null](https://www.w3schools.com/python/ref_string_isdigit.asp)
+- [Python Linter](https://www.tutorialspoint.com/online_python_formatter.htm)
  
 
 
