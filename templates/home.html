@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load thumbnail %}
+{% load cloudinary %}
 
 {% block title %}
 Generation Knit
@@ -16,9 +16,7 @@ Generation Knit
             </h3>
         </div>
         <a href="{% url 'feed:detail' pattern.id %}">
-            {% thumbnail pattern.image "400x400" crop="center" as im %}
-            <img src="{{ im.url }}" class="img-fluid" alt="pattern preview">
-            {% endthumbnail %}
+            <img src="{% cloudinary_url pattern.image.url format="auto" quality="auto" width=400 height=400 crop="scale" %}" class="img-fluid" alt="pattern preview">
         </a> 
         <div class="card-body">
             <p class="card-text float-end">
@@ -26,11 +24,7 @@ Generation Knit
                 <a href="{% url 'profiles:profile' pattern.author.username %}"
                     class="text-decoration-none link-secondary">
                     <b>{{ pattern.author }}</b>
-                    {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
-                    <img src="{{ im.url }}"
-                        alt="user icon">
-                    {% endthumbnail %}
-                </a>
+                    <img src="{% cloudinary_url pattern.author.profile.image.url format="auto" quality="auto" width=50 height=50 crop="fill" gravity="center" %}" alt="user icon" class="img-thumbnail thumbnail-50px">                </a>
             </p>
         </div>
     </div>
