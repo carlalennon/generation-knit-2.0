@@ -342,6 +342,8 @@ https://blog.hubspot.com/website/how-to-override-bootstrap-css
 Django widget tweaks 
 https://github.com/jazzband/django-widget-tweaks
 
+Fix search filtering when category etc. is null
+https://www.w3schools.com/python/ref_string_isdigit.asp
 
 
 
