@@ -22,31 +22,32 @@ from upload_validator import FileTypeValidator
 # |Tags________________|    -
 
 
-CATEGORY = (
-    (0, ''), 
-    (1, 'Sweater'), 
-    (2, 'Cardigan'), 
-    (3, 'Skirt'), 
-    (4, 'Pants'), 
-    (5, 'Hat'), 
-    (6, 'Scarf')
-    )
-WEIGHT = (
-    (0, 'Cobweb'), 
-    (1, 'Lace'), 
-    (2, 'Fingering'), 
-    (3, 'DK'), 
-    (4, 'Worsted')
-    )
-NEEDLE = (
-    (0, '1mm'), 
-    (1, '2mm'), 
-    (2, '3mm'), 
-    (3, '4mm')
-    )
+
 
 
 class Pattern(models.Model):
+    CATEGORY = (
+        (0, ''), 
+        (1, 'Sweater'), 
+        (2, 'Cardigan'), 
+        (3, 'Skirt'), 
+        (4, 'Pants'), 
+        (5, 'Hat'), 
+        (6, 'Scarf')
+        )
+    WEIGHT = (
+        (0, 'Cobweb'), 
+        (1, 'Lace'), 
+        (2, 'Fingering'), 
+        (3, 'DK'), 
+        (4, 'Worsted')
+        )
+    NEEDLE = (
+        (0, '1mm'), 
+        (1, '2mm'), 
+        (2, '3mm'), 
+        (3, '4mm')
+        )
     #Pattern title
     title = models.CharField(max_length=200, unique=True)
     #Pattern posted by
