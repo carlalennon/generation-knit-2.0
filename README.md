@@ -132,6 +132,7 @@ This can be viewed in closer detail in the [issues section of this project](http
     <IMG src="templates/assets/images/readme/wireframe-feed-large.png"  alt="large wireframe for home page"/>
     </details>
 
+  <details>
   <summary> Small Wireframe</summary>
     <IMG src="templates/assets/images/readme/wireframe-feed-small.png"  alt="large wireframe for home page"/>
     </details>
