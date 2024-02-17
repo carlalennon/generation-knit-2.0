@@ -113,12 +113,7 @@
             <a class="nav-link"
                 href="{% url 'profiles:profile' user.username %}">
                 {{ request.user.username}}
-                {% thumbnail request.user.profile.image "30x30" crop="center" as im %}
-                <img class="justify-content-end thumbnail"
-                    src="{{ im.url }}" width="{{ im.width }}"
-                    height="{{ im.height}}"
-                    alt="user icon">
-                {% endthumbnail %}
+                <img src="{% cloudinary_url user.profile.image.url format="auto" quality="auto" width=50 height=50 crop="fill" gravity="center" %}" alt="user icon" class="img-thumbnail thumbnail-50px"> 
             </a>
             {% else %}
             <a class="nav-link"
