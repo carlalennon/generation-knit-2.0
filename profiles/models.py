@@ -5,7 +5,6 @@ from django.dispatch import receiver
 from sorl.thumbnail import ImageField
 
 
-
 class Profile(models.Model):
     user = models.OneToOneField(
         User,
@@ -17,7 +16,7 @@ class Profile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
-    """Creates a profile on creation of User, to be customsed"""
+    # Creates a profile on creation of User, to be customsed
     if created:
         Profile.objects.create(user=instance)
     
