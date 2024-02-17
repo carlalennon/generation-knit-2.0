@@ -3,7 +3,6 @@ from pattern.models import Pattern
 from django.views.generic import ListView
 from django.db.models import Q
 
-# Create your views here.
 class SearchView(ListView):
     model = Pattern
     template_name = 'search.html'
@@ -15,13 +14,16 @@ class SearchView(ListView):
         weight = self.request.GET.get('weight')
         paginate_by = 8
 
+        # Is not None means that page will still render when no query is entered 
         if query is not None:
             patterns = Pattern.objects.filter(
+                # Searches title, author and content body for a match
                 Q(title__icontains=query) | Q(author__username__icontains=query) | Q(content__icontains=query)
             )
         else:
             patterns = Pattern.objects.none()
 
+        # Pattern filters
         if needle is not None and needle.isdigit():
             patterns = patterns.filter(needle=int(needle))
 
