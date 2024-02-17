@@ -22,13 +22,13 @@ class SearchView(ListView):
         else:
             patterns = Pattern.objects.none()
 
-        if needle_size:
+        if needle_size!= 'none':
             patterns = patterns.filter(needle_size=needle_size)
 
-        if category:
+        if category != 'none':
             patterns = patterns.filter(category=category)
 
-        if weight:
+        if weight != 'none':
             patterns = patterns.filter(weight=weight)
 
         return patterns
