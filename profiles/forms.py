@@ -3,6 +3,7 @@ from django_summernote.widgets import SummernoteWidget
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Profile
 
+# Allow user to edit their profile
 class EditProfile(forms.ModelForm):
     image = forms.FileField(required=False)
     bio = forms.CharField(widget=SummernoteWidget)
