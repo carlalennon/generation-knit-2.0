@@ -9,7 +9,7 @@ class PostPattern(forms.ModelForm):
     image = forms.FileField(required=False)
     content = forms.CharField(widget=SummernoteWidget)
     pattern_pdf = forms.FileField(
-        label='pattern_pdf', help_text="Please upload a .pdf file", required=False,
+        label='pdf', help_text="Please upload a .pdf file", required=False,
         validators=[FileTypeValidator(
             allowed_types=['application/pdf'],
             allowed_extensions=[ '.pdf']
