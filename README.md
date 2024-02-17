@@ -346,7 +346,8 @@ https://github.com/jazzband/django-widget-tweaks
 Fix search filtering when category etc. is null
 https://www.w3schools.com/python/ref_string_isdigit.asp
 
-
+Python Linter 
+https://pypi.org/project/pylint/
 
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
