@@ -305,6 +305,17 @@ I also did some troubleshooting on slow database queries. While not always slow,
 
 ![Showing slow queries and recommended time of 1ms or less](templates/assets/images/readme/readme-network-postgres.png)
 
+I also tried to use Lighthouse to test what exactly was the issue on the page, but it wouldn't test and only returned this error. 
+
+![Lighthouse error](templates/assets/images/readme/readme-network-lighthouse.png)
+
+Along with a similar error from PageSpeed Insights. 
+
+![PageSpeed Insights error](templates/assets/images/readme/readme-network-pagespeedinsights.png)
+
+
+In the future, I would run more tests to see why my site is so slow. 
+
 ### Linting 
 
 #### HTML
@@ -378,7 +389,6 @@ This is discussed more in the known issues section
     </details>
 
 
-## Linting 
 
 ### HTML
 
