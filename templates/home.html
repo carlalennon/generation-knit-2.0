@@ -9,16 +9,16 @@ Generation Knit
 <div class="container d-flex col col-md-auto flex-column align-items-center">
     {% for pattern in patterns %}
 
-    <div class="card d-flex" style="max-width: 30rem;">
+    <div class="card d-flex flex-column" style="max-width: 30rem;">
         <div class="text-center">
             <h3>
                 {{ pattern.title }}
             </h3>
         </div>
         <a href="{% url 'feed:detail' pattern.id %}">
-            <img src="{% cloudinary_url pattern.image.url format="auto" quality="auto" width=400 height=400 crop="scale" %}" class="img-fluid" alt="pattern preview">
+            <img src="{% cloudinary_url pattern.image.url format="auto" quality="auto" width=400 height=400 crop="fill" gravity="auto" %}" class="img-fluid" alt="pattern preview">
         </a> 
-        <div class="card-body">
+        <div class="card-body flex-grow-1">
             <p class="card-text float-end">
                 by
                 <a href="{% url 'profiles:profile' pattern.author.username %}"
