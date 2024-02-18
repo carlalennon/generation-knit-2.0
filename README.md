@@ -14,32 +14,6 @@ For my fourth portfolio projects, I wanted to create a project that both showcas
 
 Generation Knit serves as a platform to both share and find knitting patterns. The goal was to create a platform that stores the information that comes with a knitting pattern and display it back to the user in an attractive and intuitive. The largest community based knitting website on the internet has long been criticized for its confusing layout and lack of accessibilty for visually impaired users. My website aims to address these issues.
 
-## Contents: 
-
-- What happened to Generation Knit 1.0? 
-- UX Design
-- Accessibilty Focus
-- User Avatar
-- Site Goals
-- Agile Method
-- Wireframes
-- Data Modelling Relationships
-- Structure
-- - Features
-- - Future Features
-- Design 
-- - Colours 
-- - Typography 
-- Languages 
-- - Django 
-- - JavaScript
-- - Bootstrap
-- Deployment
-- Linting 
-- Error Hall of Fame
-- Citations 
-
-
 ## What happened to Generation Knit 1.0? 
 
 I started work on the first version of this project in October 2023. After multiple issues with Codeanywhere, I was advised by Code Institute to start again from scratch on Gitpod. I quickly rebuilt my project as Generation Knit 2.0. The original project can be viewed [here](https://github.com/carlalennon/portfolio-project-4). I started this current project again in January 2024. 
@@ -337,7 +311,6 @@ I used Javascript in combination with Bootstrap to make my website neater and mo
 
 Javascript is not installed in this project, rather it is loaded in using a tag in base.html. The tag is based on the bottom of the page to improve loading times.
 
-![My javascript tag](/workspace/generation-knit-2.0/templates/assets/images/readme/readme-javascript.png)
 
 ### Bootstrap
 
@@ -464,7 +437,8 @@ The site is still slow, I am not happy with the loading times. In the future, I 
 
 I used the W3C schools linter to check my html. It does not like Django tags, so my goal was to solve every error it gave apart from the Django related errors. 
 
-The HTML linter really didn't like Django, and showed a lot of errors in all HTML with Django tags 
+The HTML linter really didn't like Django, and showed a lot of errors in all HTML with Django tags
+
 ![Django errors in W3 HTML checker ](templates/assets/images/readme/readme-lint-django.png)
 
 I used "Validate by Direct Input"
@@ -530,59 +504,12 @@ For deployment I did the following:
  - Viewed app after deployment and checked everything worked
 
 
-## Error Hall of Fame
-
-  <summary> This duplicate id error appeared on pages when there were 2 different HTML sections for small and large screen. I've decided to ignore them as due to the way they styling is done, only one element appears on the screen at a time</summary>
-    <IMG src="templates/assets/images/readme/readme-error-01.png"  alt="duplicate id error"/>
-    </details>
-
-
-
-### HTML
-
-I used the W3C schools linter to check my html. It does not like Django tags, so my goal was to solve every error it gave apart from the Django related errors. 
-
-The HTML linter really didn't like Django, and showed a lot of errors in all HTML with Django tags 
-
-![Django errors in W3 HTML checker ](templates/assets/images/readme/readme-lint-django.png)
-
-I used "Validate by Direct Input"
-
-I worked through errors in my code until only the Django related errors were left. 
-
-Some common errors:
-
-
-  <summary> Button cannot be a child of an "a" tag</summary>
-    <IMG src="templates/assets/images/readme/readme-lint-common-01.png"  alt="Button cannot be a child of an a tag error "/>
-    </details>
-
-  <summary> Image tags require an alt attribute (I had been using "name" as an alt )</summary>
-    <IMG src="templates/assets/images/readme/readme-lint-common-02.png"  alt="Image tags require an alt attribute error"/>
-    </details>
-
-  <summary> Stray tags </summary>
-    <IMG src="templates/assets/images/readme/readme-lint-common-03.png"  alt="Stray tag error"/>
-    </details>
-
-
-### Python
-
-I used an [online Python formatter](https://www.tutorialspoint.com/online_python_formatter.htm) to paste each python file into to observe the differences. I then manually made changes to each file. I did not want to use an automatica linter to avoid breaking any of my Django
-
-### CSS
-
-I used [a CSS linter](csslint.net) to check my CSS file. It gave me 6 warnings for the !important tag in my CSS. However, I decided to keep these in because the custom CSS would not appear without them. I believe this is because my Bootstrap is served from a CDN. Installing Bootstrap to the static folder in Cloudinary appendsa random string to each file. Even when this is removed, the Bootstrap files are still broken. This prevented me from using SASS customisation.
-
-  <summary> CSS Lint warnings and no issues</summary>
-    <IMG src="templates/assets/images/readme/readme-lint-css.png"  alt="CSS Lint warnings and no issues"/>
-    </details>
-
 ## Known Errors 
 
 - The summernote widget does not respond to screen size in the edit pattern and profile pages
 - User cannot upload more than one image for a pattern 
 - The sign up page is not styled nicely 
+- HTML linter doesn't like duplicate ID in pages where 2 separate elements are rendered on different screen sizes, but only 1 of these elements is ever rendered at a time 
 
 
 ## Citations 

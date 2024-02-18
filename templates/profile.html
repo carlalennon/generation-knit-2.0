@@ -60,7 +60,7 @@
                         href="{% url 'profiles:profile' pattern.author.username %}"
                         class="text-decoration-none link-secondary ">
                         {{ pattern.author }}
-                        <img src="{% cloudinary_url pattern.author.profile.image.url format="auto" quality="auto" width=50 height=50 crop="fill" %}" alt="user icon">
+                        <img src="{% cloudinary_url pattern.author.profile.image.url format="auto" quality="auto" width=50 height=50 crop="fill" %}" class="thumbnail-50px" alt="user icon">
                     </a>
                 </div>
             </div>
