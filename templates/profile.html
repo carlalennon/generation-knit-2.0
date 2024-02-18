@@ -85,7 +85,7 @@
                     </h3>
                 </div>
                 <a href="{% url 'feed:detail' pattern.id %}">
-                    <img src="{% cloudinary_url pattern.image.url format="auto" quality="auto" width=300 height=300 crop="fill" %}" class="img-fluid" alt="pattern thumbnail">
+                    <img src="{% cloudinary_url pattern.image.url format="auto" quality="auto" width=300 height=300 crop="fill" %}" class="img-fluid" alt="pattern thumbnail" style="object-fit: cover; height: 300px; width: 300px">
                 </a>
                 <div class="card-body mt-auto">
                     <p class="card-text float-end ">
