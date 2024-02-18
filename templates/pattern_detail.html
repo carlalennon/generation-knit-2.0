@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% load thumbnail %}
+{% load cloudinary %}
 {% block title %}{{ pattern.title}} by {{pattern.author.username}}{% endblock %}
 
 {% block body %}
 <div class="container-fluid d-flex justify-content-center">
     <div class="card" style="width: 18rem; border: 5px solid white;">
-        <img src="{{ object.image.url }}" style="width: 100%; height: auto;"
-            alt="pattern image">
+        <img src="{% cloudinary_url object.image.url format="auto" quality="auto" width=50 height=50 crop="fill" gravity="center" %}" 
+        alt="pattern image"
+        style="width: 100%; height: auto;"> 
     </div>
 </div>
 
@@ -93,11 +95,9 @@
                     <a
                         href="{% url 'profiles:profile' pattern.author.username %}">
                         <div class="container">
-                            {% thumbnail pattern.author.profile.image "50x50" crop="center" as im %}
-                            <img class="img-thumbnail float-end"
-                                src="{{ im.url }}" width="{{ im.width }}"
-                                height="{{ im.height }}" alt="user icon">
-                            {% endthumbnail %}
+                            <img src="{% cloudinary_url user.profile.image.url format="auto" quality="auto" width=50 height=50 crop="fill" gravity="center" %}" 
+                            alt="user icon" 
+                            class="img-thumbnail thumbnail-50px float-end"> 
                             <h4 class="align-middle p-2">
                                 {{ pattern.author.username }}
                             </h4>
