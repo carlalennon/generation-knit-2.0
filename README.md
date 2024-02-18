@@ -215,6 +215,7 @@ Upon signing up, users are given a profile. They can customise their bio and pic
 - Allow users to add custom alt text to images they upload
 - Add Google Maps integration to allow users to find local yarn store
 - Create a Javascript tool that allows users to chart a pattern and download the result as an image
+- Add more pattern category options, more needle and yarn sizes
 
 
 ## Design
