@@ -343,11 +343,15 @@ Javascript is not installed in this project, rather it is loaded in using a tag 
 
 I used Bootstrap to design the HTML of my website. 
 
-Bootstrap is a 
+Bootstrap is a front-end development framework available for free on the web. While I am not a Bootstrap expert, I endeavoured to use it to create a pleasant frontend experience and neat HTML.
 
 ### CSS 
 
-I used a small amount of custom CSS to style certain aspects of my project. To serve the CSS, each change to custom.css had to be made in VS Code on my PC, saved, uploaded to Cloudinary and refreshed on prder to show changes.
+I used a small amount of custom CSS to style certain aspects of my project. To serve the CSS, each change to custom.css had to be made in VS Code on my PC, saved, uploaded to Cloudinary and refreshed on order to show changes.
+
+### Python 
+
+I used Python to build my views and models. I checked the python was formatted correctly in a Python linter, and adhered to this. The exception is segments where the line length is too long. These are left in as in case this results in broken code.
 
 ## Testing and Validation
 
@@ -513,11 +517,17 @@ In the future I would like to add further layout changes to
 
 This is discussed more in the known issues section
 
-
-
-
-
 ## Deployment
+
+For deployment I did the following:
+ - Created a Heroku account following the steps in the LMS
+ - Created a new Heroku app, paying attention to region (EU) 
+ - Went to "Config Vars" in settings
+ - - Added vars for Cloudinary and ElephantSQL, disabled collect static, added a PORT for 8000
+ - - Added the secret key for my Django app
+ - Collected the static files for my app
+ - In Deploy, deployed from the main branch of my Github repo
+ - Viewed app after deployment and checked everything worked
 
 
 ## Error Hall of Fame
