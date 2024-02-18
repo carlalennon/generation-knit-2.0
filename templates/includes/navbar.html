@@ -109,9 +109,9 @@
         </a>
         <!-- Show user information in top right -->
         {% if request.user.is_authenticated %}
-        <div class="float-end justify-content-end" id="user-information">
-            <a class="nav-link"
-                href="{% url 'profiles:profile' user.username %}">
+        <div class="float-end justify-content-end rounded" id="user-information" style="background-color: #A8A8A8; padding-left: 10px;">
+            <a class="nav-link">
+                <href="{% url 'profiles:profile' user.username %}">
                 {{ request.user.username}}
                 <img src="{% cloudinary_url user.profile.image.url format="auto" quality="auto" width=50 height=50 crop="fill" gravity="center" %}" alt="user icon" class="img-thumbnail thumbnail-50px"> 
             </a>

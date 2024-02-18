@@ -9,7 +9,7 @@ Search
 <!-- Small screen styling -->
 <div class="d-sm-none">
     <form action="{% url 'search:search' %}" method="GET">
-        <div class="mb-3 ">
+        <div class="mb-3">
             <input name="p" type="text" class="form-control mb-3"
                 placeholder='Search' aria-label="Search bar"
                 aria-describedby="search-bar">
@@ -51,7 +51,7 @@ Search
 <!-- Large screen styling -->
 <div class="d-none d-sm-block row">
     <form action="{% url 'search:search' %}" method="GET" class="row">
-        <div class="col mb-3">
+        <div class="col mb-3 ml-3">
             <input name="p" type="text" class="form-control mb-3"
                 placeholder='Search' aria-label="Search bar"
                 aria-describedby="search-bar">
