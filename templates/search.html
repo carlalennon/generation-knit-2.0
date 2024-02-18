@@ -7,7 +7,7 @@ Search
 {% endblock %}
 {% block body %}
 <!-- Small screen styling -->
-<div class="d-sm-none">
+<div class="d-sm-none" style="background-color: #A8A8A8; border: 5px solid #A8A8A8;">
     <form action="{% url 'search:search' %}" method="GET">
         <div class="mb-3">
             <input name="p" type="text" class="form-control mb-3"
@@ -49,9 +49,9 @@ Search
 </div>
 
 <!-- Large screen styling -->
-<div class="d-none d-sm-block row">
-    <form action="{% url 'search:search' %}" method="GET" class="row">
-        <div class="col mb-3 ml-3">
+<div class="d-none d-sm-block row rounded" style="background-color: #A8A8A8; border: 5px solid #A8A8A8;">
+    <form action="{% url 'search:search' %}" method="GET" class="row mt-3">
+        <div class="col p-0">
             <input name="p" type="text" class="form-control mb-3"
                 placeholder='Search' aria-label="Search bar"
                 aria-describedby="search-bar">
@@ -86,14 +86,13 @@ Search
             </select>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-1 offset-md-1">
+    <div style="background-color: #A8A8A8; border: 5px solid #A8A8A8;">
+        <div class="col-md-1 offset-md-1 mb-3" style="width: 30%;">
             <button class='btn btn-dark d-none d-sm-block' type='submit' id='search'
-                aria-label="Go">Go</button>
+                aria-label="Go">Search for Patterns</button>
         </div>
     </form>
 </div>
-<hr>
 
 <div class="container">
     <!-- Large Screen Layout -->
