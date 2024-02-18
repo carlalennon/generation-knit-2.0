@@ -297,21 +297,24 @@ To stop the grey site becoming too stale, I designed a set of hand-drawn assets 
   <summary> Small Generation Knit Icon</summary>
     <IMG src="templates/assets/images/readme/logo-sm.png"  alt="Small Generation Knit Icon"/>
     </details>
+    
+  <details>
+  <summary> New User Automatic Icon</summary>
+    <IMG src="templates/assets/images/readme/new-user.png"  alt="Waving new user"/>
+    </details>
 
 
 
 ### Colours 
-Anything over 7 is very accesible 
-My accessible colours:
 
-#F9F4BA  18.68:1
-#F6EE9A  17.61:1
-#f0e332  15.74:1
-#d9c626  12.06:1
-#c2a91a  8.98:1
+I chose a colour scheme that is accessible to visually impaired users, and that lets the patterns pop on their own without interference from a bright background colour.
 
+I chose colours with a contrast ratio of 7 or above to keep my site accessible to the visually impaired.
 
 ### Typography 
+
+The font used in the Generation Knit logo is "Chantal" from the Adobe Font selection. However, I bypassed loading the extra font into the site by creating the logo and exporting it as a PNG file in Photoshop.
+
 
 ## Languages
 
