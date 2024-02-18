@@ -1,5 +1,7 @@
 # Generation Knit 
 
+![Generation Knit home page](templates/assets/images/readme/readme-features-home-page.png)
+
 ## Overview
 
 Generation Knit is a pattern charing website, built to address the need for a modern, responsive and accesbile website in the online knitting space. It provides a space for users to upload and share pattterns for knitting and crochet 
@@ -192,15 +194,112 @@ I mapped out the relationships between my data models and used these to build my
 
 ## Structure
 
-My project is structured with gknit as the main app and feed, pattern, profiles, and search as installed apps. 
 ### Features
+
+#### Home Feed 
+
+Users have access to a home feed that shows all patterns currently uploaded to Generation Knit. This allows for organic discovery of new patterns 
+
+![Home page](templates/assets/images/readme/readme-features-home-page.png)
+
+#### Nav Bar
+
+To keep the layout as clean as possible, the site utilises a nav bar that pops in from the side. The bar is decorated with hand drawn icons to give the site some identity.
+
+![Nav Bar](templates/assets/images/readme/readme-features-menu.png) 
+
+#### Pattern Detail Page
+
+Each pattern has a detail page where details about the pattern are neatly stored. They are available to access under the collapsing tabs. From this page, the user can also follow a link to the pattern source, or download a link of the pattern'd PDF file.
+
+![Detail page](templates/assets/images/readme/readme-features-pattern-detail.png)
+
+#### Search
+
+Users can search for patterns using either a key word or a filter of the pattern's categorys.
+
+![Search page](templates/assets/images/readme/readme-features-search.png)
+
+#### Upload a Pattern
+
+If a user has an account, they can upload their pattern to the website to share it with the world. The user has a choice of uploading a PDF directly or linking to a shop page if their pattern is available for sale on another site, such as Etsy or Ravelry.
+
+![Upload a pattern](templates/assets/images/readme/readme-features-upload-pattern.png)
+
+#### Profile
+
+Upon signing up, users are given a profile. They can customise their bio and picture to share something about themselves. The profile page also displays the amount of patterns uploaded by a user. It displays a list of patterns created by the user at the bottom of the page.
+
+![User profile](templates/assets/images/readme/readme-features-profile.png)
+
+
 ###  Future Features
 
 - Add multiple image uploads to patterns
 - Add Cloudinary upload widget to forms for ease of use for user
 - Give user the option to change a pdf to an external link or vice versa after pattern is posted
 - Allow users to add custom alt text to images they upload
-## Design 
+- Add Google Maps integration to allow users to find local yarn store
+- Create a Javascript tool that allows users to chart a pattern and download the result as an image
+
+
+## Design
+
+For Generation Knit, I wanted an extremely streamlined design. The web's major knitting website has information everywhere, nested search bars, and is extremely cluttered and hard for new users to navigate. I wanted the opposite of that. 
+
+It also sports a garish orange colour scheme. For knitting patterns, it can take hours to find the perfect pattern that suits your materials and skill level. The orange also tends to overshadow the beauty of the pieces themselves. I chose a neutral colour palette for a modern look that allows the patterns to pop on the screen.
+
+The other website also has extremely poor mobile compaitibility. I chose to build my site with a mobile-first approach, so that users may enjoy the browsing experience without the hassle of tiny links and images on a smartphone. 
+
+To stop the grey site becoming too stale, I designed a set of hand-drawn assets for the nav bar to bring in an organic look.
+
+  <details>
+  <summary> Menu Icon</summary>
+    <IMG src="templates/assets/images/readme/icon-menu.png"  alt="Menu Icon"/>
+    </details>
+
+  <details>
+  <summary> Add Pattern Icon</summary>
+    <IMG src="templates/assets/images/readme/icon-nav-add.png"  alt="Add Pattern Icon"/>
+    </details>
+
+  <details>
+  <summary> Home Page Icon</summary>
+    <IMG src="templates/assets/images/readme/icon-nav-home.png"  alt="Home Page Icon"/>
+    </details>
+
+  <details>
+  <summary> My Profile Icon</summary>
+    <IMG src="templates/assets/images/readme/icon-nav-profile.png"  alt="Profile icon"/>
+    </details>
+
+  <details>
+  <summary> Search Icon</summary>
+    <IMG src="templates/assets/images/readme/icon-nav-search.png"  alt=" Search Icon"/>
+    </details>
+
+  <details>
+  <summary> Sign In Icon</summary>
+    <IMG src="templates/assets/images/readme/icon-nav-signin.png"  alt="Sign in icon"/>
+    </details>
+
+  <details>
+  <summary> Sign Out Icon</summary>
+    <IMG src="templates/assets/images/readme/icon-nav-signout.png"  alt="Sign Out Icon"/>
+    </details>
+
+  <details>
+  <summary> Large Generation Knit Icon</summary>
+    <IMG src="templates/assets/images/readme/logo-lg.png"  alt="Large Generation Knit Icon"/>
+    </details>
+
+  <details>
+  <summary> Small Generation Knit Icon</summary>
+    <IMG src="templates/assets/images/readme/logo-sm.png"  alt="Small Generation Knit Icon"/>
+    </details>
+
+
+
 ### Colours 
 Anything over 7 is very accesible 
 My accessible colours:
@@ -305,7 +404,9 @@ Manual testing was carried out on User Stories:
 
 ### Performance Testing
 
-Network testing was done using Chrome devtools. My image loading is very slow, in the future I will look into why this is and how to correct it. 
+Network testing was done using Chrome devtools. My image loading is very slow, in the future I will look into why this is and how to correct it. I think the issue may be that my images aren't optimised fully.
+
+I upload images using sorl thumbnail's Imagefield, but deliver them with Cloudinary. Before swapping out Sorl Thumbnail for Cloudinary, testing was so slow that Lighthouse could not test my pages and app would not run on Heroku which gives an error after 30 seconds of page loading.
 
 ![Waterfall showing slow image loading](templates/assets/images/readme/readme-network-testing.png)
 
@@ -321,21 +422,34 @@ Along with a similar error from PageSpeed Insights.
 
 ![PageSpeed Insights error](templates/assets/images/readme/readme-network-pagespeedinsights.png)
 
-I am using sorl thumbnail for image resizing, but results are still slow. Here's an example of a typical server response:
+I am using sorl thumbnail for image resizing results are slow. Here's an example of a typical server response:
 
 ![Server response of 10 seconds](templates/assets/images/readme/readme-network-server-timing.png)
 
-In the future, I would run more tests to see why my site is so slow. 
 
-  <summary> Lighthouse test for search page </summary>
-    <IMG src="templates/assets/images/readme/readme-lighthouse-search.png"  alt="Lighthouse test for search page"/>
+Here are my more successful Lighthouse tests:
+
+<details>
+  <summary> Lighthouse test for home page </summary>
+    <IMG src="templates/assets/images/readme/readme-lighthouse-home.png"  alt="Lighthouse test for home page"/>
     </details>
 
-
+<details>
   <summary> Lighthouse test for pattern page </summary>
     <IMG src="templates/assets/images/readme/readme-lighthouse-pattern-page.png"  alt="Lighthouse test for pattern page"/>
     </details>
 
+<details>
+  <summary> Lighthouse test for profile page </summary>
+    <IMG src="templates/assets/images/readme/readme-lighthouse-profile.png"  alt="Lighthouse test for profile page"/>
+    </details>
+
+<details>
+  <summary> Lighthouse test for search page </summary>
+    <IMG src="templates/assets/images/readme/readme-lighthouse-search.png"  alt="Lighthouse test for search page"/>
+    </details>
+
+The site is still slow, I am not happy with the loading times. In the future, I would run more tests to see why my site is so slow and what I can do to optimise it further.
 
 ### Linting 
 
