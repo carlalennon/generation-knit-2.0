@@ -492,7 +492,7 @@ I used a variety of resources to help me understand the new elements that PP4 of
 - [Django widget tweaks ](https://github.com/jazzband/django-widget-tweaks)
 - [Fix search filtering when category etc. is null](https://www.w3schools.com/python/ref_string_isdigit.asp)
 - [Python Linter](https://www.tutorialspoint.com/online_python_formatter.htm)
- 
+- [Switching delivery from sorl to cloudinary](https://cloudinary.com/documentation/transformation_reference)
 
 
 
