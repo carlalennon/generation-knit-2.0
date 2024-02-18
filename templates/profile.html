@@ -7,27 +7,24 @@
 
 {% block body %}
 <div class="container">
-    <div class="container">
-        <div class="row">
-            <!-- Profile picture -->
-            <div class="col-lg-6 d-flex justify-content-center p-3">
-                <p class="card-text">
-                    <img src="{% cloudinary_url user.profile.image.url format='auto' quality='auto' width=200 height=200 crop='fill' %}" alt="user profile picture">
-                </p>
-            </div>
+    <div class="row rounded" style="background-color: #A9A9A9;">
+        <!-- Profile picture -->
+        <div class="col-lg-6 d-flex justify-content-center p-3">
+            <p class="card-text">
+                <img src="{% cloudinary_url user.profile.image.url format='auto' quality='auto' width=200 height=200 crop='fill' %}" alt="user profile picture" class="img-thumbnail">
+            </p>
+        </div>
 
-            <!-- Bio and pattern number -->
-            <div
-                class="col-lg-6 d-flex flex-column align-items-lg-start align-items-center">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            {{ user.username }}
-                        </h5>
-                        {{ user.profile.bio|safe }}
-                    </div>
+        <!-- Bio and pattern number -->
+        <div
+            class="col-lg-6 d-flex flex-column align-items-lg-start align-items-center">
+            <div class="card mb-3 mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ user.username }}
+                    </h5>
+                    {{ user.profile.bio|safe }}
                 </div>
-
                 <table class="table table-hover">
                     <thead>
                     </thead>
@@ -42,7 +39,7 @@
         </div>
     </div>
 
-    <h2>Patterns by {{user.username }}</h2>
+    <h2 style="margin-top: 50px;">Patterns by {{user.username }}:</h2>
     <!-- Styling for small screen -->
     <div class="row d-lg-none">
         {% for pattern in patterns %}
@@ -51,7 +48,7 @@
                 <div class="col">
                     <a href="{% url 'feed:detail' pattern.id %}"
                         class="nav-link">
-                        <img src="{% cloudinary_url pattern.image.url format='auto' quality='auto' width=100 height=100 crop='fill' %}" class="img-fluid" alt="pattern thumbnail">
+                        <img src="{% cloudinary_url pattern.image.url format='auto' quality='auto' width=100 height=100 crop='fill' %}" class="img-fluid" alt="pattern thumbnail" style="object-fit: cover; height: 100px; width: 100px">
                         {{ pattern.title}}
                     </a>
                 </div>
@@ -75,14 +72,14 @@
     </div>
 
     <!-- Styling for large screen -->
-    <div class="row d-none d-lg-flex">
+    <div class="row d-none d-lg-flex rounded border p-4"  style="border: 4px solid #A9A9A9 !important;">
         {% for pattern in patterns %}
-        <div class="col-lg-3">
+        <div class="col-lg-3 p-0">
             <div class="card d-flex flex-column">
                 <div class="text-center">
-                    <h3>
+                    <h6>
                         {{ pattern.title }}
-                    </h3>
+                    </h6>
                 </div>
                 <div class="d-flex justify-content-center align-items-center" style="flex-grow: 1;">
                     <a href="{% url 'feed:detail' pattern.id %}">
@@ -113,7 +110,7 @@
 </div>
 <!-- Buttons for logged in member only -->
 {% if request.user.is_authenticated and user.username == request.user.username %}
-<div class="container-fluid d-flex justify-content-center">
+<div class="container-fluid d-flex justify-content-center m-5">
     <div class="btn-group" role="group" aria-label="Edit or delete profile">
         <a href="{% url 'profiles:edit' user.username %}" class="btn btn-dark" aria="edit profile">
             Edit profile
