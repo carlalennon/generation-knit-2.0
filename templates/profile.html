@@ -12,7 +12,7 @@
             <!-- Profile picture -->
             <div class="col-lg-6 d-flex justify-content-center p-3">
                 <p class="card-text">
-                    <img src="{% cloudinary_url user.profile.image format='auto' quality='auto' width=300 height=300 crop='fill' %}" alt="user profile picture">
+                    <img src="{% cloudinary_url user.profile.image.url format='auto' quality='auto' width=300 height=300 crop='fill' %}" alt="user profile picture">
                 </p>
             </div>
 
@@ -51,7 +51,7 @@
                 <div class="col">
                     <a href="{% url 'feed:detail' pattern.id %}"
                         class="nav-link">
-                        <img src="{% cloudinary_url pattern.image format='auto' quality='auto' width=100 height=100 crop='fill' %}" class="img-fluid" alt="pattern thumbnail">
+                        <img src="{% cloudinary_url pattern.image.url format='auto' quality='auto' width=100 height=100 crop='fill' %}" class="img-fluid" alt="pattern thumbnail">
                         {{ pattern.title}}
                     </a>
                 </div>
@@ -60,7 +60,7 @@
                         href="{% url 'profiles:profile' pattern.author.username %}"
                         class="text-decoration-none link-secondary ">
                         {{ pattern.author }}
-                        <img src="{% cloudinary_url pattern.author.profile.image format="auto" quality="auto" width=50 height=50 crop="fill" %}" alt="user icon">
+                        <img src="{% cloudinary_url pattern.author.profile.image.url format="auto" quality="auto" width=50 height=50 crop="fill" %}" alt="user icon">
                     </a>
                 </div>
             </div>
@@ -78,23 +78,23 @@
     <div class="row d-none d-lg-flex">
         {% for pattern in patterns %}
         <div class="col-lg-3">
-            <div class="card d-flex h-100">
+            <div class="card d-flex">
                 <div class="text-center">
                     <h3>
                         {{ pattern.title }}
                     </h3>
                 </div>
                 <a href="{% url 'feed:detail' pattern.id %}">
-                    <img src="{% cloudinary_url pattern.image format="auto" quality="auto" width=300 height=300 crop="fill" %}" class="img-fluid" alt="pattern thumbnail">
+                    <img src="{% cloudinary_url pattern.image.url format="auto" quality="auto" width=300 height=300 crop="fill" %}" class="img-fluid" alt="pattern thumbnail">
                 </a>
-                <div class="card-body">
-                    <p class="card-text float-end">
+                <div class="card-body mt-auto">
+                    <p class="card-text float-end ">
                         by
                         <a
                             href="{% url 'profiles:profile' pattern.author.username %}"
                             class="text-decoration-none link-secondary">
                             <b>{{ pattern.author }}</b>
-                            <img src="{% cloudinary_url pattern.author.profile.image format="auto" quality="auto" width=50 height=50 crop="fill" %}" class="img-fluid" alt="user icon"> 
+                            <img src="{% cloudinary_url pattern.author.profile.image.url format="auto" quality="auto" width=50 height=50 crop="fill" %}" class="img-fluid thumbnail-50px" alt="user icon"> 
                         </a>
                     </p>
                 </div>
