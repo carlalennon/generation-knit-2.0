@@ -38,7 +38,7 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 # Allow user to edit a pattern
-@login_required
+
 def edit_pattern(request, pattern_id):
     pattern = get_object_or_404(Pattern, id=pattern_id)
     if request.method == 'POST':
