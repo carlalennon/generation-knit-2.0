@@ -551,4 +551,3 @@ I used a variety of resources to help me understand the new elements that PP4 of
 
 
 
-https://docs.djangoproject.com/en/5.0/topics/auth/default/#:~:text=If%20the%20user%20isn't,in%2C%20execute%20the%20view%20normally.
