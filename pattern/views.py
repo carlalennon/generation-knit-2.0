@@ -33,7 +33,7 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
         return super().dispatch(request, *args, **kwargs)
 
     def form_invalid(self, form):
-        print(form.errors)
+        messages.error(self.request, "There was an error with your submission. Have you filled out all the required fields?")
         return super().form_invalid(form)
 
     def form_valid(self, form):
@@ -41,7 +41,7 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
         obj = form.save(commit=False)
         obj.author = self.request.user
         obj.save()
-        print(form.errors)
+        messages.success(self.request, "Your pattern has been added successfully.")
         return super().form_valid(form)
 
 # Allow user to edit a pattern
