@@ -551,3 +551,11 @@ I used a variety of resources to help me understand the new elements that PP4 of
 
 
 
+## Resubmission
+
+The project failed on the following criteria: 
+
+- I rearranged the nav bar on the home page when it's on a big screen 
+- I added messages for the user when the pattern is posted successully, or there's errors in the form 
+- I added an @login_required to the edit and delete views to prevent users accessing them by editing the URL
+- Removed link in base.html that was causing HTML errors 

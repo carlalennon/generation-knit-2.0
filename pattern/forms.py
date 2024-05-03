@@ -3,13 +3,18 @@ from django_summernote.widgets import SummernoteWidget
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Pattern
 from upload_validator import FileTypeValidator
+from django.core.validators import FileExtensionValidator
 
 # Allow user to upload a pattern
 class PostPattern(forms.ModelForm):
     title = forms.CharField(max_length=200)
-    image = forms.FileField(required=False)
+    # image validator from django
+    image = forms.ImageField(
+        required=False,
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])]
+    )
     content = forms.CharField(widget=SummernoteWidget)
-    # User can only upload PDFs to this field
+    # User can only upload PDFs to this field, using a different validator for more security 
     pdf = forms.FileField(
         label='pdf', help_text="Please upload a .pdf file", required=False,
         validators=[FileTypeValidator(
