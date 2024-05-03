@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 
 class PatternView(generic.ListView):
@@ -28,15 +29,23 @@ class UploadPatternView(LoginRequiredMixin, CreateView):
 
     def dispatch(self, request, *args, **kwargs):
         self.request = request
+        print("dispatch")
         return super().dispatch(request, *args, **kwargs)
 
+    def form_invalid(self, form):
+        print(form.errors)
+        return super().form_invalid(form)
+
     def form_valid(self, form):
+        print("form_valid")
         obj = form.save(commit=False)
         obj.author = self.request.user
         obj.save()
+        print(form.errors)
         return super().form_valid(form)
 
 # Allow user to edit a pattern
+@login_required
 def edit_pattern(request, pattern_id):
     pattern = get_object_or_404(Pattern, id=pattern_id)
     if request.method == 'POST':
@@ -50,6 +59,7 @@ def edit_pattern(request, pattern_id):
     return render(request, 'edit_pattern.html', {'form': form})
 
 # Allow user to delete a pattern 
+@login_required
 def delete_pattern(request, pk):
     pattern = get_object_or_404(Pattern, pk=pk)
     pattern.delete()
