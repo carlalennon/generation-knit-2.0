@@ -4,7 +4,7 @@
 
 <!-- Style navbar to same colour as BG so screen readers can see it but leaves a seamless look for sighted users-->
 <nav class="navbar" style="background-color: #ced4da;">
-    <div class="container d-lg-none">
+    <div class="container">
         <div>
 
           <!-- Offcanvas -->
@@ -122,52 +122,3 @@
         </div>
     </div>
 </nav>
-    <!-- Large screen nav-->
-    
-<nav class="navbar navbar-expand-lg navbar-light bg-dark-subtle d-none d-lg-block">
-    <div class="container">
-        <div class="row row-cols-3">
-            <div class="col">
-            </div>
-            <div class="col">
-                <a class="navbar-brand" href="{% url 'feed:feed' %}">
-                    <img class="img-fluid"
-                        src="https://res.cloudinary.com/duekocfq6/image/upload/v1708004906/static/logo-lg_idyzwe.png"
-                        alt="Generation Knit">
-                </a>
-            </div>
-            <div class="col">
-                <!-- Show user information in top right -->
-            {% if request.user.is_authenticated %}
-            <div class="float-end justify-content-end rounded" id="user-information" style="background-color: #A8A8A8; padding-left: 10px;">
-                    <a class="nav-link"
-                        href="{% url 'profiles:profile' user.username %}">
-                        {{ request.user.username}}
-                        <img src="{% cloudinary_url user.profile.image.url format="auto" quality="auto" width=50 height=50 crop="fill" gravity="center" %}" alt="user icon" class="img-thumbnail thumbnail-50px"> 
-                    </a>
-                {% else %}
-                    <a class="nav-link float-end"
-                        href="{% url 'account_login' %}">Login
-                    </a>
-                {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="nav-link">
-            <a class="nav-link" href="{% url 'feed:feed' %}">Home</a>
-            <a class="nav-link" href="{% url 'search:search' %}">Search</a>
-            <a class="nav-link" href="{% url 'pattern:add' %}">Add pattern</a>
-            {% if request.user.is_authenticated %}
-            <a class="nav-link" href="{% url 'profiles:profile' user.username %}">My Profile</a>
-            {% else %}
-            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-            {% endif %}
-            {% if request.user is request.user.is_authenticated%}
-            <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
-            {% endif %}
-        </div>
-    </div>
-</nav>
-
