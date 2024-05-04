@@ -8,10 +8,10 @@
 {% block body %}
     <div class="card m-3">
         <div class="card-body">
-            <form method="POST" action="." enctype="multipart/form-data">
+            <form method="POST" action="." enctype="multipart/form-data" >
                 {% csrf_token %} 
                 {% for field in form %}
-                <div class="mb-3 form-control">
+                <div class="mb-3 form-control" name="addform">
                     <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label> {{ field }}
                 </div>
                 {% endfor %}
@@ -21,4 +21,26 @@
             </form>
         </div>
     </div>
+{% endblock %}
+
+{% block extra_script %}
+    <script>
+        var form = document.querySelector('form');
+        var submitButton = document.querySelector('#submit-button');
+
+        form.addEventListener('submit', function() {
+            // Disable the submit button when the form is submitted
+            submitButton.disabled = true;
+            submitButton.classList.add('disabled');
+        });
+
+        form.addEventListener('invalid', function(event) {
+            // Prevent the form from being submitted
+            event.preventDefault();
+
+            // Re-enable the submit button
+            submitButton.disabled = false;
+            submitButton.classList.remove('disabled');
+        }, true);
+    </script>
 {% endblock %}

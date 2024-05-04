@@ -494,16 +494,37 @@ This is discussed more in the known issues section
 
 ## Deployment
 
-For deployment I did the following:
- - Created a Heroku account following the steps in the LMS
- - Created a new Heroku app, paying attention to region (EU) 
- - Went to "Config Vars" in settings
- - - Added vars for Cloudinary and ElephantSQL, disabled collect static, added a PORT for 8000
- - - Added the secret key for my Django app
- - Collected the static files for my app
- - In Deploy, deployed from the main branch of my Github repo
- - Viewed app after deployment and checked everything worked
+### Create a Heroku account:
+ Follow the steps provided in the Learning Management System (LMS) to create a new Heroku account.
 
+### Create a new Heroku app:
+ Pay attention to the region setting (EU in this case) when creating the app.
+
+### Set Config Vars in Heroku settings:
+ These are environment variables that Heroku will use when running your app. This is the information for the database, secret key and cloudinary.
+
+### Add variables for Cloudinary and ElephantSQL:
+ These services provide cloud-based image hosting and PostgreSQL database hosting, respectively. ElephantSQL has an end of life announcement, but will still work until January 2025
+
+### Disable collect static:
+ This tells Django not to collect static files when deploying to Heroku. Django serves static files its own way.
+
+### Add a PORT variable and set it to 8000:
+ This tells Heroku which port to use when running your app.
+
+### Add the secret key for your Django app:
+ This is a crucial security measure. I won't be revealing the key here.
+
+### Collect static files for your app:
+ Run python manage.py collectstatic to collect all static files into a single location that can be served by Heroku.
+
+### Deploy from the main branch of your Github repo:
+ In the Deploy section of your Heroku app's dashboard, connect your Github account, select your repository, and deploy from the main branch.
+
+### Check the deployed app: 
+After deployment, open the app in your browser and check that everything works as expected. Test all features and ensure that there are no errors.
+
+Remember to commit and push all changes to your Github repository before deploying. Also, make sure to add any necessary files for Heroku deployment, such as Procfile, runtime.txt (to specify Python version), and requirements.txt (to specify Python package dependencies).
 
 ## Known Errors 
 
@@ -555,7 +576,35 @@ I used a variety of resources to help me understand the new elements that PP4 of
 
 The project failed on the following criteria: 
 
-- I rearranged the nav bar on the home page when it's on a big screen 
-- I added messages for the user when the pattern is posted successully, or there's errors in the form 
-- I added an @login_required to the edit and delete views to prevent users accessing them by editing the URL
+The board to maange resubmission tasks is [here](https://github.com/users/carlalennon/projects/4/views/1?pane=issue&itemId=61514229)
+
+  <summary> CSS Lint warnings and no issues</summary>
+    <IMG src="templates/assets/images/readme/readme-lint-css.png"  alt="CSS Lint warnings and no issues"/>
+    </details>
+
+
+    
+  <summary> - I rearranged the nav bar on the home page when it's on a big screen </summary>
+    <IMG src="templates/assets/images/readme/00005_navbar.png"  alt="New nav bar"/>
+    </details>
+
+    
+  <summary> - I added messages for the user when the pattern is posted successully, or there's errors in the form </summary>
+    <IMG src="templates/assets/images/readme/00006_messages.png"  alt="Messages in code "/>
+    </details>
+
+   <summary> - I added an @login_required to the edit and delete views to prevent users accessing them by editing the URL </summary>
+    <IMG src="templates/assets/images/readme/00007_login.png"  alt="Login mixins"/>
+    </details>
+
 - Removed link in base.html that was causing HTML errors 
+
+
+   <summary> - Added image validation for png and jpegs on profile pictures and pattern pictures  </summary>
+    <IMG src="templates/assets/images/readme/00008_validator.png"  alt="Image validator"/>
+    </details>
+
+  <summary> - Found that summernote widget is causing Issues in console, potential fix could be to remove it altogether or find a different formatter   </summary>
+  <IMG src="templates/assets/images/readme/00009_summernote_errors.png"  alt="Summernote issues"/>
+  </details>
+
